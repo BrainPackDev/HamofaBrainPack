@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="backend_config_data" model="backend.config">
+            <field name="light_primary_bg_color">#137EE8</field>
+            <field name="light_primary_text_color">#ffffff</field>
+            <field name="use_custom_colors" eval="True"/>
+            <field name="use_custom_drawer_color" eval="True"/>
+        </record>
+    </data>
+</odoo>

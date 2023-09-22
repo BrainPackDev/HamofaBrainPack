@@ -1,0 +1,22 @@
+body.o_web_client {
+    @for $i from 1 through 10 {
+        &.loader_style_#{$i} {
+            .o_blockUI .o_spinner {
+                height: 150px !important;
+                img {
+                    content: url(/brainpack_debranding/static/description/imgpsh_fullsize_anim.gif) !important;
+                    animation: none !important;
+                    max-height: 150px;
+                    height:150px;
+                }
+            }
+        }
+    }
+
+    .loader_style {
+        .custom-control-label::after,
+        .custom-control-label::before {
+            top: 38%;
+        }
+    }
+}

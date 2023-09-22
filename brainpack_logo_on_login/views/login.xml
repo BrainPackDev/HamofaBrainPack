@@ -1,0 +1,11 @@
+<odoo>
+    <template id="loginInherit" inherit_id="web.login" name="Login">
+        <xpath expr='//form[hasclass("oe_login_form")]/div[1]' position="before">
+            <div class="mb16" style="text-align: center;">
+                <a href="/">
+                    <img src="/brainpack_logo_on_login/static/description/icon.png" class="img-fluid" alt=""/>
+                </a>
+            </div>
+        </xpath>
+    </template>
+</odoo>

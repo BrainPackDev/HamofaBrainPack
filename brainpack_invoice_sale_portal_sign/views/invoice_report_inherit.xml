@@ -1,0 +1,22 @@
+<odoo>
+    <template id="report_account_invoice_document_inherit" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@id='qrcode']" position="after">
+            <div class="signature">
+                <table style="float: right;" t-if="o.signature_attachment">
+                    <tr>
+                        <th style="text-align: center;">
+                            <strong>Signature</strong>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img t-attf-src="data:image/gif;base64,{{o.signature_attachment.datas}}" height="100px"
+                                 width="150px"/>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </xpath>
+    </template>
+</odoo>

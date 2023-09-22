@@ -1,0 +1,134 @@
+body.o_web_client.o_in_studio {
+    &.o_home_menu_background{
+        .o_studio_navbar .o_menu_toggle{
+        }
+    }
+    .o_web_studio_sidebar{
+        select{
+            color: #b7b7b7 !important;
+            > option{
+                background-color: var(--biz-theme-secondary-color) !important;
+                color: var(--biz-theme-secondary-text-color) !important;
+            }
+        }
+    }
+    .o_web_studio_icons_library{
+        background-color: var(--biz-theme-secondary-color) !important;
+        color: var(--biz-theme-secondary-text-color) !important;
+        border-radius: var(--border-radius-lg);
+        .o_web_studio_selector{
+            background-color: var(--biz-theme-secondary-color);
+            border: 2px solid var(--biz-theme-secondary-color);
+        }
+    }
+    .o_web_studio_app_creator{
+        h6, .text-muted{
+            color: #b7b7b7 !important;
+        }
+        .o_web_studio_app_creator_box{
+            border-radius: var(--border-radius-lg);
+            .o_web_studio_app_creator_left{
+                background-color: var(--biz-theme-secondary-color) !important;
+                color: var(--biz-theme-secondary-text-color) !important;
+                border-top-left-radius: var(--border-radius-lg);
+                border-bottom-left-radius: var(--border-radius-lg);
+
+                .o_web_studio_app_creator_model_choice{
+                    .form-check > input{
+                        margin-top: 0.25em;
+                    }
+                    label{
+                        color: var(--biz-theme-secondary-text-color) !important;
+                    }
+                }
+                
+            }
+            .o_web_studio_app_creator_right{
+                // color: #fff;
+                border-top-right-radius: var(--border-radius-lg);
+                border-bottom-right-radius: var(--border-radius-lg);
+            }
+
+            .o_web_studio_app_creator_buttons{
+                .o_web_studio_app_creator_next, .o_web_studio_app_creator_previous{
+                    opacity: 1;
+                    color: #121212;
+                }
+                .o_web_studio_app_creator_next.is_ready{
+                    background-color: var(--biz-theme-primary-color);
+                    color: var(--biz-theme-primary-text-color);
+                }
+            }
+        }
+        .o_web_studio_model_configurator{
+            background-color: var(--biz-theme-secondary-color) !important;
+            color: var(--biz-theme-secondary-text-color) !important;
+            border-radius: var(--border-radius-lg);
+        }
+    }
+
+    .header_menu_right_content , .fav_app_island {
+        display: none !important;
+    }
+    .o_studio {
+        .o_studio_navbar {
+            .o_menu_sections, .o_nav_entry {
+                height: 80px !important;
+            }
+            .o-studio--menu {
+                margin-left: auto;
+            }
+            .o_studio_buttons{
+                .o_web_studio_notes, .o_web_studio_leave{
+                    > a{
+                        color: var(--biz-theme-primary-text-color);
+                    }
+                }
+            }
+            .o_web_studio_home_studio_menu {
+                .o-dropdown {
+                    .dropdown-toggle {
+                        height: 100% !important;
+                    }
+                    height: 100%;
+                }
+            }
+            .o_web_edit_menu, .o_web_create_new_model {
+                color: inherit;
+            }
+            .o_app_drawer {
+                display: none !important;
+            }
+            .o_menu_toggle {
+                display: inline-block !important;
+                color: var(--biz-theme-primary-text-color);
+                order: -1;
+                height: var(--horizontal-menu-height);
+                line-height: 80px;
+                padding: 0 10px;
+                &:hover, &:focus {
+                    box-shadow: 0 4px 10px rgba(0,0,0,0.03) !important;
+                    background: rgba(255, 255, 255, 0.05) !important;
+                }
+            }
+            display: flex !important;
+        }
+        .o_studio_home_menu {
+            background-image: none;
+        }
+    }
+    &.o_home_menu_background {
+        .o_studio {
+            .o_studio_navbar {
+                .o_web_studio_leave {
+                    .btn-primary {
+                        background-color: transparent !important;
+                        border-color: transparent !important;
+                    }
+                }
+                background-color: rgba(255, 255, 255, 0.1) !important;
+                border-color: rgba(255, 255, 255, 0.1) !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="brainpack_company_favicon" model="res.config.settings">
+            <field name="favicon" type="base64" file="brainpack_debranding/static/description/brainPack_favicon/favicon.ico" />
+            <field name="bot_logo" type="base64" file="brainpack_debranding/static/description/brainPack_favicon/favicon.ico" />
+        </record>
+    </data>
+</odoo>

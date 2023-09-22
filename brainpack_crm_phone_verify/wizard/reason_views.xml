@@ -1,0 +1,36 @@
+<odoo>
+     <record id="verify_phone_reason_view_form" model="ir.ui.view">
+        <field name="name">verify.phone.form</field>
+        <field name="model">verify.phone.reason</field>
+        <field name="arch" type="xml">
+            <form string="Reason">
+                <sheet>
+                    <group>
+                        <field name="phone" readonly="1"/>
+                        <field name="phone_status"  widget="radio" required="1"/>
+                    </group>
+                    <group attrs="{'invisible':[('phone_status','!=','answered')]}">
+                        <group>
+                            <field name="case_type"  widget="radio" />
+                            <field name="investment_amount_id" attrs="{'invisible':[('phone_status','!=','answered')]}"/>
+                            <field name="message" attrs="{'invisible':[('phone_status','!=','answered')]}"/>
+                        </group>
+                        <group>
+                            <field name="transfer_type"  widget="radio" attrs="{'invisible':[('phone_status','!=','answered')]}"/>
+                            <label for="date_deadline" attrs="{'invisible':[('phone_status','!=','answered')]}">Expected Closing</label>
+                            <div class="o_lead_opportunity_form_inline_fields" attrs="{'invisible':[('phone_status','!=','answered')]}">
+                                <field name="date_deadline" nolabel="1" class="oe_inline"/>
+                                <field name="priority" widget="priority" nolabel="1" class="oe_inline align-top"/>
+                            </div>
+                        </group>
+                    </group>
+                </sheet>
+                 <footer>
+                    <button  string="Save" type="object" name="update_reason"
+                            class="oe_highlight"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

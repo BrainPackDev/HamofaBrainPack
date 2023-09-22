@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record id="view_res_config_settings_form_brainpack_website_extended" model="ir.ui.view">
+            <field name="name">res.config.settings.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="website.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//div[@id='website_email_marketing']" position="after">
+                     <h2>Canonical Tag</h2>
+                      <div class="row mt16 o_settings_container" id="canonical_tag" attrs="{'invisible': [('website_id', '=', False)]}">
+                        <div class="col-12 col-lg-6 o_setting_box" id="canonical_tag">
+                            <div class="o_setting_left_pane">
+                                <field name="canonical_tag"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="canonical_tag"/>
+                            </div>
+                        </div>
+                      </div>
+                 </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

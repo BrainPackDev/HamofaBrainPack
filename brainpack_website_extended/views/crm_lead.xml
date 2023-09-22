@@ -1,0 +1,21 @@
+<odoo>
+    <record id="crm_lead_view_form_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.view.form.inherit.event.crm.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group/group[5]/field[@name='team_id']" position="after">
+                <field name="website_url" widget="url"/>
+            </xpath>
+        </field>
+    </record>
+
+    <data>
+        <function model="ir.model.fields" name="formbuilder_whitelist">
+            <value>crm.lead</value>
+            <value eval="['website_url']"/>
+        </function>
+    </data>
+
+
+</odoo>

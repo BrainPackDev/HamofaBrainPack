@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="brainpack_meta_whatsapp.ChatViewNav" owl="1">
+        <div t-if="chatWindow and chatWindow.thread and chatWindow.thread.channel and chatWindow.thread.channel.channel_type and chatWindow.thread.channel.channel_type == 'chat'">
+            <ul class="nav nav-tabs">
+                <li class="nav-item chat_box_tab live_chatbox_tab" t-if="chatWindow and chatWindow.thread and chatWindow.thread.channel and chatWindow.thread.channel.correspondent and chatWindow.thread.channel.correspondent.persona.partner and chatWindow.thread.channel.correspondent.persona.partner.user" t-att-class="{ 'active': chatWindow.thread.isWaMsgs == false }"><a class="nav-link live_chat current"  href="javascript:void(0);" t-on-click="onClickLive">Live chat </a></li>
+                <li class="nav-item chat_box_tab whatsup_chatbox_tab" t-att-class="{ 'active': chatWindow and chatWindow.thread and chatWindow.thread.isWaMsgs}">
+                    <a class="nav-link whatsup_chat" href="javascript:void(0);"
+                    t-on-click="onClickWhatsapp">WhatsApp Chat</a> </li>
+            </ul>
+        </div>
+    </t>
+</templates>

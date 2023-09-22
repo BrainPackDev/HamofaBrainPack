@@ -1,0 +1,152 @@
+/** @odoo-module **/
+
+import { UserMenu } from "@web/webclient/user_menu/user_menu";
+import { routeToUrl } from "@web/core/browser/router_service";
+import { patch } from "@web/core/utils/patch";
+import { browser } from "@web/core/browser/browser";
+import { registry } from "@web/core/registry";
+import { session } from "@web/session";
+import { useService } from "@web/core/utils/hooks";
+const userMenuRegistry = registry.category("user_menuitems");
+
+patch(UserMenu.prototype, "app_odoo_customize.UserMenu", {
+    setup() {
+        this._super.apply(this, arguments);
+        // this.companyService = useService("company");
+        this.rpc = useService("rpc");
+        this.orm = useService("orm");
+
+        this.app_lang_list = session.app_lang_list;
+        console.log(">>>>>>>>",session,session.main_admin)
+        if (session.main_admin) {
+            userMenuRegistry.add("debug", debugItem, {'force': true})
+                .add("asset_asset", activateAssetsDebugging, {'force': true})
+                .add("leave_debug", leaveDebugMode, {'force': true})
+                .add("separator10", separator10, {'force': true})
+        }
+        if (session.app_show_documentation) {
+            userMenuRegistry.add("documentation", documentationItem, {'force': true});
+        }
+        else{
+            userMenuRegistry.remove("documentation", documentationItem, {'force': true});
+        }
+        if (session.app_show_support) {
+            userMenuRegistry.add("support", supportItem, {'force': true})
+        }
+         else{
+            userMenuRegistry.remove("support", supportItem, {'force': true})
+        }
+        if (session.app_show_account) {
+            userMenuRegistry.add("odoo_account", odooAccountItem, {'force': true});
+        }
+        else{
+            userMenuRegistry.remove("odoo_account", odooAccountItem, {'force': true});
+        }
+    },
+
+    async setLang(lang_code) {
+        // alert(lang_code);
+        browser.clearTimeout(this.toggleTimer);
+        if (this.user.lang != lang_code) {
+            const res = await this.orm.call("res.users", "write", [
+                session.uid, {'lang': lang_code}
+            ]);
+            location.reload();
+        }
+    }
+});
+
+function debugItem(env) {
+    const url_debug = $.param.querystring(window.location.href, 'debug=1');
+    return {
+        type: "item",
+        id: "debug",
+        description: env._t("Activate the developer mode"),
+        href: url_debug,
+        callback: () => {
+            browser.open(url_debug, "_self");
+        },
+        sequence: 5,
+    };
+}
+
+function activateAssetsDebugging(env) {
+    return {
+        type: "item",
+        description: env._t("Activate Assets Debugging"),
+        callback: () => {
+            browser.location.search = "?debug=assets";
+        },
+        sequence: 6,
+    };
+}
+
+function leaveDebugMode(env) {
+    return {
+        type: "item",
+        description: env._t("Leave the Developer Tools"),
+        callback: () => {
+            const route = env.services.router.current;
+            route.search.debug = "";
+            browser.location.href = browser.location.origin + routeToUrl(route);
+        },
+        sequence: 7,
+    };
+}
+
+function separator1() {
+    return {
+        type: "separator",
+        sequence: 1,
+    };
+}
+
+function separator10() {
+    return {
+        type: "separator",
+        sequence: 10,
+    };
+}
+
+function documentationItem(env) {
+    const documentationURL = session.app_documentation_url;
+    return {
+        type: "item",
+        id: "documentation",
+        description: env._t("Documentation"),
+        href: documentationURL,
+        callback: () => {
+            browser.open(documentationURL, "_blank");
+        },
+        sequence: 21,
+    };
+}
+
+function supportItem(env) {
+    const url = session.app_support_url;
+    return {
+        type: "item",
+        id: "support",
+        description: env._t("Support"),
+        href: url,
+        callback: (ev) => {
+            browser.open(url, "_blank");
+        },
+        sequence: 22,
+    };
+}
+
+function odooAccountItem(env) {
+    const app_account_title = session.app_account_title;
+    const app_account_url = session.app_account_url;
+    return {
+        type: "item",
+        id: "account",
+        description: env._t(app_account_title),
+        href: app_account_url,
+        callback: () => {
+            browser.open(app_account_url, "_blank");
+        },
+        sequence: 60,
+    };
+}

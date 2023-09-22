@@ -1,0 +1,2273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="brainpack_snippet_extra_pages" inherit_id="website.snippets">
+        <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_header')]" position="before">
+            <!-- Home Pages -->
+            <div class="o_panel_header">
+                BrainPack Snippet
+            </div>
+            <div class="o_panel_body">
+                <t t-snippet="brainpack_website_extended.brainpack_banner"
+                   t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg"/>
+                <t t-snippet="brainpack_website_extended.brainpack_feature"
+                   t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg"/>
+                <t t-snippet="brainpack_website_extended.brainpack_service_intergration"
+                   t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg"/>
+                <t t-snippet="brainpack_website_extended.brainpack_integration_app"
+                   t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg"/>
+                <t t-snippet="brainpack_website_extended.brainpack_contact_us"
+                   t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg"/>
+                <t t-snippet="brainpack_website_extended.brainpack_testimonial"
+                   t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg"/>
+                <t t-snippet="brainpack_website_extended.brainpack_expert"
+                   t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg"/>
+                <t t-snippet="brainpack_website_extended.brainpack_service"
+                   t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg"/>
+                <t t-snippet="brainpack_website_extended.brainpack_integration_app_slider"
+                   t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg"/>
+                <t t-snippet="brainpack_website_extended.brainpack_testimonial_app_slider"
+                   t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg"/>
+                 <t t-snippet="brainpack_website_extended.brainpack_contact_us_crm"
+                   t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg"/>
+                <t t-snippet="brainpack_website_extended.brainpack_contact_banner"
+                   t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg"/>
+            </div>
+        </xpath>
+    </template>
+
+     <template id="brainpack_contact_banner" name="Brainpack Contact Banner Block">
+        <section class="s_text_image o_colored_level pt96 pb72 gulf_banner" data-snippet="s_text_image"
+                 data-name="Text - Image"
+                 style="background-color: rgb(21, 33, 79); background-image: none;">
+            <div class="container">
+                <div class="row o_grid_mode" style="" data-row-count="9">
+                    <div class="o_colored_level o_grid_item g-col-lg-6 g-height-7 col-lg-6"
+                         style="grid-area: 2 / 1 / 9 / 7; z-index: 1;">
+                        <h2 style="text-align: right;">
+
+                        </h2>
+                        <h2 style="text-align: center;">
+                            <strong>
+                                <span style="font-size: 36px;">
+                                    <font class="text-o-color-1">
+                                        Money Recovery Experts -
+                                    </font>
+                                </span>
+                            </strong>
+                        </h2>
+                        <h2 style="text-align: center;">
+                            <strong>
+                                <font style="background-color: rgba(245, 244, 240, 0);" class="text-o-color-3">Fraud
+                                    Companies
+
+                                </font>
+                            </strong>
+                        </h2>
+                        <h2 style="text-align: right;">
+
+                        </h2>
+                        <h2>
+                            <br/>
+                        </h2>
+                        <p style="text-align: center;">
+                            <font class="text-o-color-3">
+                                <span style="font-size: 18px;"></span>
+                            </font>
+                            <span style="font-size: 18px;">
+                            </span>
+                            <font class="text-o-color-3">
+                                <span style="font-size: 18px;">If you have been scammed by financial fraud, contact us
+                                    today and our team of experts will contact you to get your money back
+                                </span>
+                            </font>
+                        </p>
+                        <p style="text-align: center;">.</p>
+                    </div>
+                    <div class="o_colored_level bg-white o_grid_item g-col-lg-5 g-height-9 col-lg-5"
+                         style="grid-area: 1 / 8 / 10 / 13; z-index: 2;">
+                        <section class="s_website_form pb16 pt16 custom-form" data-vcss="001"
+                                 data-snippet="s_website_form" data-name="Form">
+                            <div class="container">
+
+                              <h2 class="elementor-heading-title elementor-size-default">
+                                    <font style="vertical-align: inherit;">
+                                          <font style="vertical-align: inherit;">Let's meet
+                                        </font>
+                                    </font>
+                                </h2>
+                                <p class="elementor-heading-p elementor-size-default">
+                                    <font style="vertical-align: inherit;">
+                                          <font style="vertical-align: inherit;">No matter how complex the puzzle seems, there is a way to solve it
+                                        </font>
+                                    </font>
+                                </p>
+                                <form action="/website/form/" method="post" enctype="multipart/form-data"
+                                      class="o_mark_required" data-mark="*" data-pre-fill="true"
+                                      data-success-mode="redirect" data-success-page="/contactus-thank-you"
+                                      data-model_name="crm.lead">
+                                    <div class="s_website_form_rows row s_col_no_bgcolor">
+                                        <div data-visibility-condition="" data-visibility-between=""
+                                             class="s_website_form_field mb-3 col-12 col-lg-6 s_website_form_custom s_website_form_required"
+                                             data-type="char" data-name="Field">
+                                            <label class="s_website_form_label d-none" style="width: 200px"
+                                                   for="o12op7cw3fjln">
+                                                <span class="s_website_form_label_content">اسم العائلة</span>
+                                                <span class="s_website_form_mark">*</span>
+                                            </label>
+                                            <input type="text" class="form-control s_website_form_input"
+                                                   name="name" required="1" placeholder="Name"
+                                                   id="name" data-fill-with="name"/>
+                                        </div>
+                                        <div data-visibility-condition="" data-visibility-between=""
+                                             class="s_website_form_field mb-3 col-12 col-lg-6 s_website_form_model_required o_we_force_no_transition"
+                                             data-type="char" data-name="Field">
+                                            <label class="s_website_form_label d-none" style="width: 200px"
+                                                   for="o6w2rh8bfqk3">
+                                                <span class="s_website_form_label_content">Your Email</span>
+                                                <span class="s_website_form_mark">*</span>
+                                            </label>
+                                            <input type="text" class="form-control s_website_form_input"
+                                                   name="email_from" required="true" placeholder="Email"
+                                                   id="email" data-fill-with="email"/>
+                                        </div>
+                                        <div data-visibility-condition="" data-visibility-between=""
+                                             class="s_website_form_field mb-3 col-12 col-lg-6 s_website_form_custom"
+                                             data-type="tel" data-name="Field">
+                                            <label class="s_website_form_label d-none" style="width: 200px"
+                                                   for="odmq9op6f8y">
+                                                <span class="s_website_form_label_content">Phone</span>
+                                            </label>
+                                            <input type="tel" class="form-control s_website_form_input" name="phone"
+                                                   value="" placeholder="Phone" id="odmq9op6f8y"
+                                                   data-fill-with="phone" required=""/>
+                                        </div>
+                                        <div data-visibility-condition="" data-visibility-between=""
+                                             class="s_website_form_field mb-3 col-12 col-lg-6 s_website_form_model_required"
+                                             data-type="char" data-name="Field">
+                                            <label class="s_website_form_label d-none" style="width: 200px"
+                                                   for="oh760fanr6l">
+                                                <span class="s_website_form_label_content">Subject</span>
+                                                <span class="s_website_form_mark">*</span>
+                                            </label>
+                                            <input id="contact5" type="text" class="form-control s_website_form_input" name="subject" placeholder="Website" required=""/>
+                                        </div>
+                                        <div data-visibility-condition="" data-visibility-between=""
+                                             class="s_website_form_field mb-3 col-12 s_website_form_model_required o_we_force_no_transition d-none"
+                                             data-type="char" data-name="Field">
+                                            <label class="s_website_form_label d-none" style="width: 200px"
+                                                   for="o6w2rh8bfqk3">
+                                                <span class="s_website_form_label_content">Website</span>
+                                                <span class="s_website_form_mark">*</span>
+                                            </label>
+                                            <input type="text" class="form-control s_website_form_input website_url"
+                                                   name="website_url" placeholder="Your Email" t-att-value="request.env['ir.config_parameter'].sudo().get_param('web.base.url', False) + request.httprequest.path"
+                                                   id="website_url" data-fill-with="website_url"/>
+                                        </div>
+                                         <div class="mb-0 py-2 col-12 s_website_form_field s_website_form_custom s_website_form_required" data-type="text" data-name="Field">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px" for="contact6">
+                                                    <span class="s_website_form_label_content">Question</span>
+                                                    <span class="s_website_form_mark"> *</span>
+                                                </label>
+                                                <div class="col-sm">
+                                                    <textarea id="contact6" class="form-control s_website_form_input" name="description" placeholder="Message" required=""></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-0 py-2 col-12 s_website_form_submit col-lg-12"
+                                             data-name="Submit Button">
+                                            <a href="#" role="button"
+                                               class="btn btn-primary btn-lg s_website_form_send custom-btn"
+                                               data-bs-original-title="" title="">
+                                                <span class="oe-tabs"
+                                                      style="width: 27.1091px;"></span>
+                                                Submit
+                                            </a>
+                                            <span id="s_website_form_result"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+     <template id="brainpack_contact_us_crm" name="Brainpack ContactUs">
+        <section class="s_call_to_action o_colored_level o_cc o_cc3 pb0 o_half_screen_height pt0"
+                 data-snippet="s_call_to_action" data-name="Call to Action"
+                 style="background-color: #ffffff; background-image: none;">
+            <div class="container gulf_contact_container brain_contact_container">
+                <div class="row" style="    background-color: #2F2D2E !important;border-radius: 12px;">
+                    <div class="col-lg-8 o_colored_level pt64 pb32" style="margin:auto;">
+                        <!--                <div class="row o_grid_mode" style="" data-row-count="9">-->
+                        <!--                    <div class="o_colored_level bg-white o_grid_item g-col-lg-8 g-height-9 col-lg-8"-->
+                        <!--                         style="grid-area: 1 / 3 / 10 / 11; z-index: 1;">-->
+                        <!--                        -->
+
+                        <section class="s_website_form pt0 pb0 custom-form" data-vcss="001"
+                                 data-snippet="s_website_form" data-name="Custom Form">
+                            <div class="container">
+                                <h1 class="elementor-heading-title elementor-size-default">
+                                    <font style="vertical-align: inherit;">
+                                          <font style="vertical-align: inherit;">Let's meet
+                                        </font>
+                                    </font>
+                                </h1>
+                                <h5 class="elementor-heading-p1 elementor-size-default">
+                                    <font style="vertical-align: inherit;">
+                                          <font style="vertical-align: inherit;">No matter how complex the puzzle seems, there is a way to solve it
+                                        </font>
+                                    </font>
+                                </h5>
+                                <form action="/website/form/" method="post" enctype="multipart/form-data"
+                                      class="o_mark_required" data-mark="*" data-pre-fill="true"
+                                      data-success-mode="redirect" data-success-page="/contactus-thank-you"
+                                      data-model_name="crm.lead" style="padding: 5%;">
+                                    <div class="s_website_form_rows row s_col_no_bgcolor">
+                                        <div data-visibility-condition="" data-visibility-between=""
+                                             class="s_website_form_field mb-3 col-12 col-lg-6 s_website_form_custom s_website_form_required"
+                                             data-type="char" data-name="Field">
+                                            <label class="s_website_form_label d-none" style="width: 200px"
+                                                   for="o12op7cw3fjln">
+                                                <span class="s_website_form_label_content">اسم العائلة</span>
+                                                <span class="s_website_form_mark">*</span>
+                                            </label>
+                                            <input type="text" class="form-control s_website_form_input"
+                                                   name="name" required="1" placeholder="Name"
+                                                   id="name" data-fill-with="name"/>
+                                        </div>
+                                        <div data-visibility-condition="" data-visibility-between=""
+                                             class="s_website_form_field mb-3 col-12 col-lg-6 s_website_form_model_required o_we_force_no_transition"
+                                             data-type="char" data-name="Field">
+                                            <label class="s_website_form_label d-none" style="width: 200px"
+                                                   for="o6w2rh8bfqk3">
+                                                <span class="s_website_form_label_content">Your Email</span>
+                                                <span class="s_website_form_mark">*</span>
+                                            </label>
+                                            <input type="text" class="form-control s_website_form_input"
+                                                   name="email_from" required="true" placeholder="Email"
+                                                   id="email" data-fill-with="email"/>
+                                        </div>
+                                        <div data-visibility-condition="" data-visibility-between=""
+                                             class="s_website_form_field mb-3 col-12 col-lg-6 s_website_form_custom"
+                                             data-type="tel" data-name="Field">
+                                            <label class="s_website_form_label d-none" style="width: 200px"
+                                                   for="odmq9op6f8y">
+                                                <span class="s_website_form_label_content">Phone</span>
+                                            </label>
+                                            <input type="tel" class="form-control s_website_form_input" name="phone"
+                                                   value="" placeholder="Phone" id="odmq9op6f8y"
+                                                   data-fill-with="phone" required=""/>
+                                        </div>
+                                        <div data-visibility-condition="" data-visibility-between=""
+                                             class="s_website_form_field mb-3 col-12 col-lg-6 s_website_form_model_required"
+                                             data-type="char" data-name="Field">
+                                            <label class="s_website_form_label d-none" style="width: 200px"
+                                                   for="oh760fanr6l">
+                                                <span class="s_website_form_label_content">Subject</span>
+                                                <span class="s_website_form_mark">*</span>
+                                            </label>
+                                            <input id="contact5" type="text" class="form-control s_website_form_input" name="subject" placeholder="Website" required=""/>
+                                        </div>
+                                        <div data-visibility-condition="" data-visibility-between=""
+                                             class="s_website_form_field mb-3 col-12 s_website_form_model_required o_we_force_no_transition d-none"
+                                             data-type="char" data-name="Field">
+                                            <label class="s_website_form_label d-none" style="width: 200px"
+                                                   for="o6w2rh8bfqk3">
+                                                <span class="s_website_form_label_content">Website</span>
+                                                <span class="s_website_form_mark">*</span>
+                                            </label>
+                                            <input type="text" class="form-control s_website_form_input website_url"
+                                                   name="website_url" placeholder="Your Email" t-att-value="request.env['ir.config_parameter'].sudo().get_param('web.base.url', False) + request.httprequest.path"
+                                                   id="website_url" data-fill-with="website_url"/>
+                                        </div>
+                                         <div class="mb-0 py-2 col-12 s_website_form_field s_website_form_custom s_website_form_required" data-type="text" data-name="Field">
+                                            <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                <label class="col-form-label col-sm-auto s_website_form_label d-none" style="width: 200px" for="contact6">
+                                                    <span class="s_website_form_label_content">Question</span>
+                                                    <span class="s_website_form_mark"> *</span>
+                                                </label>
+                                                <div class="col-sm">
+                                                    <textarea id="contact6" class="form-control s_website_form_input" name="description" placeholder="Message" required=""></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-0 py-2 col-12 s_website_form_submit col-lg-12"
+                                             data-name="Submit Button">
+                                            <a href="#" role="button"
+                                               class="btn btn-primary btn-lg s_website_form_send custom-btn"
+                                               data-bs-original-title="" title="">
+                                                <span class="oe-tabs"
+                                                      style="width: 27.1091px;"></span>
+                                                Submit
+                                            </a>
+                                            <span id="s_website_form_result"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <!--                    </div>-->
+                <!--                </div>-->
+            </div>
+        </section>
+    </template>
+
+    <template id="brainpack_testimonial_app_slider" name="Testimonial App Slider">
+        <section class="section">
+            <div class="container-fluid text-center pt32 pb32 my-3">
+                <div class="col-12 text-center">
+                    <h2 class="FeatureHead" style="font-size: 32px;margin-bottom: 10px;">Don't just take our word for
+                        it
+                    </h2>
+                    <p class="testimonial_p">Hear what some of our customers have to say about BrainPack</p>
+                </div>
+                <div class="p-3 overflow-hidden">
+                    <div id="carousel-multiple1" class="carousel slide carousel-multiple1" data-bs-ride="carousel"
+                         data-maximum-items-per-slide="3">
+                        <div class="row position-relative">
+                            <div class="row carousel-inner mx-0">
+                                <div class="carousel-item col-lg-4 active">
+                                    <div class="card mainSliderBox">
+                                        <p class="testimonialText">
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
+                                            dolor sit amet, Lorem ipsum Lorem ipsum dolor sit amet,
+                                            consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum
+                                            Lorem ipsum dolor sit amet, consetetur
+                                        </p>
+                                        <div class="w-100 float-start ClientInfo">
+                                            <div class="w-25 float-start">
+                                                <div class="ImgCicle">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                                         alt=""/>
+                                                </div>
+                                            </div>
+                                            <div class="w-75 float-start">
+                                                <div class="clientName">
+                                                    Sammy Samson
+                                                </div>
+                                                <p class="ClientPosition">Head of Marketing, rtings.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-lg-4">
+                                    <div class="card mainSliderBox">
+                                        <p class="testimonialText">
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
+                                            dolor sit amet, Lorem ipsum Lorem ipsum dolor sit amet,
+                                            consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum
+                                            Lorem ipsum dolor sit amet, consetetur
+                                        </p>
+                                        <div class="w-100 float-start ClientInfo">
+                                            <div class="w-25 float-start">
+                                                <div class="ImgCicle">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                                         alt=""/>
+                                                </div>
+                                            </div>
+                                            <div class="w-75 float-start">
+                                                <div class="clientName">
+                                                    Sammy Samson
+                                                </div>
+                                                <p class="ClientPosition">Head of Marketing, rtings.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-lg-4">
+                                    <div class="card mainSliderBox">
+                                        <p class="testimonialText">
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
+                                            dolor sit amet, Lorem ipsum Lorem ipsum dolor sit amet,
+                                            consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum
+                                            Lorem ipsum dolor sit amet, consetetur
+                                        </p>
+                                        <div class="w-100 float-start ClientInfo">
+                                            <div class="w-25 float-start">
+                                                <div class="ImgCicle">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                                         alt=""/>
+                                                </div>
+                                            </div>
+                                            <div class="w-75 float-start">
+                                                <div class="clientName">
+                                                    Sammy Samson
+                                                </div>
+                                                <p class="ClientPosition">Head of Marketing, rtings.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-lg-4">
+                                    <div class="card mainSliderBox">
+                                        <p class="testimonialText">
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
+                                            dolor sit amet, Lorem ipsum Lorem ipsum dolor sit amet,
+                                            consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum
+                                            Lorem ipsum dolor sit amet, consetetur
+                                        </p>
+                                        <div class="w-100 float-start ClientInfo">
+                                            <div class="w-25 float-start">
+                                                <div class="ImgCicle">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                                         alt=""/>
+                                                </div>
+                                            </div>
+                                            <div class="w-75 float-start">
+                                                <div class="clientName">
+                                                    Sammy Samson
+                                                </div>
+                                                <p class="ClientPosition">Head of Marketing, rtings.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-lg-4">
+                                    <div class="card mainSliderBox">
+                                        <p class="testimonialText">
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
+                                            dolor sit amet, Lorem ipsum Lorem ipsum dolor sit amet,
+                                            consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum
+                                            Lorem ipsum dolor sit amet, consetetur
+                                        </p>
+                                        <div class="w-100 float-start ClientInfo">
+                                            <div class="w-25 float-start">
+                                                <div class="ImgCicle">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                                         alt=""/>
+                                                </div>
+                                            </div>
+                                            <div class="w-75 float-start">
+                                                <div class="clientName">
+                                                    Sammy Samson
+                                                </div>
+                                                <p class="ClientPosition">Head of Marketing, rtings.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-lg-4">
+                                    <div class="card mainSliderBox">
+                                        <p class="testimonialText">
+                                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
+                                            dolor sit amet, Lorem ipsum Lorem ipsum dolor sit amet,
+                                            consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum
+                                            Lorem ipsum dolor sit amet, consetetur
+                                        </p>
+                                        <div class="w-100 float-start ClientInfo">
+                                            <div class="w-25 float-start">
+                                                <div class="ImgCicle">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                                         alt=""/>
+                                                </div>
+                                            </div>
+                                            <div class="w-75 float-start">
+                                                <div class="clientName">
+                                                    Sammy Samson
+                                                </div>
+                                                <p class="ClientPosition">Head of Marketing, rtings.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev w-auto px-5 px-xl-4" href="#carousel-multiple1"
+                               role="button"
+                               data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next w-auto px-5 px-xl-4" href="#carousel-multiple1"
+                               role="button"
+                               data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="brainpack_integration_app_slider" name="Integration App Slider">
+        <section class="section">
+            <div class="container-fluid py-3">
+                <div class="">
+                    <div class="col-12 text-center">
+                        <h2 class="FeatureHead">Complete suite of integrated apps for your business</h2>
+                    </div>
+                </div>
+                <div class="p-3 overflow-hidden">
+                    <div id="carousel-multiple" class="carousel slide carousel-multiple" data-bs-ride="carousel"
+                         data-bs-interval="5000"
+                         data-maximum-items-per-slide="4">
+                        <div class="row position-relative">
+                            <div class="row carousel-inner mx-0">
+                                <div class="carousel-item col-sm-6 col-md-4 col-lg-3 col-xl-2 active">
+                                    <div class="card mainSliderBox">
+                                        <div class="SliderCardHead">
+                                            Card 1
+                                        </div>
+                                        <div class="w-100 float-start">
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Inventory</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">MRP</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Purchase</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">More</div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                                    <div class="card mainSliderBox">
+                                        <div class="SliderCardHead">
+                                            Card 2
+                                        </div>
+                                        <div class="w-100 float-start">
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Inventory</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">MRP</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Purchase</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">More</div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                                    <div class="card mainSliderBox">
+                                        <div class="SliderCardHead">
+                                            Card 3
+                                        </div>
+                                        <div class="w-100 float-start">
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Inventory</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">MRP</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Purchase</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">More</div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                                    <div class="card mainSliderBox">
+                                        <div class="SliderCardHead">
+                                            Card 4
+                                        </div>
+                                        <div class="w-100 float-start">
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Inventory</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">MRP</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Purchase</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">More</div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                                    <div class="card mainSliderBox">
+                                        <div class="SliderCardHead">
+                                            Card 5
+                                        </div>
+                                        <div class="w-100 float-start">
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Inventory</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">MRP</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Purchase</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">More</div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                                    <div class="card mainSliderBox">
+                                        <div class="SliderCardHead">
+                                            Card 6
+                                        </div>
+                                        <div class="w-100 float-start">
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Inventory</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">MRP</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Purchase</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">More</div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                                    <div class="card mainSliderBox">
+                                        <div class="SliderCardHead">
+                                            Card 7
+                                        </div>
+                                        <div class="w-100 float-start">
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Inventory</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">MRP</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Purchase</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">More</div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                                    <div class="card mainSliderBox">
+                                        <div class="SliderCardHead">
+                                            Card 8
+                                        </div>
+                                        <div class="w-100 float-start">
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Inventory</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">MRP</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">Purchase</div>
+                                                </a>
+                                            </div>
+                                            <div class="w-50 float-start">
+                                                <a href="">
+                                                    <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"
+                                                         width="50%" alt="" srcset=""/>
+                                                    <div class="InteApps">More</div>
+                                                </a>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev w-auto px-5 px-xl-4" href="#carousel-multiple" role="button"
+                               data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next w-auto px-5 px-xl-4" href="#carousel-multiple" role="button"
+                               data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="brainpack_expert" name="BrainPack Expert">
+        <section class="section expert_section s_website_form" data-snippet="s_website_form">
+            <div class="container expert_container pt32 pb32 my-3 FormDiv">
+                <div class="row shadow-brain rounded-brain" style="margin: 0 auto;">
+                    <div class="col-lg-6 col-12 FillYrDetail">
+                        <div class="BannerHead container pt16 pb16 p-2" style="text-align: initial;">
+                            <h2 class="service_header o_default_snippet_text pt16">
+                                Talk to our experts,<br/>They'll help to get started!
+                            </h2>
+
+                            <p class="service_p o_default_snippet_text">
+                                Lorem ipsum dolor sit amet,
+                                <br/>
+                                consetetur sadipscing elitr, sed Lorem ipsum dolor sit
+                                <br/>amet, Lorem ipsum
+                            </p>
+                            <t t-set="logged_partner"
+                               t-value="request.env['website.visitor']._get_visitor_from_request().partner_id"/>
+                            <t t-set="contactus_form_values" t-value="{
+                                'email_to': res_company.email,
+                                'name': request.params.get('name', ''),
+                                'phone': request.params.get('phone', ''),
+                                'email_from': request.params.get('email_from', ''),
+                                'company': request.params.get('company', ''),
+                                'subject': request.params.get('subject', ''),
+                            }"/>
+
+                            <span class="hidden" data-for="contactus_form" t-att-data-values="contactus_form_values"/>
+                            <form id="contactus_form" action="/website/form/" method="post"
+                                  enctype="multipart/form-data" class="o_mark_required"
+                                  data-mark="*" data-pre-fill="true" data-success-mode="redirect"
+                                  data-success-page="/contactus-thank-you"
+                                  data-model_name="crm.lead">
+                                <div class="row s_website_form_rows row s_col_no_bgcolor">
+                                    <div class="mb-3 col-12 col-lg-5 s_website_form_field">
+                                        <label for="name"
+                                               class="col-form-label form-label label_color s_website_form_label d-none">
+                                            <span class="s_website_form_label_content">Full Name</span>
+                                        </label>
+                                        <input type="text" name="name" required="" data-fill-with="name"
+                                               class="form-control s_website_form_input" placeholder="Name"/>
+                                    </div>
+                                    <div class="mb-3 col-12 col-lg-5 s_website_form_field">
+                                        <label for="email"
+                                               class="col-form-label form-label label_color s_website_form_label d-none">
+                                            <span class="s_website_form_label_content">Email</span>
+                                        </label>
+                                        <input type="email" class="form-control s_website_form_input" name="email_from"
+                                               required="" data-fill-with="email"
+                                               placeholder="Your Email"/>
+                                    </div>
+                                    <div data-visibility-condition="" data-visibility-between=""
+                                         class="s_website_form_field mb-3 col-12 s_website_form_model_required o_we_force_no_transition d-none"
+                                         data-type="char" data-name="Field">
+                                        <label class="s_website_form_label d-none" style="width: 200px"
+                                               for="o6w2rh8bfqk3">
+                                            <span class="s_website_form_label_content">Website</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <input type="text" class="form-control s_website_form_input website_url"
+                                               name="website_url" placeholder="Your Email" t-att-value="request.env['ir.config_parameter'].sudo().get_param('web.base.url', False) + request.httprequest.path"
+                                               id="website_url" data-fill-with="website_url"/>
+                                    </div>
+                                    <div class="mb-3 col-12 col-lg-4 s_website_form_submit">
+                                        <a href="#" role="button"
+                                           class="btn btn-primary btn-lg s_website_form_send o_default_snippet_text formSubmit">
+                                            Submit
+                                        </a>
+                                        <span id="s_website_form_result"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 img_div col-12">
+                        <img src="/web/image/website.s_text_image_default_image" alt="" style="width:100%;height:100%;
+    border-radius: 0 8px 8px 0;"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="brainpack_service" name="BrainPack Service">
+        <section class="section">
+            <div class="container pt32 pb32 my-3">
+                <div class="row">
+                    <div class="col-lg-4 col-12">
+                        <div class="BannerHead container">
+                            <h2 class="service_header o_default_snippet_text pt40">
+                                What Can<br/>BrainPack do for you?
+                            </h2>
+
+                            <p class="service_p o_default_snippet_text">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet,
+                                Lorem ipsum
+                            </p>
+                            <div class="">
+                                <button type="button" class="btn btn-primary bannerButton o_default_snippet_text">Start
+                                    now. It's free
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row mx-auto my-auto justify-content-center">
+                            <div class="col-lg-4 s_col_no_bgcolor pt8 pb8">
+                                <div class="card service_mainSliderBox">
+                                    <div class="w-100 float-start ClientInfo">
+                                        <div class="w-25 float-start" style="display: contents;">
+                                            <div class="ImgCicle">
+                                                <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                                     alt=""/>
+                                            </div>
+                                        </div>
+                                        <div class="w-75 float-start">
+                                            <p class="ClientPosition">Feature title that describes the feature</p>
+                                        </div>
+                                    </div>
+                                    <div class="w-100 float-start ClientInfo">
+                                        <div class="w-25 float-start">
+
+                                        </div>
+                                        <div class="w-75 float-start">
+                                            <p class="ClientPosition_p2">Lorem ipsum dolor sit amet, consetetur
+                                                sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum Lorem
+                                                ipsum dolor sit amet, Lorem ipsum
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 s_col_no_bgcolor pt8 pb8">
+                                <div class="card service_mainSliderBox">
+                                    <div class="w-100 float-start ClientInfo">
+                                        <div class="w-25 float-start" style="display: contents;">
+                                            <div class="ImgCicle">
+                                                <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                                     alt=""/>
+                                            </div>
+                                        </div>
+                                        <div class="w-75 float-start">
+                                            <p class="ClientPosition">Feature title that describes the feature</p>
+                                        </div>
+                                    </div>
+                                    <div class="w-100 float-start ClientInfo">
+                                        <div class="w-25 float-start">
+
+                                        </div>
+                                        <div class="w-75 float-start">
+                                            <p class="ClientPosition_p2">Lorem ipsum dolor sit amet, consetetur
+                                                sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum Lorem
+                                                ipsum dolor sit amet, Lorem ipsum
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 s_col_no_bgcolor pt8 pb8">
+                                <div class="card service_mainSliderBox">
+                                    <div class="w-100 float-start ClientInfo">
+                                        <div class="w-25 float-start" style="display: contents;">
+                                            <div class="ImgCicle">
+                                                <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                                     alt=""/>
+                                            </div>
+                                        </div>
+                                        <div class="w-75 float-start">
+                                            <p class="ClientPosition">Feature title that describes the feature</p>
+                                        </div>
+                                    </div>
+                                    <div class="w-100 float-start ClientInfo">
+                                        <div class="w-25 float-start">
+
+                                        </div>
+                                        <div class="w-75 float-start">
+                                            <p class="ClientPosition_p2">Lorem ipsum dolor sit amet, consetetur
+                                                sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum Lorem
+                                                ipsum dolor sit amet, Lorem ipsum
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 s_col_no_bgcolor pt8 pb8">
+                                <div class="card service_mainSliderBox">
+                                    <div class="w-100 float-start ClientInfo">
+                                        <div class="w-25 float-start" style="display: contents;">
+                                            <div class="ImgCicle">
+                                                <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                                     alt=""/>
+                                            </div>
+                                        </div>
+                                        <div class="w-75 float-start">
+                                            <p class="ClientPosition">Feature title that describes the feature</p>
+                                        </div>
+                                    </div>
+                                    <div class="w-100 float-start ClientInfo">
+                                        <div class="w-25 float-start">
+
+                                        </div>
+                                        <div class="w-75 float-start">
+                                            <p class="ClientPosition_p2">Lorem ipsum dolor sit amet, consetetur
+                                                sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum Lorem
+                                                ipsum dolor sit amet, Lorem ipsum
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 s_col_no_bgcolor pt8 pb8">
+                                <div class="card service_mainSliderBox">
+                                    <div class="w-100 float-start ClientInfo">
+                                        <div class="w-25 float-start" style="display: contents;">
+                                            <div class="ImgCicle">
+                                                <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                                     alt=""/>
+                                            </div>
+                                        </div>
+                                        <div class="w-75 float-start">
+                                            <p class="ClientPosition">Feature title that describes the feature</p>
+                                        </div>
+                                    </div>
+                                    <div class="w-100 float-start ClientInfo">
+                                        <div class="w-25 float-start">
+
+                                        </div>
+                                        <div class="w-75 float-start">
+                                            <p class="ClientPosition_p2">Lorem ipsum dolor sit amet, consetetur
+                                                sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum Lorem
+                                                ipsum dolor sit amet, Lorem ipsum
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 s_col_no_bgcolor pt8 pb8">
+                                <div class="card service_mainSliderBox">
+                                    <div class="w-100 float-start ClientInfo">
+                                        <div class="w-25 float-start" style="display: contents;">
+                                            <div class="ImgCicle">
+                                                <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                                     alt=""/>
+                                            </div>
+                                        </div>
+                                        <div class="w-75 float-start">
+                                            <p class="ClientPosition">Feature title that describes the feature</p>
+                                        </div>
+                                    </div>
+                                    <div class="w-100 float-start ClientInfo">
+                                        <div class="w-25 float-start">
+
+                                        </div>
+                                        <div class="w-75 float-start">
+                                            <p class="ClientPosition_p2">Lorem ipsum dolor sit amet, consetetur
+                                                sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum Lorem
+                                                ipsum dolor sit amet, Lorem ipsum
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="brainpack_testimonial" name="Testimonial">
+        <section class="section">
+            <div class="container text-center pt32 pb32 my-3">
+                <div class="col-12 text-center">
+                    <h2 class="FeatureHead" style="font-size: 32px;margin-bottom: 10px;">Don't just take our word for
+                        it
+                    </h2>
+                    <p class="testimonial_p">Hear what some of our customers have to say about BrainPack</p>
+                </div>
+                <div class="d-flex mx-auto my-auto justify-content-center">
+                    <div class="col-lg-4 s_col_no_bgcolor pt16 pb16">
+                        <div class="card mainSliderBox">
+
+                            <p class="testimonialText">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
+                                dolor sit amet, Lorem ipsum Lorem ipsum dolor sit amet,
+                                consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum
+                                Lorem ipsum dolor sit amet, consetetur
+                            </p>
+                            <div class="w-100 float-start ClientInfo">
+                                <div class="w-25 float-start">
+                                    <div class="ImgCicle">
+                                        <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                             alt=""/>
+                                    </div>
+                                </div>
+                                <div class="w-75 float-start">
+                                    <div class="clientName">
+                                        Sammy Samson
+                                    </div>
+                                    <p class="ClientPosition">Head of Marketing, rtings.com</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 s_col_no_bgcolor pt16 pb16">
+                        <div class="card mainSliderBox">
+
+                            <p class="testimonialText">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
+                                dolor sit amet, Lorem ipsum Lorem ipsum dolor sit amet,
+                                consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum
+                                Lorem ipsum dolor sit amet, consetetur
+                            </p>
+                            <div class="w-100 float-start ClientInfo">
+                                <div class="w-25 float-start">
+                                    <div class="ImgCicle">
+                                        <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                             alt=""/>
+                                    </div>
+                                </div>
+                                <div class="w-75 float-start">
+                                    <div class="clientName">
+                                        Sammy Samson
+                                    </div>
+                                    <p class="ClientPosition">Head of Marketing, rtings.com</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 s_col_no_bgcolor pt16 pb16">
+                        <div class="card mainSliderBox">
+                            <p class="testimonialText">
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed Lorem ipsum
+                                dolor sit amet, Lorem ipsum Lorem ipsum dolor sit amet,
+                                consetetur sadipscing elitr, sed Lorem ipsum dolor sit amet, Lorem ipsum
+                                Lorem ipsum dolor sit amet, consetetur
+                            </p>
+                            <div class="w-100 float-start ClientInfo">
+                                <div class="w-25 float-start">
+                                    <div class="ImgCicle">
+                                        <img src="/brainpack_website_extended/static/src/imgs/profile.png"
+                                             alt=""/>
+                                    </div>
+                                </div>
+                                <div class="w-75 float-start">
+                                    <div class="clientName">
+                                        Sammy Samson
+                                    </div>
+                                    <p class="ClientPosition">Head of Marketing, rtings.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="brainpack_contact_us" name="ContactUs">
+        <section class="section s_website_form" id="brainpack_contactus" data-snippet="s_website_form">
+            <div class="container FormDiv">
+                <div class="row shadow-brain rounded-brain pt-5 p-2" style="margin: 0 auto;">
+                    <div class="col-lg-6 col-12">
+                        <div class="FormText">
+                            <h3>
+                                Tap into your full potential
+                            </h3>
+                            <p class="FormShortDesc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br/>sed
+                                Lorem
+                                ipsum dolor sit amet, Lorem ipsum
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 ">
+                        <div class="FillYrDetail">
+                            <div class="detaillHead">
+                                Fill in your details
+                            </div>
+                            <t t-set="logged_partner"
+                               t-value="request.env['website.visitor']._get_visitor_from_request().partner_id"/>
+                            <t t-set="contactus_form_values" t-value="{
+                            'email_to': res_company.email,
+                            'name': request.params.get('name', ''),
+                            'phone': request.params.get('phone', ''),
+                            'email_from': request.params.get('email_from', ''),
+                            'company': request.params.get('company', ''),
+                            'subject': request.params.get('subject', ''),
+                        }"/>
+                            <span class="hidden" data-for="contactus_form" t-att-data-values="contactus_form_values"/>
+                            <form id="contactus_form" action="/website/form/" method="post"
+                                  enctype="multipart/form-data" class="o_mark_required"
+                                  data-mark="*" data-pre-fill="true" data-success-mode="redirect"
+                                  data-success-page="/contactus-thank-you"
+                                  data-model_name="crm.lead">
+                                <div class="row s_website_form_rows row s_col_no_bgcolor">
+                                    <div class="mb-3 col-12 col-lg-6 s_website_form_field">
+                                        <label for="name"
+                                               class="col-form-label form-label label_color s_website_form_label">
+                                            <span class="s_website_form_label_content">Full Name</span>
+                                        </label>
+                                        <input type="text" name="name" required="" data-fill-with="name"
+                                               class="form-control s_website_form_input" placeholder="Full Name"/>
+                                    </div>
+                                    <div class="mb-3 col-12 col-lg-6 s_website_form_field">
+                                        <label for="phone"
+                                               class="col-form-label form-label label_color s_website_form_label">
+                                            <span class="s_website_form_label_content">Phone</span>
+                                        </label>
+                                        <input type="tel" class="col-form-label form-control s_website_form_input"
+                                               required=""
+                                               name="phone" data-fill-with="phone"
+                                               placeholder="Phone Number"/>
+                                    </div>
+                                    <div class="mb-3 col-12 col-lg-6 s_website_form_field">
+                                        <label for="email"
+                                               class="col-form-label form-label label_color s_website_form_label">
+                                            <span class="s_website_form_label_content">Email</span>
+                                        </label>
+                                        <input type="email" class="form-control s_website_form_input" name="email_from"
+                                               required="" data-fill-with="email"
+                                               placeholder="Your Email"/>
+                                    </div>
+                                    <div data-visibility-condition="" data-visibility-between=""
+                                         class="s_website_form_field mb-3 col-12 s_website_form_model_required o_we_force_no_transition d-none"
+                                         data-type="char" data-name="Field">
+                                        <label class="s_website_form_label d-none" style="width: 200px"
+                                               for="o6w2rh8bfqk3">
+                                            <span class="s_website_form_label_content">Website</span>
+                                            <span class="s_website_form_mark">*</span>
+                                        </label>
+                                        <input type="text" class="form-control s_website_form_input website_url"
+                                               name="website_url" placeholder="Your Email" t-att-value="request.env['ir.config_parameter'].sudo().get_param('web.base.url', False) + request.httprequest.path"
+                                               id="website_url" data-fill-with="website_url"/>
+                                    </div>
+                                    <div class="mb-3 col-12 col-lg-6 s_website_form_field">
+                                        <label for="partner_name"
+                                               class="col-form-label form-label label_color s_website_form_label">
+                                            <span class="s_website_form_label_content">Company</span>
+                                        </label>
+                                        <input type="text" placeholder="Your Company" required="" name="partner_name"
+                                               class="form-control s_website_form_input"
+                                               id="partner_name"/>
+                                    </div>
+                                    <div class="mb-3 col-12 s_website_form_submit">
+                                        <a href="#" role="button"
+                                           class="btn btn-primary btn-lg s_website_form_send o_default_snippet_text formSubmit">
+                                            Submit
+                                        </a>
+                                        <span id="s_website_form_result"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="brainpack_integration_app" name="Integration App">
+
+        <section class="s_three_columns pt32 pb32" data-vcss="001">
+            <div class="container">
+                <div class="">
+                    <div class="col-12 text-center">
+                        <h2 class="FeatureHead">Complete suite of integrated apps for your business</h2>
+                    </div>
+                </div>
+                <div class="row d-flex align-items-stretch">
+
+                    <div class="col-lg-3 s_col_no_bgcolor pt16 pb16">
+                        <div class="card mainSliderBox">
+                            <div class="SliderCardHead">
+                                Card 1
+                            </div>
+                            <div class="w-100 float-start">
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">Inventory</div>
+                                    </a>
+                                </div>
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">MRP</div>
+                                    </a>
+                                </div>
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">Purchase</div>
+                                    </a>
+                                </div>
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">More</div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 s_col_no_bgcolor pt16 pb16">
+                        <div class="card mainSliderBox">
+
+                            <div class="SliderCardHead">
+                                Card 2
+                            </div>
+                            <div class="w-100 float-start">
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">Inventory</div>
+                                    </a>
+                                </div>
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">MRP</div>
+                                    </a>
+                                </div>
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">Purchase</div>
+                                    </a>
+                                </div>
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">More</div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 s_col_no_bgcolor pt16 pb16">
+                        <div class="card mainSliderBox">
+
+                            <div class="SliderCardHead">
+                                Card 3
+                            </div>
+                            <div class="w-100 float-start">
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">Inventory</div>
+                                    </a>
+                                </div>
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">MRP</div>
+                                    </a>
+                                </div>
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">Purchase</div>
+                                    </a>
+                                </div>
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">More</div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 s_col_no_bgcolor pt16 pb16">
+                        <div class="card mainSliderBox">
+
+                            <div class="SliderCardHead">
+                                Card 4
+                            </div>
+                            <div class="w-100 float-start">
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">Inventory</div>
+                                    </a>
+                                </div>
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">MRP</div>
+                                    </a>
+                                </div>
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">Purchase</div>
+                                    </a>
+                                </div>
+                                <div class="w-50 float-start">
+                                    <a href="">
+                                        <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"
+                                             width="50%" alt="" srcset=""/>
+                                        <div class="InteApps">More</div>
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--        <section class="section" id="brainpack_banner">-->
+        <!--            <div class="container-FLUID text-center my-3">-->
+        <!--                <div class="">-->
+        <!--                    <div class="col-12 text-center">-->
+        <!--                        <h2 class="FeatureHead">Complete suite of integrated apps for your business</h2>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--                <div class="row mx-auto my-auto justify-content-center">-->
+        <!--                    <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">-->
+        <!--                        <div class="carousel-inner" role="listbox">-->
+        <!--                            <div class="carousel-item Integration_app active">-->
+        <!--                                <div class="col-md-3">-->
+        <!--                                    <div class="card mainSliderBox">-->
+        <!--                                        <div class="SliderCardHead">-->
+        <!--                                            Card 1-->
+        <!--                                        </div>-->
+        <!--                                        <div class="w-100 float-start">-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">Inventory</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">MRP</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">Purchase</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                     <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">More</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                        </div>-->
+
+
+        <!--                                    </div>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                            <div class="carousel-item Integration_app">-->
+        <!--                                <div class="col-md-3">-->
+        <!--                                    <div class="card mainSliderBox">-->
+
+        <!--                                        <div class="SliderCardHead">-->
+        <!--                                            Card 2-->
+        <!--                                        </div>-->
+        <!--                                        <div class="w-100 float-start">-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">Inventory</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">MRP</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">Purchase</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                     <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">More</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                        </div>-->
+
+
+        <!--                                    </div>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                            <div class="carousel-item Integration_app">-->
+        <!--                                <div class="col-md-3">-->
+        <!--                                    <div class="card mainSliderBox">-->
+
+        <!--                                        <div class="SliderCardHead">-->
+        <!--                                            Card 3-->
+        <!--                                        </div>-->
+        <!--                                        <div class="w-100 float-start">-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">Inventory</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">MRP</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">Purchase</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                     <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">More</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                        </div>-->
+
+
+        <!--                                    </div>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                            <div class="carousel-item Integration_app">-->
+        <!--                                <div class="col-md-3">-->
+        <!--                                    <div class="card mainSliderBox">-->
+
+        <!--                                        <div class="SliderCardHead">-->
+        <!--                                            Card 4-->
+        <!--                                        </div>-->
+        <!--                                        <div class="w-100 float-start">-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">Inventory</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">MRP</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">Purchase</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                     <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">More</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                        </div>-->
+
+
+        <!--                                    </div>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                            <div class="carousel-item Integration_app">-->
+        <!--                                <div class="col-md-3">-->
+        <!--                                    <div class="card mainSliderBox">-->
+
+        <!--                                        <div class="SliderCardHead">-->
+        <!--                                            Card 5-->
+        <!--                                        </div>-->
+        <!--                                        <div class="w-100 float-start">-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">Inventory</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">MRP</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">Purchase</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                 <a href="">-->
+        <!--                                                     <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">More</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                        </div>-->
+
+
+        <!--                                    </div>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                            <div class="carousel-item Integration_app">-->
+        <!--                                <div class="col-md-3">-->
+        <!--                                    <div class="card mainSliderBox">-->
+
+        <!--                                        <div class="SliderCardHead">-->
+        <!--                                            Card 6-->
+        <!--                                        </div>-->
+        <!--                                        <div class="w-100 float-start">-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 589.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">Inventory</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 591.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">MRP</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                <a href="">-->
+        <!--                                                    <img src="/brainpack_website_extended/static/src/imgs/Group 593.svg"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">Purchase</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                            <div class="w-50 float-start">-->
+        <!--                                                 <a href="">-->
+        <!--                                                     <img src="/brainpack_website_extended/static/src/imgs/and_icon.png"-->
+        <!--                                                         width="50%" alt="" srcset=""/>-->
+        <!--                                                    <div class="InteApps">More</div>-->
+        <!--                                                </a>-->
+        <!--                                            </div>-->
+        <!--                                        </div>-->
+
+
+        <!--                                    </div>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                        <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button"-->
+        <!--                           data-bs-slide="prev">-->
+        <!--                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+        <!--                        </a>-->
+        <!--                        <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button"-->
+        <!--                           data-bs-slide="next">-->
+        <!--                            <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+        <!--                        </a>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </section>-->
+    </template>
+
+    <template id="brainpack_service_intergration" name="Services Integration">
+        <section class="section" id="brainpack_banner">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-12 text-center">
+                        <h2 class="FeatureHead">Services Integration</h2>
+                    </div>
+                    <div class="col-lg-6 col-12">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="ServiceIntImg">
+                                    <img src="/brainpack_website_extended/static/src/imgs/serviceIntegration/Mask Group 2.png"
+                                         alt="" srcset=""/>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="ServiceIntImg">
+                                    <img src="/brainpack_website_extended/static/src/imgs/serviceIntegration/Mask Group 3.png"
+                                         alt="" srcset=""/>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="ServiceIntImg">
+                                    <img src="/brainpack_website_extended/static/src/imgs/serviceIntegration/Mask Group 4.png"
+                                         alt="" srcset=""/>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="ServiceIntImg">
+                                    <img src="/brainpack_website_extended/static/src/imgs/serviceIntegration/Mask Group 5.png"
+                                         alt="" srcset=""/>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="ServiceIntImg">
+                                    <img src="/brainpack_website_extended/static/src/imgs/serviceIntegration/Mask Group 6.png"
+                                         alt="" srcset=""/>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="ServiceIntImg">
+                                    <img src="/brainpack_website_extended/static/src/imgs/serviceIntegration/Mask Group 7.png"
+                                         alt="" srcset=""/>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="ServiceIntImg">
+                                    <img src="/brainpack_website_extended/static/src/imgs/serviceIntegration/Mask Group 8.png"
+                                         alt="" srcset=""/>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="ServiceIntImg">
+                                    <img src="/brainpack_website_extended/static/src/imgs/serviceIntegration/Mask Group 11.png"
+                                         alt="" srcset=""/>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="ServiceIntImg">
+                                    <div>&amp; many more</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 ServicesIntDec">
+                        <div class="serviceDescription">
+                            <p>
+                                Using separate software solutions that are not integrated can result in duplicate data
+                                entry and
+                                prevent you from having a complete understanding of your business operations.
+                            </p>
+                            <p>
+                                With the extensive range of BrainBox apps and tens of thousands of Community apps, you
+                                can now
+                                address all of your business needs with a single, cost-effective, and modular solution,
+                                eliminating the need to struggle with disparate technologies.
+                            </p>
+                            <p>
+                                All BrainBox apps are seamlessly integrated with each other, enabling you to fully
+                                automate your
+                                business processes and benefit from significant savings.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="brainpack_banner" name="Banner">
+        <section class="section o_colored_level mt40 pt40 pb40 mb40" id="brainpack_banner"
+                 data-snippet="brainpack_banner" data-name="Banner" style="background-image: none;overflow: hidden;">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-12 Banner o_colored_level">
+                        <div class="BannerHead container">
+                            <h2 class="HeaderColor o_default_snippet_text">
+                                Streamline your<br/>customer relationships
+                                <br/>
+                                <span class="TextSizing o_default_snippet_text">With</span>
+                                <span class="BrainPackCrm o_default_snippet_text">Brain Pack CRM</span>
+                            </h2>
+
+                            <p class="BannerDescription o_default_snippet_text">
+                                Get a 360-degree view of your customer<br/>interactions and boost your business growth
+                                <br/>
+                                with
+                                our top-notch CRM application.
+                            </p>
+                            <div class="buttonMobsize">
+                                <button type="button" class="btn btn-primary bannerButton o_default_snippet_text">Start
+                                    now. It's free
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="container-FLUID bannerImgHome" style="
+
+">
+                <div class="row" style="">
+
+                    <div class="col-lg-12 col-12 o_colored_level imgPositionMob" style="">
+                        <div class="BannerImg" style="
+    /* width: 100%; */
+">
+                            <img src="/brainpack_website_extended/static/src/imgs/Group_569/Group_569.png" width="80%"
+                                 alt="" loading="lazy" style="
+    overflow: hidden;
+"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="brainpack_feature" name="Features">
+        <section class="section" id="our-features">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 text-center">
+                        <h2 class="FeatureHead">Features</h2>
+                    </div>
+
+                    <div class="col-lg-4 col-12">
+
+                        <div class="FeatureBox">
+                            <div class="iconFeature left">
+                                <img src="/brainpack_website_extended/static/src/imgs/Group 574.svg" alt="" srcset=""/>
+                            </div>
+                            <div class="FeatureText right">
+                                <h3>
+                                    Organise Sales<br/>Activities
+                                </h3>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-12">
+
+                        <div class="FeatureBox">
+                            <div class="iconFeature left">
+                                <img src="/brainpack_website_extended/static/src/imgs/Group 576.svg" alt="" srcset=""/>
+                            </div>
+                            <div class="FeatureText right">
+                                <h3>
+                                    Automate<br/>Tasks
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12">
+
+                        <div class="FeatureBox">
+                            <div class="iconFeature left">
+                                <img src="/brainpack_website_extended/static/src/imgs/Group 578.svg" alt="" srcset=""/>
+                            </div>
+                            <div class="FeatureText right">
+                                <h3>
+                                    Empower team with customer data
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12">
+
+                        <div class="FeatureBox">
+                            <div class="iconFeature left">
+                                <img src="/brainpack_website_extended/static/src/imgs/Group 583.svg" alt="" srcset=""/>
+                            </div>
+                            <div class="FeatureText right">
+                                <h3>
+                                    Simple drag and drop interface
+                                </h3>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-12">
+
+                        <div class="FeatureBox">
+                            <div class="iconFeature left">
+                                <img src="/brainpack_website_extended/static/src/imgs/Group 585.svg" alt="" srcset=""/>
+                            </div>
+                            <div class="FeatureText right">
+                                <h3>
+                                    Easily Schedule, calls, meetings, or tasks
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-12">
+
+                        <div class="FeatureBox">
+                            <div class="iconFeature left">
+                                <img src="/brainpack_website_extended/static/src/imgs/Group 587.svg" alt="" srcset=""/>
+                            </div>
+                            <div class="FeatureText right">
+                                <h3>
+                                    Reporting and<br/>Analysis
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="brainpack_duran_footer_custom" inherit_id="website.layout" name="Duran Digital Footer" active="False">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer">
+                <section class="s_text_block pb16" data-snippet="s_text_block" data-name="Text" style="">
+                    <div class="container duran_container py-2">
+                        <div class="row shadow-brain rounded-brain pt-5 pb-3" style=" margin: 0 auto;">
+                            <div class="col-lg-4 col-12" style="    justify-content: space-between;
+                                    display: flex;
+                                    flex-direction: column;">
+                                <div class="footerLogo">
+                                    <img src="/brainpack_website_extended/static/src/imgs/Duran Digital.png" alt="Duran Digital"
+                                         width="50%" srcset=""/>
+                                </div>
+                                <div class="duran_detail">
+                                    Founded in 2008, Duran Digital is a global team of code masters and marketing maestros committed to solving digital puzzles.
+                                    <br/><br/>
+                                    Experience our distinctive fusion of cutting-edge development and result-driven marketing prowess.
+                                    <br/><br/>
+                                    Let's piece together your path to digital greatness.
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-12 service_div">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="AppSuite">
+                                            <h4>Services</h4>
+                                        </div>
+                                        <ul class="service_detail">
+                                            <li>
+                                                <a href="#">Digital Marketing</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">UI/UX Design</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Content Strategy</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Paid Ads</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Social Management</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 right">
+                                        <div class="AppSuite" style="height: 22px;">
+                                            <h4></h4>
+                                        </div>
+                                        <ul class="service_detail">
+                                            <li>
+                                                <a href="#">SEO</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Development</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Outsourcing</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">FAQ</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <span class="service_bottom">All rights reserved © Duran Web Services LTD</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-12 contact_div">
+                                <div class="AppSuite">
+                                    <h4>Contact Us</h4>
+                                </div>
+                                 <ul class="contact_detail">
+                                    <li>
+                                        <a href="mailto:info@duran.digital" style="text-decoration: underline;">info@duran.digital
+                                        </a>
+                                    </li>
+                                     <li>
+                                        <a href="tel:+972-52-8896977" style="text-decoration: underline;">+972-52-8896977
+                                        </a>
+                                    </li>
+                                     <li>
+                                         Yehuda Hanasi 10, Petach Tikva, Tel Aviv, Israel
+                                     </li>
+                                 </ul>
+                                <div class="row">
+                                    <span class="contact_bottom">Intrigued? <br/>Explore more about us or contact us today!</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="brainpack_footer_custom" inherit_id="website.layout" name="BrainPack Footer" active="False">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="oe_structure oe_structure_solo" t-ignore="true" t-if="not no_footer">
+                <section class="s_text_block pt16" data-snippet="s_text_block" data-name="Text" style="">
+                    <div class="container brain_container py-2">
+                        <div class="row shadow-brain rounded-brain pt-5" style="    margin: 0 auto;">
+                            <div class="col-lg-4 col-12">
+                                <div class="footerLogo">
+                                    <img src="/brainpack_website_extended/static/src/imgs/Layer_1-2.svg" alt=""
+                                         width="80%" srcset=""/>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-12">
+                                <div class="row">
+                                    <div class="col-6 left">
+                                        <div class="AppSuite">
+                                            <h4>App Suite</h4>
+                                        </div>
+                                        <ul class="AppSuiteList">
+                                            <li>
+                                                <a href="#">Website apps</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Sales apps</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Finance</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Human Resource Apps</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Marketing Apps</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 right">
+                                        <div class="AppSuite">
+                                            <h4>Company</h4>
+                                        </div>
+                                        <ul class="CompanyDetail">
+                                            <li>
+                                                <a href="#">About</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Pricing</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Blog</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">FAQ</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-12">
+                                <div class="AppSuite">
+                                    <h4>Contact</h4>
+                                </div>
+                                <div class="ContactMail">
+                                    <a href="">
+                                        <h4>hello@brainpack.io
+                                            <i class="fa fa-arrow-up" style="transform: rotate(45deg) !important;"/>
+                                        </h4>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="CopyRightsAndPolicy text-center">
+                                    <ul>
+                                        <li>
+                                            <a href="">Data Policy</a>
+                                        </li>
+                                        <li>
+                                            <a href="">Privacy Policy</a>
+                                        </li>
+                                        <li>
+                                            <a href="">©2023 Legal</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <!--                <div class="container">-->
+                    <!--                    <div class="row">-->
+                    <!--                        <div class="col-lg-2 pt24 pb24">-->
+                    <!--                            <h5 class="mb-3">Useful Links</h5>-->
+                    <!--                            <ul class="list-unstyled">-->
+                    <!--                                <li><a href="/">Home</a></li>-->
+                    <!--                                <li><a href="#">About us</a></li>-->
+                    <!--                                <li><a href="#">Products</a></li>-->
+                    <!--                                <li><a href="#">Services</a></li>-->
+                    <!--                                <li><a href="#">Legal</a></li>-->
+                    <!--                                <t t-set="configurator_footer_links" t-value="[]"/>-->
+                    <!--                                <li t-foreach="configurator_footer_links" t-as="link">-->
+                    <!--                                    <a t-att-href="link['href']" t-esc="link['text']"/>-->
+                    <!--                                </li>-->
+                    <!--                                <li><a href="/contactus">Contact us</a></li>-->
+                    <!--                            </ul>-->
+                    <!--                        </div>-->
+                    <!--                        <div class="col-lg-5 pt24 pb24">-->
+                    <!--                            <h5 class="mb-3">About us</h5>-->
+                    <!--                            <p>We are a team of passionate people whose goal is to improve everyone's life through disruptive products. We build great products to solve your business problems.-->
+                    <!--                            <br/><br/>Our products are designed for small to medium size companies willing to optimize their performance.</p>-->
+                    <!--                        </div>-->
+                    <!--                        <div id="connect" class="col-lg-4 offset-lg-1 pt24 pb24">-->
+                    <!--                            <h5 class="mb-3">Connect with us</h5>-->
+                    <!--                            <ul class="list-unstyled">-->
+                    <!--                                <li><i class="fa fa-comment fa-fw me-2"/><span><a href="/contactus">Contact us</a></span></li>-->
+                    <!--                                <li><i class="fa fa-envelope fa-fw me-2"/><span><a href="mailto:info@yourcompany.example.com">info@yourcompany.example.com</a></span></li>-->
+                    <!--                                <li><i class="fa fa-phone fa-fw me-2"/><span class="o_force_ltr"><a href="tel:+1 (650) 555-0111">+1 (650) 555-0111</a></span></li>-->
+                    <!--                            </ul>-->
+                    <!--                            <div class="s_social_media text-start o_not_editable" data-snippet="s_social_media" data-name="Social Media" contenteditable="false">-->
+                    <!--                                <h5 class="s_social_media_title d-none" contenteditable="true">Follow us</h5>-->
+                    <!--                                <a href="/website/social/facebook" class="s_social_media_facebook" target="_blank">-->
+                    <!--                                    <i class="fa fa-facebook rounded-circle shadow-sm"/>-->
+                    <!--                                </a>-->
+                    <!--                                <a href="/website/social/twitter" class="s_social_media_twitter" target="_blank">-->
+                    <!--                                    <i class="fa fa-twitter rounded-circle shadow-sm"/>-->
+                    <!--                                </a>-->
+                    <!--                                <a href="/website/social/linkedin" class="s_social_media_linkedin" target="_blank">-->
+                    <!--                                    <i class="fa fa-linkedin rounded-circle shadow-sm"/>-->
+                    <!--                                </a>-->
+                    <!--                                <a href="/" class="text-800">-->
+                    <!--                                    <i class="fa fa-home rounded-circle shadow-sm"/>-->
+                    <!--                                </a>-->
+                    <!--                            </div>-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                </div>-->
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+<!--    <template id="visitor_form_inherit" name="Contact_us form inherit" inherit_id="website.contactus">-->
+<!--        <xpath expr="//section[hasclass('s_website_form')]//form[@id='contactus_form']//div[hasclass('s_website_form_rows')]"-->
+<!--               position="inside">-->
+<!--&lt;!&ndash;            <div class="s_website_form_field mb-3 col-12 d-none">&ndash;&gt;-->
+<!--&lt;!&ndash;                <label class="s_website_form_label d-none" style="width: 200px"&ndash;&gt;-->
+<!--&lt;!&ndash;                       for="o6w2rh8bfqk3">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="s_website_form_label_content">Website</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span class="s_website_form_mark">*</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="text" class="form-control s_website_form_input website_url"&ndash;&gt;-->
+<!--&lt;!&ndash;                       name="website_url" placeholder="Your Email" t-att-value="request.env['ir.config_parameter'].sudo().get_param('web.base.url', False) + request.httprequest.path"&ndash;&gt;-->
+<!--&lt;!&ndash;                       id="website_url" data-fill-with="website_url"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--        </xpath>-->
+<!--    </template>-->
+
+
+    <template id="custom_lang_class_add" name="Custom Class Add" inherit_id="website.layout">
+        <xpath expr="//div[@id='wrapwrap']" position="after">
+            <span><t t-esc="request.env.context.get('lang')"/></span>
+        </xpath>
+
+    </template>
+
+    <template id="snippet_options" inherit_id="website.snippet_options">
+        <xpath expr="//we-select[@data-variable='footer-template']/we-button[last()]" position="after">
+            <we-button title="BrainPack Footer"
+                       data-customize-website-views="brainpack_website_extended.brainpack_footer_custom"
+                       data-customize-website-variable="'brainpack default'"
+                       data-img="/website/static/src/img/snippets_options/footer_template_default.svg"/>
+
+            <we-button title="Duran Digital Footer"
+                       data-customize-website-views="brainpack_website_extended.brainpack_duran_footer_custom"
+                       data-customize-website-variable="'duran default'"
+                       data-img="/website/static/src/img/snippets_options/footer_template_default.svg"/>
+        </xpath>
+    </template>
+</odoo>

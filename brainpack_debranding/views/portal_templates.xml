@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="brand_promotion_message_debrand" inherit_id="web.brand_promotion_message">
+        <xpath expr="//t[@t-set='odoo_logo']" position="replace">
+<!--            <t t-set="odoo_logo" t-value="request.env['ir.config_parameter'].sudo().get_param('app_system_name', 'BrainPack')"></t>-->
+            <t t-set="odoo_logo" t-value="request.env.company and request.env.company.app_system_name or 'BrainPack'"/>
+        </xpath>
+    </template>
+
+
+     <template id="portal.portal_record_sidebar" name="Portal Template Override">
+
+         <div t-attf-class="#{classes}">
+            <div class="card bg-white mb-4 sticky-top" id="sidebar_content">
+                <div t-if="title" class="card-body text-center pb-2 pt-3">
+                    <t t-out="title"/>
+                </div>
+                <t t-if="entries" t-out="entries"/>
+<!--                <t t-set="brand" t-value="request.env['ir.config_parameter'].sudo().get_param('app_system_name', 'BrainPack')"/>-->
+                <t t-set="brand" t-value="request.env.company and request.env.company.app_system_name or 'BrainPack'"/>
+                <div class="card-footer small text-center text-muted border-top-0 pt-1 pb-1 d-none d-lg-block">
+                    Powered by <span><t t-esc="brand"/></span>
+                </div>
+            </div>
+        </div>
+
+    </template>
+</odoo>

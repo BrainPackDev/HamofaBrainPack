@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- FORM VIEW -->
+        <record id="lead_status_form" model="ir.ui.view">
+            <field name="name">lead.status.form</field>
+            <field name="model">lead.status</field>
+            <field name="arch" type="xml">
+                <form string="Lead Status">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW -->
+        <record id="lead_status_tree" model="ir.ui.view">
+            <field name="name">lead.status.tree</field>
+            <field name="model">lead.status</field>
+            <field name="arch" type="xml">
+                <tree string="Lead Status">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_lead_status" model="ir.actions.act_window">
+            <field name="name">Lead Status</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lead.status</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="lead_status_menu_brainpack"
+                  name="Lead Status"
+                  action="action_lead_status"
+                  parent="crm.crm_menu_config"
+        />
+    </data>
+</odoo>

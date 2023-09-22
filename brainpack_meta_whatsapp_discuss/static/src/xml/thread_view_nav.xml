@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="brainpack_meta_whatsapp.ThreadViewNav" owl="1">
+        <div class="o_thread_nav" t-if="threadViewNav and threadViewNav.channel and threadViewNav.channel.channel_type and threadViewNav.channel.channel_type == 'chat'">
+            <div class="tus" style="margin-top:3px;">
+<!--            <nav class="navbar navbar-expand-lg" style="margin: -12px -12px">-->
+<!--                      <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item chat_box_tab live_chat_tab" t-if="threadViewNav and threadViewNav.channel and threadViewNav.channel.correspondent and threadViewNav.channel.correspondent.persona.partner and threadViewNav.channel.correspondent.persona.partner.user" t-att-class="{ 'active': threadViewNav and threadViewNav.isWaMsgs == false }">
+                                <a class="nav-link live_chat current" href="javascript:void(0);" t-on-click="onClickLive">
+                                    <i class="fa fa-comments-o" aria-hidden="false"></i>
+                                    Live chat </a>
+                            </li>
+                            <li class="nav-item chat_box_tab whatsup_chat_tab" t-att-class="{ 'active': threadViewNav and threadViewNav.isWaMsgs }">
+                                <a class="nav-link whatsup_chat" href="javascript:void(0);" t-on-click="onClickWhatsapp">
+                                    <i class="fa fa-whatsapp" aria-hidden="false"></i>
+                                    WhatsApp Chat </a>
+                            </li>
+                        </ul>
+<!--                    </div>-->
+<!--                </nav>-->
+        </div>
+        </div>
+    </t>
+</templates>

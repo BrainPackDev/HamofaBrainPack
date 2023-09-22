@@ -1,0 +1,8 @@
+<odoo>
+     <template id="web_layout_debranding" inherit_id="web.layout">
+        <xpath expr="//title" position="after">
+            <t t-set="website" t-value="request.env['website'].sudo().search([('id','=',request.context.get('website_id'))],limit=1)"/>
+            <link rel="canonical" t-if="website and website.canonical_tag" t-att-href="request.env['ir.config_parameter'].sudo().get_param('web.base.url')+request.httprequest.path"/>
+        </xpath>
+     </template>
+</odoo>

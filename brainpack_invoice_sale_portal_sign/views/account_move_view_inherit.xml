@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<odoo>
+
+<!--    <record id="account_invoice_inherit_form_view" model="ir.ui.view">-->
+<!--        <field name="name">account.move.inherit.form.view</field>-->
+<!--        <field name="model">account.move</field>-->
+<!--        <field name="inherit_id" ref="account.view_move_form"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <xpath expr="//notebook" position="inside">-->
+<!--                <page string="Signature" name="signature_attachment"-->
+<!--                      attrs="{'invisible': [('signature_attachment', '=', False)]}">-->
+<!--                    <group>-->
+<!--                        <field name="signature_attachment" invisible="1"/>-->
+<!--&lt;!&ndash;                        <field name="signature_datas" widget="image" readonly="1"/>&ndash;&gt;-->
+<!--                    </group>-->
+<!--                </page>-->
+<!--            </xpath>-->
+<!--        </field>-->
+<!--    </record>-->
+</odoo>

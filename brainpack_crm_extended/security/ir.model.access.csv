@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_investment_amount","investment.amount","brainpack_crm_extended.model_investment_amount","",1,1,1,1
+"access_lead_status","lead.status","brainpack_crm_extended.model_lead_status","",1,1,1,1

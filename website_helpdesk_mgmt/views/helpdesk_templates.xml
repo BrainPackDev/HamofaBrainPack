@@ -1,0 +1,122 @@
+<odoo>
+
+    <template id="ticket_submited" name="Ticket Received">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty h-100">
+                <div class="container d-flex flex-column justify-content-center h-100">
+                    <div class="oe_structure" id="oe_structure_website_helpdesk_thanks_you"/>
+                    <div class="row justify-content-center">
+                        <t t-if="request.session.get('form_builder_model_model', '') == 'helpdesk.ticket'">
+                            <t t-set="ticket" t-value="request.website._website_form_last_record()"/>
+                        </t>
+                        <h1 class="text-center">
+                            <i class="fa fa-check-circle fa-1x text-success me-2" role="img" aria-label="Success" title="Success"/>
+                            <t t-if="ticket">
+                                <span>Your Ticket Number is <a t-if="request.session.uid" t-attf-href="/helpdesk/ticket/#{ticket.id}">#<span t-field="ticket.id"/></a><t t-if="not request.session.get('uid')">#<span t-field="ticket.id"/></t>.</span>
+                            </t>
+                        </h1>
+                        <h1 class="text-center">Thank you for submitting your issue, our team will get right on it!</h1>
+                    </div>
+                    <div class="oe_structure" id="oe_structure_website_helpdesk_thanks_you_bottom"/>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <record id="aboutus_page" model="website.page">
+        <field name="is_published">True</field>
+        <field name="url">/your-ticket-has-been-submitted</field>
+        <field name="website_indexed" eval="False"/>
+        <field name="view_id" ref="ticket_submited" />
+    </record>
+
+    <template id="ticket_submit_form" name="Helpdesk: Submit a Ticket Form">
+        <t t-set="additional_title">Submit a Ticket</t>
+        <div class="container">
+            <h2 class="text-muted">
+                Submit a Ticket
+                <t t-if="multiple_teams">- <t t-out="team.name" /></t>
+            </h2>
+            <div class="oe_structure" id="oe_structure_whelpdesk_form_1"/>
+            <span class="hidden" data-for="helpdesk_ticket_form" t-att-data-values="{'team_id': team and team.id or ''}" />
+            <div id="helpdesk_section">
+                <section class="s_website_form pt16 pb16 o_colored_level" data-vcss="001" data-snippet="s_website_form" data-name="Form">
+                    <div class="container">
+                        <form id="helpdesk_ticket_form" action="/website/form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-pre-fill="true" data-success-mode="redirect" data-success-page="/your-ticket-has-been-submitted" data-model_name="helpdesk.ticket">
+                            <div class="s_website_form_rows row s_col_no_bgcolor">
+                                <div class="mb-0 py-2 s_website_form_field col-12 s_website_form_required" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" for="helpdesk1">
+                                            <span class="s_website_form_label_content">Your Name</span>
+                                            <span class="s_website_form_mark"> *</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text" class="form-control s_website_form_input" name="partner_name" required="1" data-fill-with="name" id="helpdesk1"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-0 py-2 s_website_form_field col-12 s_website_form_required" data-type="email" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px" for="helpdesk2">
+                                            <span class="s_website_form_label_content">Your Email</span>
+                                            <span class="s_website_form_mark"> *</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="email" class="form-control s_website_form_input" name="partner_email" required="1" data-fill-with="email" id="helpdesk2"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-0 py-2 s_website_form_field col-12 s_website_form_model_required" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px" for="helpdesk3">
+                                            <span class="s_website_form_label_content">Subject</span>
+                                            <span class="s_website_form_mark"> *</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="text" class="form-control s_website_form_input" name="name" required="true" id="helpdesk3"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-0 py-2 s_website_form_field col-12" data-type="char" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px" for="helpdesk4">
+                                            <span class="s_website_form_label_content">Description</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <textarea type="text" class="form-control s_website_form_input" name="description" id="helpdesk4" rows="5"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-0 py-2 s_website_form_field col-12 s_website_form_custom" data-type="binary" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class=" col-sm-auto s_website_form_label " style="width: 200px" for="helpdesk5">
+                                            <span class="s_website_form_label_content">Attachment</span>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="file" class="form-control-file s_website_form_input" name="Attachment" id="helpdesk5"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-0 py-2 s_website_form_field col-12 s_website_form_dnone" data-name="Field">
+                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                        <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px">
+                                            <span class="s_website_form_label_content"/>
+                                        </label>
+                                        <div class="col-sm">
+                                            <input type="hidden" class="form-control s_website_form_input" name="team_id" id="helpdesk6" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-0 py-2 col-12 s_website_form_submit" data-name="Submit Button">
+                                    <div style="width: 200px;" class="s_website_form_label"/>
+                                    <a href="#" role="button" class="btn btn-primary btn-lg s_website_form_send o_default_snippet_text">Submit</a>
+                                    <span id="s_website_form_result"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </template>
+</odoo>

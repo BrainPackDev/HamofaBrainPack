@@ -1,0 +1,43 @@
+.chat_mobile{
+    display:none !important
+}
+.search_desktop{
+    display:block;
+}
+
+.span_disabled{
+    pointer-events: none;
+    opacity: 0.3;
+}
+.search_message.highlight.active{
+    background-color: #eba434;
+}
+.search_message.highlight{
+     background-color: #EEF43B;
+}
+
+@media (min-width: 0px) and (max-width: 575px) {
+    .chatter_loader{
+        height:70px !important;
+    }
+    .chat_mobile{
+        display:block !important;
+        width: 100%;
+    }
+    .search_desktop{
+        display:none !important;
+    }
+}
+
+.o_searchview_count{
+    background-color: white !important;
+    border: 0 !important;
+    border-radius: 10px;
+    padding: 0px 2px 0px 2px;
+    align-items: center;
+    margin-left: 5px;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 3%);
+}
+.o_searchview_count span{
+    padding: 9px;
+}

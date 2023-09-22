@@ -1,0 +1,6 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_whatsapp_messaging","security_whatsapp_messaging","brainpack_meta_whatsapp_marketing.model_whatsapp_messaging","",1,1,1,1
+"access_whatsapp_messaging_schedule_date","security_whatsapp_messaging_schedule_date","brainpack_meta_whatsapp_marketing.model_whatsapp_messaging_schedule_date","",1,1,1,1
+"access_whatsapp_messaging_lists","security_whatsapp_messaging_lists","brainpack_meta_whatsapp_marketing.model_whatsapp_messaging_lists","",1,1,1,1
+"access_whatsapp_messaging_lists_contacts","security_whatsapp_messaging_lists_contacts","brainpack_meta_whatsapp_marketing.model_whatsapp_messaging_lists_contacts","",1,1,1,1
+"access_marketing_contact_history","security_marketing_contact_history","brainpack_meta_whatsapp_marketing.model_marketing_contact_history","",1,1,1,1

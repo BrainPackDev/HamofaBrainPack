@@ -1,0 +1,36 @@
+<odoo>
+    <template id="sale_portal_template_inherit" name="Sign on My Sale Order"
+              inherit_id="sale.sale_order_portal_template">
+        <xpath expr="//div[@id='quote_content']" position="inside">
+            <div role="dialog" class="modal fade" id="ModalSignSaleOrder">
+                <div class="modal-dialog">
+                    <form id="accept" method="POST" t-att-data-order-id="sale_order.id"
+                          t-att-data-token="sale_order.access_token"
+                          class="js_accept_json modal-content js_website_submit_form">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <header class="modal-header">
+                            <h2>Sign</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </header>
+                        <main class="modal-body" id="sign-dialog">
+                            <t t-call="portal.signature_form">
+                                <t t-set="call_url" t-value="sale_order.get_portal_url(suffix='/sign')"/>
+                                <t t-set="default_name" t-value="sale_order.partner_id.name"/>
+                            </t>
+                        </main>
+                    </form>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[hasclass('o_download_pdf')]" position="after">
+             <t t-if="sale_order.state == 'sale' and not sale_order.signature">
+                <div class="col-sm-auto mt8">
+                    <a role="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalSignSaleOrder"
+                       href="#" style=" margin-bottom: 10px; width: 100%;">
+                        Sign
+                    </a>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

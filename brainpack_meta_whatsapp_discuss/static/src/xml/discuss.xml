@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_ext" xml:space="preserve">
+    <t t-name="ComposerExt" t-inherit="mail.Composer" t-inherit-mode="extension" owl="1">
+
+
+         <xpath expr="//div[hasclass('o_Composer_coreMain')]/div[hasclass('o_Composer_buttons')]/div/t[@t-if='composerView.isExpandable']" position="replace">
+             <t t-if="composerView.isExpandable">
+                <div class="o_Composer_secondaryToolButtons">
+                    <t t-if="composerView and composerView.composer and composerView.composer.thread and composerView.composer.thread.isWaMsgs">
+                        <button class="o_Composer_button o_Composer_buttonFullComposer btn btn-primary mx-1 border-0 rounded-pill" t-att-class="{ 'o-isDeviceSmall': messaging.device.isSmall }" title="Full composer" aria-label="Full composer" type="button" t-on-click="composerView.onClickFullComposer">Send Template</button>
+                    </t>
+                    <t t-else="">
+                        <button class="o_Composer_button o_Composer_buttonFullComposer o_Composer_toolButton btn btn-light fa fa-expand mx-1 border-0 rounded-pill bg-view" t-att-class="{ 'o-isDeviceSmall': messaging.device.isSmall }" title="Full composer" aria-label="Full composer" type="button" t-on-click="composerView.onClickFullComposer"/>
+                    </t>
+                </div>
+            </t>
+         </xpath>
+       <xpath expr="//t[@t-if='composerView.hasFooter']/div/t[@t-if='!composerView.isCompact']" position="replace">
+           <t t-if="composerView and composerView.composer and composerView.composer.thread and composerView.composer.thread.isWaMsgs">
+               <t t-if="!composerView.isCompact and !state.send_template_req">
+                    <t t-call="mail.Composer.actionButtons"/>
+                </t>
+           </t>
+           <t t-else="">
+               <t t-if="!composerView.isCompact">
+                    <t t-call="mail.Composer.actionButtons"/>
+                </t>
+           </t>
+       </xpath>
+       <xpath expr="//t[@t-if='composerView.hasHeader']" position="replace">
+           <t t-if="composerView.hasHeader">
+                    <div class="o_Composer_coreHeader text-truncate">
+                        <t t-if="composerView and composerView.chatter and composerView.chatter.isWaComposerView">
+
+                        </t>
+                        <t t-else="">
+                            <t t-if="composerView.threadView and composerView.threadView.replyingToMessageView">
+                                Replying to <b t-esc="composerView.threadView.replyingToMessageView.message.authorName"/>
+                                <i t-if="composerView.threadView.thread !== messaging.inbox" class="o_Composer_cancelReply fa fa-lg fa-times-circle rounded-circle p-0 ml-1" title="Stop replying" t-on-click="composerView.onClickStopReplying"/>
+                            </t>
+                            <t t-if="props.hasThreadName">
+                                <span class="o_Composer_threadName">
+                                    on: <b><t t-esc="composerView.composer.activeThread.displayName"/></b>
+                                </span>
+                            </t>
+                            <t t-if="props.hasFollowers and !composerView.composer.isLog">
+                                <!-- Text for followers -->
+                                <small class="o_Composer_followers">
+                                    <b class="text-muted">To: </b>
+                                    <em class="text-muted">Followers of </em>
+                                    <b>
+                                        <t t-if="composerView.composer.activeThread.displayName">
+                                            &#32;&quot;<t t-esc="composerView.composer.activeThread.displayName"/>&quot;
+                                        </t>
+                                        <t t-else="">
+                                            this document
+                                        </t>
+                                    </b>
+                                </small>
+                                <ComposerSuggestedRecipientList threadLocalId="composerView.composer.activeThread.localId"/>
+                            </t>
+                        </t>
+                    </div>
+           </t>
+        </xpath>
+    </t>
+</templates>

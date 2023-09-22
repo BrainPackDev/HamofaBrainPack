@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t t-inherit="web.LoadingIndicator" t-inherit-mode="extension" owl="1" >
+        <xpath expr="//Transition/span" position="before">
+            <div class="o_blockUI fixed-top d-flex justify-content-center align-items-center flex-column vh-100 bg-white-50">
+                <div class="o_spinner mb-4">
+                    <img src="/brainpack_debranding/static/description/imgpsh_fullsize_anim.gif" alt="Loading..." style="height:150px;"/>
+                </div>
+            </div>
+        </xpath>
+    </t>
+</templates>

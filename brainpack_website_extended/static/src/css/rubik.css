@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'Rubik-Black';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-Black.ttf');
+}
+
+@font-face {
+    font-family: 'Rubik-BlackItalic';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-BlackItalic.ttf');
+}
+@font-face {
+    font-family: 'Rubik-Bold';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-Bold.ttf');
+}
+@font-face {
+    font-family: 'Rubik-BoldItalic';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-BoldItalic.ttf');
+}
+@font-face {
+    font-family: 'Rubik-ExtraBold';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-ExtraBold.ttf');
+}
+@font-face {
+    font-family: 'Rubik-ExtraBoldItalic';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-ExtraBoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'Rubik-Italic';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-Italic.ttf');
+}
+@font-face {
+    font-family: 'Rubik-ExtraBoldItalic';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-ExtraBoldItalic.ttf');
+}
+@font-face {
+    font-family: 'Rubik-Light';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-Light.ttf');
+}
+@font-face {
+    font-family: 'Rubik-LightItalic';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-LightItalic.ttf');
+}
+@font-face {
+    font-family: 'Rubik-Medium';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-Medium.ttf');
+}
+@font-face {
+    font-family: 'Rubik-MediumItalic';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-MediumItalic.ttf');
+}
+@font-face {
+    font-family: 'Rubik-Regular';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-Regular.ttf');
+}
+@font-face {
+    font-family: 'Rubik-SemiBold';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-SemiBold.ttf');
+}
+@font-face {
+    font-family: 'Rubik-SemiBoldItalic';
+    src: url('/brainpack_website_extended/static/src/font/Rubik/Rubik-SemiBoldItalic.ttf');
+}

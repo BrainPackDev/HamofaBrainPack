@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="0">
+<!--        <function model="ir.config_parameter" name="set_param" eval="('app_system_name', 'BrainPack')"/>-->
+        <function model="ir.config_parameter" name="set_param" eval="('bot_user', 'BrainPack')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_bot_user_id', 1)"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_show_debug', 'True')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_show_documentation', 'True')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_show_support', 'True')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_show_account', 'True')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_documentation_url', 'https://www.brainpack.io')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_support_url', 'https://www.brainpack.io/trial')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_account_title', 'My BrainPack Account')"/>
+        <function model="ir.config_parameter" name="set_param" eval="('app_account_url', 'https://www.brainpack.io/my-account')"/>
+    </data>
+</openerp>

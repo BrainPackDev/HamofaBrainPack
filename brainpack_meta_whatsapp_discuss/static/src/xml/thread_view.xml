@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_ext" xml:space="preserve">
+    <t t-name="ChatWindowExt" t-inherit="mail.ChatWindow" t-inherit-mode="extension" owl="1">
+        <xpath expr="//t[@t-if='chatWindow.threadView']" position="before">
+            <ChatViewNav t-if="chatWindow and chatWindow.messaging and chatWindow.messaging.currentUser" className="'o_thread_nav'" chatWindowLocalId="chatWindow.localId"/>
+         </xpath>
+    </t>
+    <t t-name="ThreadViewExt" t-inherit="mail.ThreadView" t-inherit-mode="extension">
+         <xpath expr="//t[@t-if='threadView.topbar']" position="before">
+             <t t-if="threadView.hasThreadNav">
+                 <ThreadViewNav
+                    className="'o_thread_nav'"
+                    localId="threadView.thread.localId"
+                />
+             </t>
+         </xpath>
+    </t>
+</templates>

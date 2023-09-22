@@ -1,0 +1,24 @@
+<odoo>
+<!--    <menuitem id="sale.sale_menu_root" web_icon="brainpack_debranding,static/description/sales.png"/>-->
+
+<!--    <record id="sale.sale_menu_root" model="ir.ui.menu">-->
+<!--         <field name="name">Sales</field>-->
+<!--         <field name="web_icon">brainpack_debranding,static/description/sales.png</field>-->
+<!--    </record>-->
+<!--    <record id="crm.crm_menu_root" model="ir.ui.menu">-->
+<!--         <field name="name">CRM</field>-->
+<!--         <field name="web_icon">brainpack_debranding,static/description/icons/SVG/crm.svg</field>-->
+<!--    </record>-->
+<!--    <record id="crm.crm_menu_root" model="ir.ui.menu">-->
+<!--         <field name="name">PURCHASE</field>-->
+<!--         <field name="web_icon">brainpack_debranding,static/description/icons/SVG/crm.svg</field>-->
+<!--    </record>-->
+<!--    <record id="purchase.menu_purchase_root" model="ir.ui.menu">-->
+<!--         <field name="name">Purchase</field>-->
+<!--         <field name="web_icon">brainpack_debranding,static/description/icons/SVG/purchases.svg</field>-->
+<!--    </record>-->
+<!--    <record id="purchase.menu_purchase_root" model="ir.ui.menu">-->
+<!--         <field name="name">Purchase</field>-->
+<!--         <field name="web_icon">brainpack_debranding,static/description/icons/SVG/purchases.svg</field>-->
+<!--    </record>-->
+</odoo>

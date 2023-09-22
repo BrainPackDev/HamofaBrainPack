@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="web.VerifyPhoneField" t-inherit="web.PhoneField" t-inherit-mode="primary">
+        <xpath expr="//div" position="replace">
+            <t t-if="props.verifyButton">
+                <div class="o_phone_content d-inline-flex w-100">
+                    <span t-if="!state.verify and props.value" class="o_form_uri" t-esc="state.phone_field"/>
+                    <a t-else="state.verify and props.value" class="o_form_uri" t-att-href="'tel:'+props.value"
+                       t-esc="props.value"/>
+                    <t t-if="state.verify and props.enableButton and props.value.length > 0">
+                        <SendSMSButton t-props="props"/>
+                    </t>
+
+                    <a role="button"
+                       class="o_phone_form_link ms-3 d-inline-flex align-items-center btn btn-primary" style="padding: 3px !important;" t-on-click="openReasonWizard" t-if="!state.verify"
+                    >
+                        <small class="fw-bold ms-1">Start</small>
+                    </a>
+                </div>
+            </t>
+            <t t-else="">
+                <!--                 <a t-if="props.value" class="o_form_uri" t-att-href="'tel:'+props.value" t-esc="props.value"/>-->
+                <div class="o_phone_content d-inline-flex w-100">
+                    <t t-if="props.readonly">
+                        <a t-if="props.value" class="o_form_uri" t-att-href="'tel:'+props.value" t-esc="props.value"/>
+                    </t>
+                    <t t-else="">
+                        <input
+                                class="o_input"
+                                t-att-id="props.id"
+                                type="tel"
+                                t-att-placeholder="props.placeholder"
+                                t-ref="input"
+                        />
+                    </t>
+                </div>
+            </t>
+        </xpath>
+    </t>
+</templates>

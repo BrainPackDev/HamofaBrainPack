@@ -1,0 +1,35 @@
+<odoo>
+    <record model="ir.ui.view" id="whatsapp_messaging_lists_contacts_form_view">
+        <field name="name">whatsapp.messaging.lists.contacts.form</field>
+        <field name="model">whatsapp.messaging.lists.contacts</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="phone"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="whatsapp_messaging_lists_contacts_tree_view">
+        <field name="name">whatsapp.messaging.lists.contacts.tree</field>
+        <field name="model">whatsapp.messaging.lists.contacts</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="phone"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="whatsapp_messaging_lists_contacts_action">
+        <field name="name">Marketing Contact</field>
+        <field name="res_model">whatsapp.messaging.lists.contacts</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="whatsapp_messaging_lists_contacts_menu" name="Marketing Contact" parent="brainpack_meta_whatsapp_marketing.whatsapp_messaging_lists_main_menu" action="whatsapp_messaging_lists_contacts_action"/>
+</odoo>

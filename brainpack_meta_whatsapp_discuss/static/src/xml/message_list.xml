@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_ext" xml:space="preserve">
+<!--    <t t-name="MessageListExt" t-inherit="mail.MessageList" t-inherit-mode="extension" owl="1">-->
+<!--        <xpath expr="//div[hasclass('o_MessageList')]" position="attributes">-->
+<!--             <attribute name="t-attf-style">background-image:url({{image_url}})</attribute>-->
+<!--        </xpath>-->
+<!--    </t>-->
+</templates>

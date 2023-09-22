@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_ext" xml:space="preserve">
+    <t t-name="ThreadViewExt" t-inherit="mail.ThreadView" t-inherit-mode="extension" owl="1">
+        <xpath expr="//t[@t-if='threadView.callView']" position="before">
+               <div class="row chat_mobile" t-if="threadView">
+                    <div class="o_cp_searchview d-flex flex-grow-1" role="search" style="    padding-top: 5px;
+                            padding-bottom: 5px;    padding-right: 0px !important;">
+                    <div class="o_searchview pb-1 align-self-center flex-grow-1" role="search"
+                         aria-autocomplete="list" style="    padding: 10px;
+                            border: 1px solid;
+                            border-radius: 14px;    border: 1px solid #C9CCD2;">
+                        <i class="o_searchview_icon oi oi-search" role="img" aria-label="Search..." style="    padding: 10px;"
+                           title="Search..."></i>
+                        <div class="o_searchview_input_container">
+                            <input type="text"
+                                   class="o_searchview_input"
+                                   accesskey="Q"
+                                   placeholder="Search..."
+                                   role="searchbox"
+                                   title="Search for records"
+                                    t-on-keyup="_onKeyUpSearch"
+                            />
+                        </div>
+<!--                    t-on-keyup="_onKeyUpSearch"-->
+                    </div>
+                        <div class="o_searchview_count pb-1 align-self-center" style="    border: 1px solid #C9CCD2 !important;">
+<!--                            <button type="button" t-attf-class="#{threadView and threadView.searchMessage ? 'btn btn-primary fa fa-search' : 'btn fa fa-search'}" t-on-click="_onClickSearch"/>-->
+                            <button type="button" class="btn fa fa-times-circle-o" t-on-click="_onClickCancle"/>
+
+<!--                                <span class="current_search"><t t-if="messaging and messaging.discuss" t-esc="messaging.discuss.currentSearchCount"/></span> / <span class="total_search_message" ><t t-if="messaging and messaging.discuss" t-esc="messaging.discuss.numberOfSearch"/></span> <span t-if="messaging and messaging.discuss" t-on-click="_onClickUp" t-att-class="'fa fa-angle-up %s' % ('span_disabled' if messaging.discuss.upDisable else '')"/> <span t-att-class="'fa fa-angle-down %s' % ('span_disabled' if messaging.discuss.downDisable else '')" t-on-click="_onClickDown"/>-->
+                            <span class="current_search"><t t-if="threadView" t-esc="threadView.currentSearchCount"/></span>
+                            /
+                            <span class="total_search_message"><t t-if="threadView" t-esc="threadView.numberOfSearch"/></span>
+                            <span t-if="threadView" t-on-click="_onClickUp"
+                                  t-attf-class="fa fa-angle-up #{threadView.upDisable and 'span_disabled' or ''}" style="cursor: pointer;"/>
+                            <span t-if="threadView"
+                                  t-attf-class="fa fa-angle-down #{threadView.downDisable and 'span_disabled' or ''}" style="cursor: pointer;"
+                                  t-on-click="_onClickDown"/>
+                        </div>
+                </div>
+            </div>
+        </xpath>
+    </t>
+</templates>

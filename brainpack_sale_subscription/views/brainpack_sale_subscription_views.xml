@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- FORM VIEW -->
+        <record id="brainpack_sale_subscription_form" model="ir.ui.view">
+            <field name="name">brainpack.sale.subscription.form</field>
+            <field name="model">brainpack.sale.subscription</field>
+            <field name="arch" type="xml">
+                <form string="Brainpack Sale Subscription" class="o_sale_order">
+                    <header>
+                        <button type="object" name="get_config_parameters" string="Get DB Parameters" class="btn-primary"/>
+                    </header>
+                    <sheet>
+                        <div name="button_box" class="oe_button_box"/>
+                        <label for="url"/>
+                        <h2>
+                            <field name="url" string="URL" required="1"/>
+                        </h2>
+                        <label for="db_name"/>
+                        <h2>
+                            <field name="db_name" string="DB Name" required="1"/>
+                        </h2>
+                        <label for="username"/>
+                        <h2>
+                            <field name="username" string="Username" required="1"/>
+                        </h2>
+                        <label for="password"/>
+                        <h2>
+                            <field name="password" string="Password" required="1"/>
+                        </h2>
+                        <label for="creation_date_db"/>
+                        <h2>
+                            <field name="creation_date_db" string="DB Creation Date"/>
+                        </h2>
+                        <label for="expiration_date_db"/>
+                        <h2>
+                            <field name="expiration_date_db" string="DB Expiration Date"/>
+                        </h2>
+                        <label for="db_expiration_reason"/>
+                        <h2>
+                            <field name="db_expiration_reason" string="DB Expiration Reason"/>
+                        </h2>
+                        <label for="db_enterprise_code"/>
+                        <h2>
+                            <field name="db_enterprise_code" string="DB Enterprise Code"/>
+                        </h2>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW -->
+        <record id="brainpack_sale_subscription_tree" model="ir.ui.view">
+            <field name="name">brainpack.sale.subscription.tree</field>
+            <field name="model">brainpack.sale.subscription</field>
+            <field name="arch" type="xml">
+                <tree string="Brainpack Sale Subscription">
+                    <field name="db_name" string="DB Name"/>
+                    <field name="creation_date_db" string="DB Creation Date"/>
+                    <field name="expiration_date_db" string="DB Expiration Date"/>
+                    <field name="db_expiration_reason" string="DB Expiration Reason"/>
+                    <field name="db_enterprise_code" string="DB Enterprise Code"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- ADD FIELDS TO SEARCH DIRECTLY FROM SEARCHBAR-->
+        <record id="brainpack_sale_subscription_search" model="ir.ui.view">
+            <field name="name">brainpack.sale.subscription.search</field>
+            <field name="model">brainpack.sale.subscription</field>
+            <field name="arch" type="xml">
+                <search string="Search Brainpack Sale Subscription">
+                    <field name="id"/>
+                    <field name="db_name"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- ACTIONS (WINDOW) FOR TREE,FORM VIEW OF "Brainpack Sale Subscription" MODEL -->
+        <record id="action_brainpack_sale_subscription" model="ir.actions.act_window">
+            <field name="name">Brainpack Sale Subscription</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">brainpack.sale.subscription</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Brainpack Sale Subscription, the first step!
+                </p>
+            </field>
+        </record>
+
+        <!-- ADD MENU IN SALE SUBSCRIPTION CONFIGURATION TAB -->
+        <menuitem id="sale_subscription_template_menu_brainpack"
+                  name="Brainpack Sale Subscription"
+                  action="action_brainpack_sale_subscription"
+                  parent="sale_subscription.menu_sale_subscription_config"
+        />
+
+    </data>
+</odoo>

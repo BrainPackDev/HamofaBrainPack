@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- FORM VIEW -->
+        <record id="investment_amount_form" model="ir.ui.view">
+            <field name="name">investment.amount.form</field>
+            <field name="model">investment.amount</field>
+            <field name="arch" type="xml">
+                <form string="Investment Amount">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="currency_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW -->
+        <record id="investment_amount_tree" model="ir.ui.view">
+            <field name="name">investment.amount.tree</field>
+            <field name="model">investment.amount</field>
+            <field name="arch" type="xml">
+                <tree string="Investment Amount">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                    <field name="currency_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_investment_amount" model="ir.actions.act_window">
+            <field name="name">Investment Amount</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">investment.amount</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="investment_amount_menu_brainpack"
+                  name="Investment Amount"
+                  action="action_investment_amount"
+                  parent="crm.crm_menu_config"
+        />
+
+    </data>
+</odoo>

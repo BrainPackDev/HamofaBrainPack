@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="brainpack_meta_whatsapp_discuss.WaThreadView" owl="1">
+        <div class="waThreadView" style="width: 50%; border-left: 1px solid #c7c5c5;">
+            <div class="container" style="margin-top:3px;">
+            <div class="o_notebook" style="position: absolute; width: 42%;height: 73%;">
+<!--                <ul class="nav nav-tabs o-wa-threadview-nav" style="background-color: #504e48;position: relative;display: flex;">-->
+                <ul class="nav nav-tabs nav-custom o-wa-threadview-nav" style="margin: 0 -17px;">
+                    <li id="tab_partner" class="nav-item">
+                        <a data-toggle="tab" disable_anchor="true"
+                             role="tab" style="cursor: pointer;"
+                            t-attf-class="nav-link functional_tab {{state.nav_active == 'partner'? 'active':''}}" t-on-click="tabPartner">
+                              <i class="fa fa-user" aria-hidden="false"></i>
+                            Client
+                        </a>
+                    </li>
+                    <li id="tab_message" class="nav-item">
+                        <a data-toggle="tab" disable_anchor="true"
+                            role="tab" style="cursor: pointer;"
+                            t-attf-class="nav-link functional_tab {{state.nav_active == 'message_templates'? 'active':''}}" t-on-click="tab_message_templates">
+                            <i class="fa fa-comments" aria-hidden="false"></i>
+                            Message Templates
+                        </a>
+                    </li>
+                     <li id="tab_agent" class="nav-item">
+                        <a data-toggle="tab" disable_anchor="true"
+                             role="tab" style="cursor: pointer;"
+                            t-attf-class="nav-link functional_tab {{state.nav_active == 'agent'? 'active':''}}" t-on-click="tab_agent">
+                            <i class="fa fa-user-circle" aria-hidden="false"></i>
+                            Agents
+                        </a>
+                    </li>
+                </ul>
+                <div class="row main-button" style="display: flex;position: relative;">
+                    <div class="col-6 back" style="padding: 16px;">
+                        <button class="btn btn-primary back_btn ml-4 o_hidden" type="button" t-on-click="onClickBack">Back</button>
+                    </div>
+                    <div class="col-6">
+                        <div id="main-buttons-view"/>
+                    </div>
+                </div>
+                <div class="" id="main-form-view">
+                </div>
+            </div>
+        </div>
+        </div>
+    </t>
+</templates>

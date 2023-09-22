@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    hide config fields added on config views-->
+    <record id="res_config_settings_view_form_brainpack_access" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.brainpack_access</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="6"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('settings')]" position="inside">
+                <div class="app_settings_block" data-string="BrainPack Access Settings"
+                     string="BrainPack Access Settings"
+                     data-key="brainpack_access_rights">
+                    <h2>BrainPack Access Settings</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="field_ids" class="o_light_label"/>
+                                <field name="field_ids" widget="many2many_tags"/>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="modules_ids" class="o_light_label"/>
+                                <field name="modules_ids" widget="many2many_tags"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="support_url" class="o_light_label"/>
+                                <field name="support_url" widget="url"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//div[@id='contacts_settings']" position="attributes">
+                <attribute name="groups">brainpack_access_rights.main_admin</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

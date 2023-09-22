@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-inherit="web.SettingsPage" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('settings_tab')]/t[@t-foreach='props.modules']" position="replace">
+            <t t-foreach="props.modules" t-as="module" t-key="module.key">
+                <div class="tab" t-if="!module.isVisible" t-att-class="(state.selectedTab === module.key and state.search.value.length === 0) ? 'selected': ''" t-att-data-key="module.key" role="tab" t-on-click="() => this.onSettingTabClick(module.key)">
+                    <t t-set="image_url" t-value="False"/>
+                    <t t-set="image_url_white" t-value="False"/>
+                    <t t-if="module.key == 'general_settings'">
+                        <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/seetings.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'account_accountant'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/accounting.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'appointment'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/appointment.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_appraisal'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/appraisals.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'approvals'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/approvals.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_attendance'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/attendance.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'stock_barcode'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/barcode.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_blog'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/blogs.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'calendar'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/calender.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'account_consolidation'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/consolidation.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'contacts'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/contacts.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'crm'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/crm.png'"/>
+                    </t>
+                    <t t-elif="['data_recycle','data_merge','data_cleaning'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/data-recycle.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'mail'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/discuss.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'documents'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/documents.png'"/>
+                    </t>
+                    <t t-elif="['website_sale','website_sale_digital','website_sale_loyalty'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/eCommerce.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_slides'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/eLearning.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'mass_mailing'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/emailAutomation.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/employees.png'"/>
+                    </t>
+                    <t t-elif="['website_event','event'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/events.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_expense'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/expenses.png'"/>
+                    </t>
+                    <t t-elif="['industry_fsm','industry_fsm_sale','industry_fsm_stock'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/field-service.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'fleet'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/fleet.png'"/>
+                    </t>
+                    <t t-elif="['website_helpdesk_forum','website_forum'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/forum.png'"/>
+                    </t>
+                    <t t-elif="['helpdesk','website_helpdesk_slides','helpdesk_account','helpdesk_fsm','helpdesk_sale_loyalty','helpdesk_stock','helpdesk_timesheet','helpdesk_mgmt'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/helpdesk.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'iot'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/internet-of-things.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'stock'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/inventory.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'account'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/invoicing.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'knowledge'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/knowledge.png'"/>
+                    </t>
+                    <t t-elif="['im_livechat','website_helpdesk_livechat','website_livechat'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/liveChat.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'lunch'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/lunch.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'maintenance'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/maintainance.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'mrp'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/manufacturing.png'"/>
+                    </t>
+                    <t t-elif="['marketing_automation','social'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/marketingAutomation.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'note'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/notes.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_hr_recruitment'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/online-jib.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_payroll'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payroll.png'"/>
+                    </t>
+                    <t t-elif="['planning','project_forecast'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/planning.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'mrp_plm'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/plm.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'point_of_sale'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/pointOfSale.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'project'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/project.png'"/>
+                    </t>
+                    <t t-elif="['purchase','iap'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/purchases.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'quality_control'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/quality.png'"/>
+                    </t>
+                    <t t-elif="['hr_recruitment'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/recruitment.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_referral'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/refferals.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'sale_renting'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/rental.png'"/>
+                    </t>
+                    <t t-elif="['repair','helpdesk_repair'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/repair.png'"/>
+                    </t>
+                    <t t-elif="['sale','sale_management'].includes(module.key)">
+                        <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/sales.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'sign'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/signs.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_skills'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/skill-management.png'"/>
+                    </t>
+                    <t t-elif="['mass_mailing_sms','sms'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/smsMarketing.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'web_studio'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/studio.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'sale_subscription'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/subscription.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'survey'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/surveys.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_holidays'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/timeOff.png'"/>
+                    </t>
+                    <t t-elif="['timesheet_grid','hr_timesheet','sale_timesheet'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/timeSheet.png'"/>
+                    </t>
+                    <t t-elif="['voip','voip_onsip'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/VoIP.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/website-builder.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'sale_amazon'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/amazon_connector.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'delivery_bpost'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/bpost.png'"/>
+                    </t>
+                    <t t-elif="['board','spreadsheet_dashboard'].includes(module.key)">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/dashboard.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'delivery_dhl'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/DHL.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'delivery_easypost'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/easypost.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'sale_ebay'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/ebay_connector.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'delivery_fedex'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/fedex.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'delivery_sendcloud'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/sendcloud.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'delivery_ups'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/UPS.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'delivery_usps'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/usps.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'account_auto_transfer'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/account_automatic_transfers.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'account_asset'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/asset_management.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_crm'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/contac_form.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'google_gmail'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/gmail.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'google_calendar'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/google_calender.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_expense_extract'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/hr_expense_extract.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'account_bank_statement_import_ofx'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/import_OFX_bank_statement.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'account_bank_statement_import_qif'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/import_QIF_bank_statement.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'iap'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/in_app_purchase.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'mrp_maintenance'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/maintanance_mrp.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'membership'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/member.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'microsoft_outlook'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/outlook_calender.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'microsoft_calendar'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/outlook_calender.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'partner_autocomplete'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/partner_autocomplete.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'payment'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_engine.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'product'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/product_and_pricelist.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'sale_timesheet'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/sales_timesheet.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_work_entry_contract'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/work_entries_contract.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_demo'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_demo.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_flutterwave'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_flutterwave.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_mercado_pago'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_mercadopago.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_mollie'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_mollie.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_ogone'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_ogone.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_paypal'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_paypal.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_payumoney'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_payUmoney.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_payulatam'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_payUmoney_latam.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_razorpay'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_razorpay.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_sepa_direct_debit'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_sepadirectdebit.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'payment_sips'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_stripe.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'payment_stripe'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_worldlinesips.png'"/>
+                    </t>
+
+                     <t t-elif="module.key == 'website_event_track'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/advanced_events.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_customer'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/customer_references.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_sale_delivery'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/ecommerce_delivery.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_google_map'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/google_maps.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_links'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/link_tracker.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'link_tracker'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/link_tracker.png'"/>
+                    </t>
+
+                    <t t-elif="module.key == 'website_mass_mailing'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/newsletter_subscribe_button.png'"/>
+                    </t>
+
+                    <t t-elif="module.key == 'website_event_sale'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/online_event_ticketing.png'"/>
+                    </t>
+
+                    <t t-elif="module.key == 'website_membership'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/online_member_directory.png'"/>
+                    </t>
+
+                    <t t-elif="module.key == 'website_form_project'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/online_task_submission.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'payment_alipay'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_alipay.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'payment_aps'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_amazonpay.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'payment_asiapay'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_asiapay.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'payment_authorize'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_authorize_net.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_adyen'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_ayden.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_buckaroo'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_buckaroo.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_custom'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_custom_payment_method.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_sale_stock'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/product_availibility.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_sale_comparison'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/product_comparison.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_event_questions'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/questions_on_event.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_crm_partner_assign'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/resellers.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_sale_wishlist'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/shoppers_wishlist.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'snailmail'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/snail_mail.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'social_facebook'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/social_facebook.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'social_instagram'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/social_instagram.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'social_youtube'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/social_youtube.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'social_twitter'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/spreadsheet_dashboard.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'spreadsheet_dashboard'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/social_facebook.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'test_exceptions'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/test_exception.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'transifex'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/transifex_integration.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_twitter'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/twitter_snippet.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_twitter_wall'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/twitter_wall.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'web_unsplash'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/unsplash_image_library.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_payment'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/website_payment.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_enterprise'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/website_enterprise.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'utm'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/utm_tracker.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'social_linkedin'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/social_linkedin.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_partner'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/website_planner.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'gamification'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/gamify.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'account_sepa'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/payment_provider_sepadirectdebit.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'brain_pack_backend_ent'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/brainPack_favicon/android-chrome-192x192.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'brainpack_access_rights'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/brainPack_favicon/android-chrome-192x192.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'brainpack_debranding'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/brainPack_favicon/android-chrome-192x192.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'brainpack_website_extended'">
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/brainPack_favicon/android-chrome-192x192.png'"/>
+                    </t>
+
+                    <t t-if="module.key == 'general_settings'">
+                        <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/settings.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'account_accountant'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/accounting.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'appointment'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/appointment.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_appraisal'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/appraisals.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'approvals'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/approvals.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_attendance'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/attendance.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'stock_barcode'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/barcode.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_blog'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/blogs.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'calendar'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/calender.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'account_consolidation'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/consolidation.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'contacts'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/contacts.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'crm'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/crm.png'"/>
+                    </t>
+                    <t t-elif="['data_recycle','data_merge','data_cleaning'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/data-recycle.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'mail'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/discuss.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'documents'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/documents.png'"/>
+                    </t>
+                    <t t-elif="['website_sale','website_sale_digital','website_sale_loyalty'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/eCommerce.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_slides'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/eLearning.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'mass_mailing'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/emailAutomation.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/employees.png'"/>
+                    </t>
+                    <t t-elif="['website_event','event'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/events.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_expense'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/expenses.png'"/>
+                    </t>
+                    <t t-elif="['industry_fsm','industry_fsm_sale','industry_fsm_stock'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/field-service.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'fleet'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/fleet.png'"/>
+                    </t>
+                    <t t-elif="['website_helpdesk_forum','website_forum'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/forum.png'"/>
+                    </t>
+                    <t t-elif="['helpdesk','helpdesk_mgmt','website_helpdesk_slides','helpdesk_account','helpdesk_fsm','helpdesk_sale_loyalty','helpdesk_stock','helpdesk_timesheet'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/helpdesk.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'iot'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/internet-of-things.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'stock'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/inventory.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'account'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/invoicing.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'knowledge'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/knowledge.png'"/>
+                    </t>
+                    <t t-elif="['im_livechat','website_helpdesk_livechat','website_livechat'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/liveChat.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'lunch'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/lunch.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'maintenance'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/maintainance.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'mrp'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/manufacturing.png'"/>
+                    </t>
+                    <t t-elif="['marketing_automation','social'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/marketingAutomation.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'note'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/notes.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_hr_recruitment'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/online-jib.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_payroll'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payroll.png'"/>
+                    </t>
+                    <t t-elif="['planning','project_forecast'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/planning.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'mrp_plm'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/plm.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'point_of_sale'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/pointOfSale.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'project'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/project.png'"/>
+                    </t>
+                    <t t-elif="['purchase','iap'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/purchases.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'quality_control'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/quality.png'"/>
+                    </t>
+                    <t t-elif="['hr_recruitment'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/recruitment.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_referral'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/refferals.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'sale_renting'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/rental.png'"/>
+                    </t>
+                    <t t-elif="['repair','helpdesk_repair'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/repair.png'"/>
+                    </t>
+                    <t t-elif="['sale','sale_management'].includes(module.key)">
+                        <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/sales.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'sign'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/signs.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_skills'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/skill-management.png'"/>
+                    </t>
+                    <t t-elif="['mass_mailing_sms','sms'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/smsMarketing.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'web_studio'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/studio.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'sale_subscription'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/subscription.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'survey'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/surveys.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_holidays'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/timeOff.png'"/>
+                    </t>
+                    <t t-elif="['timesheet_grid','hr_timesheet','sale_timesheet'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/timeSheet.png'"/>
+                    </t>
+                    <t t-elif="['voip','voip_onsip'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/VoIP.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/website-builder.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'sale_amazon'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/amazon_connector.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'delivery_bpost'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/bpost.png'"/>
+                    </t>
+                    <t t-elif="['board','spreadsheet_dashboard'].includes(module.key)">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/dashboard.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'delivery_dhl'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/DHL.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'delivery_easypost'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/easypost.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'sale_ebay'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/ebay_connector.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'delivery_fedex'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/fedex.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'delivery_sendcloud'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/sendcloud.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'delivery_ups'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/UPS.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'delivery_usps'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/usps.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'account_auto_transfer'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/account_automatic_transfers.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'account_asset'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/asset_management.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_crm'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/contac_form.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'google_gmail'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/gmail.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'google_calendar'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/google_calender.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_expense_extract'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/hr_expense_extract.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'account_bank_statement_import_ofx'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/import_OFX_bank_statement.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'account_bank_statement_import_qif'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/import_QIF_bank_statement.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'iap'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/in_app_purchase.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'mrp_maintenance'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/maintanance_mrp.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'membership'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/member.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'microsoft_outlook'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/outlook_calender.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'microsoft_calendar'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/outlook_calender.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'partner_autocomplete'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/partner_autocomplete.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'payment'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_engine.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'product'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/product_and_pricelist.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'sale_timesheet'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/sales_timesheet.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'hr_work_entry_contract'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/work_entries_contract.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_demo'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_demo.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_flutterwave'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_flutterwave.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_mercado_pago'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_mercadopago.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_mollie'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_mollie.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_ogone'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_ogone.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_paypal'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_paypal.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_payumoney'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_payUmoney.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_payulatam'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_payUmoney_latam.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_razorpay'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_razorpay.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_sepa_direct_debit'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_sepadirectdebit.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'payment_sips'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_stripe.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'payment_stripe'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_worldlinesips.png'"/>
+                    </t>
+
+                     <t t-elif="module.key == 'website_event_track'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/advanced_events.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_customer'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/customer_references.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_sale_delivery'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/ecommerce_delivery.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_google_map'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/google_maps.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_links'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/link_tracker.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'link_tracker'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/link_tracker.png'"/>
+                    </t>
+
+                    <t t-elif="module.key == 'website_mass_mailing'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/newsletter_subscribe_button.png'"/>
+                    </t>
+
+                    <t t-elif="module.key == 'website_event_sale'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/online_event_ticketing.png'"/>
+                    </t>
+
+                    <t t-elif="module.key == 'website_membership'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/online_member_directory.png'"/>
+                    </t>
+
+                    <t t-elif="module.key == 'website_form_project'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/online_task_submission.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'payment_alipay'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_alipay.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'payment_aps'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_amazonpay.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'payment_asiapay'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_asiapay.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'payment_authorize'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_authorize_net.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_adyen'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_ayden.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_buckaroo'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_buckaroo.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'payment_custom'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_custom_payment_method.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_sale_stock'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/product_availibility.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_sale_comparison'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/product_comparison.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_event_questions'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/questions_on_event.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_crm_partner_assign'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/resellers.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_sale_wishlist'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/shoppers_wishlist.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'snailmail'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/snail_mail.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'social_facebook'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/social_facebook.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'social_instagram'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/social_instagram.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'social_youtube'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/social_youtube.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'social_twitter'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/spreadsheet_dashboard.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'spreadsheet_dashboard'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/social_facebook.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'test_exceptions'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/test_exception.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'transifex'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/transifex_integration.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_twitter'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/twitter_snippet.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_twitter_wall'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/twitter_wall.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'web_unsplash'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/unsplash_image_library.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_payment'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/website_payment.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'website_enterprise'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/website_enterprise.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'utm'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/utm_tracker.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'social_linkedin'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/social_linkedin.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'website_partner'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/website_planner.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'gamification'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/gamify.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'account_sepa'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/payment_provider_sepadirectdebit.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'brain_pack_backend_ent'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/favicon_white.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'brainpack_access_rights'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/favicon_white.png'"/>
+                    </t>
+                    <t t-elif="module.key == 'brainpack_debranding'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/favicon_white.png'"/>
+                    </t>
+                     <t t-elif="module.key == 'brainpack_website_extended'">
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/favicon_white.png'"/>
+                    </t>
+
+                    <t t-if="image_url">
+                        <t t-if="state.selectedTab === module.key and state.search.value.length === 0">
+                            <div class="icon d-none d-md-block" t-attf-style="background : url('{{image_url_white}}') no-repeat center;background-size:contain !important;"/> <span class="app_name"><t t-esc="module.string"/></span>
+                        </t>
+                         <t t-else="">
+                             <div class="icon d-none d-md-block" t-attf-style="background : url('{{image_url}}') no-repeat center;background-size:contain !important;"/> <span class="app_name"><t t-esc="module.string"/></span>
+                         </t>
+                    </t>
+                    <t t-else="">
+                        <div class="icon d-none d-md-block" t-attf-style="background : url('{{module.imgurl}}') no-repeat center;background-size:contain !important;"/> <span class="app_name"><t t-esc="module.string"/></span>
+                    </t>
+
+                </div>
+            </t>
+        </xpath>
+    </t>
+</templates>

@@ -1,0 +1,762 @@
+body{
+    font-family: 'Asap', sans-serif;
+}
+
+.carousel-multiple .carousel-item{
+    width: 25% !important;
+    min-height:335px !important;
+}
+.carousel-multiple1 .carousel-item{
+    width: 33.33% !important;
+    min-height:220px !important;
+}
+
+.Banner{
+    display: flex;
+    align-items: center;
+}
+
+.BannerImg{
+    overflow: hidden;
+}
+
+.BannerImg img{
+    margin-left: 20%;
+}
+.card.service_mainSliderBox {
+    margin: 2px 2px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 1px 1px 10px #d5d5d5;
+    padding: 14px;
+    text-align: center;
+}
+.service_mainSliderBox .w-100{
+    width:100% !important;
+}
+.service_mainSliderBox .w-75{
+    width:75% !important;
+}
+.service_mainSliderBox .w-25{
+    width:25% !important;
+}
+.service_mainSliderBox .ClientInfo{
+    line-height: 22px;
+
+}
+.service_mainSliderBox .ClientPosition_p2{
+    padding: 3px;
+    margin: auto;
+    font-size: 12px;
+}
+.service_mainSliderBox .ImgCicle img {
+    width: 50px !important;
+    height: 50px !important;
+        border-radius: 5px;
+}
+.service_mainSliderBox .ImgCicle {
+    width: 50px !important;
+    height: 50px !important;
+}
+.service_mainSliderBox .ClientPosition{
+            padding: 8px;
+    margin: auto;
+    font-weight: 600;
+     color: #137EE8;
+     font-size: 14px;
+}
+.service_mainSliderBox .ClientInfo{
+        display: flex;
+    align-items: center;
+}
+.service_header{
+    color: #137EE8;
+    font-size: 38px;
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+.service_p{
+    font-size: 20px;
+    line-height: 27px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+.HeaderColor{
+    color: #303030;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+.TextSizing{
+    color: #303030;
+    font-size: 25px;
+}
+
+.BrainPackCrm{
+    color: #137EE8;
+    font-size: 50px;
+}
+
+.BannerDescription{
+    font-size: 24px;
+    line-height: 43px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.bannerButton{
+       padding: 13px 15px;
+    font-size: 20px;
+}
+
+.iconFeature{
+    width: 30%;
+    float: left;
+}
+.FeatureText{
+    width: 70%;
+    float: left;
+
+}
+
+.FeatureText h3{
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.FeatureBox{
+    border-radius: 12px;
+    box-shadow: 1px 1px 10px #d5d5d5;
+    width: 100%;
+    float: left;
+    padding: 30px;
+    margin-bottom: 50px;
+    display: flex;
+}
+
+.FeatureHead{
+    font-size: 32px;
+    color: #137EE8;
+    margin-bottom: 40px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.iconFeature img{
+    width: 50%;
+}
+
+.ServiceIntImg{
+    box-shadow: 1px 1px 10px #d5d5d5;
+    border-radius: 22px;
+    margin-bottom: 15px;
+}
+
+.ServiceIntImg div{
+        color: #137EE8;
+        font-size: 22px;
+        height: 122px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.ServiceIntImg img{
+    width: 100%;
+}
+.o_footer_copyright{
+display:none;
+}
+.ServicesIntDec{
+    display: flex;
+    align-items: center;
+}
+.serviceDescription p{
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.ServiceIntHead{
+    font-size: 32px;
+    color: #137EE8;
+    margin-bottom: 40px;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+.FormText h3{
+    font-size: 50px;
+    color: #137EE8;
+    font-weight: 600;
+}
+
+.FormDiv{
+    margin-top: 15px;
+    padding-top: 15px;
+    /* padding-left: 63px; */
+    margin-bottom: 15px;
+}
+
+.FormShortDesc{
+    font-size: 18px;
+    margin-top: 53px;
+    font-weight: normal;
+}
+.testimonial_p{
+    font-size: 24px;font-weight: 600;
+}
+
+.FillYrDetail .detaillHead{
+font-size: 26px;
+color: #137EE8;
+font-weight: 600;
+margin-bottom: 45px;
+text-align: center;
+}
+
+.label_color{
+    font-size: 18px;
+    color: #137EE8;
+}
+
+.FillYrDetail form input{
+    height: 50px;
+}
+
+.formSubmit{
+    height: 50px;
+    width: 100%;
+    float: left;
+}
+
+.duran_container a{
+        color: #000000 !important;
+    font-size: 15px;
+}
+ul.service_detail,ul.contact_detail{
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 26px;
+}
+.service_detail li,.contact_detail li{
+        line-height: 35px;
+}
+.service_detail li a,.contact_detail li a{
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 14px;
+}
+.contact_bottom {
+        margin-top: 25px;
+    font-size: 14px;
+}
+.service_bottom{
+    font-size: 14px;
+        margin-top: 6px;
+}
+
+.AppSuite h4{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.brain_container a{
+    color:#3B3D3C !important;
+    font-size: 15px;
+}
+.duran_detail{
+    font-size: 13px;
+    padding-right: 18% !important;
+}
+ul.AppSuiteList {
+    list-style: none;
+    padding-left: 0;
+}
+
+.AppSuiteList li a{
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 18px;
+}
+.AppSuiteList li{
+    padding-bottom: 10px;
+}
+
+
+ul.CompanyDetail {
+    list-style: none;
+    padding-left: 0;
+}
+
+.CompanyDetail li a{
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: none;
+}
+.CompanyDetail li{
+    padding-bottom: 10px;
+}
+
+.ContactMail a{
+    color: #000;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.CopyRightsAndPolicy{
+    border-top:1px solid #eee;
+    padding: 20px 0;
+}
+.CopyRightsAndPolicy ul{
+    margin-bottom: 0;
+}
+
+
+.CopyRightsAndPolicy ul li{
+display: inline-block;
+margin-right: 12px;
+font-size: 12px;
+}
+
+.CopyRightsAndPolicy ul li a{
+    color: #000;
+    text-decoration: none;
+}
+
+.card.mainSliderBox{
+    margin: 10px 5px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 1px 1px 10px #d5d5d5;
+    padding: 5%;
+    text-align: center;
+}
+.SliderCardHead{
+    padding: 15px 0;
+    font-size: 30px;
+}
+
+.card.mainSliderBox .w-50.float-start{
+   /* margin-bottom: 20px;*/
+}
+
+.card.mainSliderBox .w-50.float-start a img {
+    width: 60%;
+}
+
+.MoreButton .InteApps{
+    height: 98px;
+}
+
+.InteApps{
+    font-size: 22px;
+    color: #137EE8;
+}
+.InteApps .andSymbole{
+    font-size: 48px;
+    color: #137EE8;
+    display: block;
+}
+.InteApps .MoreText{
+    font-size: 18px;
+}
+
+.ImgCicle img{
+    width: 60px;
+    height: 60px;
+}
+.ImgCicle{
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+}
+
+.testimonialItem .mainSliderBox{
+    padding: 30px;
+}
+
+.testimonialText{
+    text-align: left;
+    font-weight: normal;
+}
+.ClientInfo{
+    text-align: left;
+}
+.ClientPosition{
+    font-weight: normal;
+}
+.clientName{
+    font-size: 22px;
+}
+.rounded-brain{
+    border-radius: 10px !important;
+}
+.shadow-brain {
+    box-shadow: 0 0.425rem 1.25rem rgb(225 225 225);
+}
+
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.slider-items {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-item {
+  flex: 1;
+  margin: 0 20px;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slider-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.slider-item:not(.active) {
+  opacity: 0;
+}
+
+.slider-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slider-nav button {
+  margin: 0 10px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.slider-nav button:focus {
+  outline: none;
+}
+
+.slider-nav button.prev {
+  transform: rotate(180deg);
+}
+
+
+@media (min-width: 0px) and (max-width: 575px) {
+
+    .carousel-multiple .carousel-item{
+        width: 100% !important;
+    }
+    .carousel-multiple1 .carousel-item{
+        width: 100% !important;
+    }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+
+    .carousel-multiple .carousel-item{
+        width: 50% !important;
+    }
+    .carousel-multiple1 .carousel-item{
+        width: 50% !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .carousel-multiple .carousel-item{
+        width: 33.33% !important;
+    }
+    .carousel-multiple1 .carousel-item{
+        width: 50% !important;
+    }
+}
+
+.bannerImgHome{
+    position: absolute;
+    right: -10%;
+    top: 0;
+    overflow: hidden;
+    width: 70%;
+    top: 10%;
+}
+.expert_section .rounded-brain{
+     border-radius: 8px !important;
+}
+
+.expert_container .btn-lg {
+    padding: 0.3rem 1rem !important;
+}
+.expert_container .FillYrDetail form input {
+    height: 45px;
+}
+.expert_container .formSubmit {
+    height: 45px !important;
+}
+.expert_container .col-lg-6.img_div{
+        padding-right: 0px !important;
+
+}
+
+
+.expert_container .s_website_form_rows {
+     position: relative;
+}
+.expert_container .s_website_form_submit {
+        position: absolute;
+    right: -16%;
+}
+
+/* ================== media query ================== */
+
+
+@media only screen and (max-width: 998px) {
+.expert_container .s_website_form_submit {
+    position: initial !important;
+
+}
+.expert_container .col-lg-6.img_div{
+padding-left: 0px !important;
+}
+.expert_container .col-lg-6.img_div img{
+    border-radius: 0px 0px 8px 8px !important;
+
+}
+.HeaderColor{
+    font-size: 40px;
+}
+
+.BrainPackCrm {
+    color: #137EE8;
+    font-size: 40px;
+}
+
+.bannerImgHome{
+    position: unset !important;
+        width: 100%;
+
+}
+.imgPositionMob{
+text-align:center;
+}
+
+        .HeaderColor{
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .TextSizing {
+            font-size: 22px;
+        }
+        .BrainPackCrm {
+            color: #137EE8;
+            font-size: 30px;
+        }
+        .BannerDescription {
+            font-size: 14px;
+            line-height: 33px;
+            text-align: center;
+            margin-bottom: 40px;
+
+        }
+        .bannerButton{
+            margin-bottom: 40px;
+        }
+        .buttonMobsize{
+            text-align: center;
+        }
+        .BannerImg img{
+            margin-left: 0;
+        }
+        .FeatureBox{
+            margin-bottom: 15px;
+        }
+        .FeatureHead {
+            margin-bottom: 31px;
+        }
+        .ServiceIntImg div{
+            font-size: 14px;
+            height: 61px;
+        }
+        .serviceDescription{
+            text-align: center;
+        }
+
+        .left {
+            order:2;
+        }
+
+        .right {
+            order:1;
+        }
+
+        .FormText h3{
+            font-size: 32px;
+            text-align: center;
+        }
+        .FormDiv{
+            padding-left: 15px;
+        }
+        .FormShortDesc{
+            text-align: center;
+        }
+        .mobCenterView{
+            text-align: center;
+        }
+
+        .footerLogo img{
+            width: 80%;
+        }
+        .footerLogo{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .contactMailmob{
+            text-align: right;
+        }
+        .CopyRightsAndPolicy{
+            margin-top: 30px;
+        }
+        #our-features .left {
+            order:unset !important;
+        }
+
+        #our-features .right {
+            order:unset !important;
+        }
+        .o_text_columns div.row .o_colored_level{
+            padding: 0 !important;
+        }
+
+}
+
+.o_grid_mode .o_colored_level.o_grid_item p strong{
+    font-family: 'Rubik-SemiBold';
+}
+.o_rtl .s_allow_columns.container div.row .o_colored_level.col-lg-6.o_animate.o_anim_slide_in.o_anim_from_right.o_visible.o_animated .s_text_highlight h4,.o_rtl .s_allow_columns.container div.row .o_colored_level.col-lg-6.o_animate.o_anim_slide_in.o_anim_from_right.o_visible.o_animated .s_text_highlight p{
+     text-align: initial !important;
+}
+.s_website_form_rows .s_website_form_send .oe-tabs{
+    display: none;
+}
+
+    /* ================== media query ================== */
+
+@media (min-width: 576px){
+.carousel-multiple .col-sm-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+}
+
+@media (min-width: 768px){
+.carousel-multiple .col-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+}
+
+@media (min-width: 992px){
+    .carousel-multiple .col-lg-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 992px){
+    .contact_div,.service_div{
+         margin-top: 30px;
+    }
+    .duran_detail {
+        font-size: 16px;
+        padding-right:0px !important;
+    }
+    .duran_container .footerLogo img {
+        width: 70%;
+    }
+}
+
+
+.elementor-heading-p1 {
+    text-align: center;
+    font-family: "Open Sans", Sans-serif;
+    font-weight: 400;
+    font-size: 27px;
+    /* font-weight: 1; */
+    line-height: 49px;
+        color: white !important;
+}
+.elementor-heading-title {
+    text-align: center;
+    font-family: "Open Sans", Sans-serif;
+    font-weight: bold;
+    line-height: 41px;
+        color: white !important;
+}
+.elementor-heading-p {
+     text-align: center;
+    font-family: "Open Sans", Sans-serif;
+    font-weight: 900;
+}
+
+.s_website_form_submit{
+    text-align:center;
+}
+
+@media (min-width: 576px){
+.gulf_contact_container{
+     padding: 3% 0% 3% 0%;
+}
+}
+
+.gulf_contact_container form input, .gulf_contact_container form select,.gulf_contact_container form textarea{
+      border-width: 1px 1px 1px 1px !important;
+    border-radius: 7px;
+    font-family: "Open Sans", Sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    height: 60px;
+    color: #353535 !important;
+}
+
+.gulf_contact_container form textarea {
+    height: 120px;
+}
+
+.brain_contact_container .s_website_form_send{
+    font-size: 26px;
+    padding: 0.5625rem 1.5625rem;
+    width: 100%;
+    border-color: #2F2D2E;
+    background: transparent linear-gradient(92deg, #F1421C 0%, #EEA713 100%) 0% 0% no-repeat padding-box;
+}
+
+#contactus_form .s_website_form_send{
+     padding: 0.5625rem 1.5625rem;
+}
+#helpdesk_ticket_form .s_website_form_send{
+    width:100%;
+    padding: 0.5625rem 1.5625rem;
+}
+
+.duran_container{
+        padding-right: 0px;
+    padding-left: 0px;
+}
+.brain_contact_container{
+        padding-right: 15px;
+    padding-left: 15px;
+}
+

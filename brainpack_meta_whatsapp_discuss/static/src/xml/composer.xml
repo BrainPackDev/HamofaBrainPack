@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_ext" xml:space="preserve">
+<!--    <t t-name="DiscussExt" t-inherit="mail.Discuss.content" t-inherit-mode="extension" owl="1">-->
+<!--        <xpath expr="//t[@t-if='discussView.discuss.threadView']" position="inside">-->
+<!--            <t t-if="discussView.discuss.hasWAThreadNav">-->
+<!--                 <WaThreadView-->
+<!--                    className="'o_Discuss_wa_thread'"-->
+<!--                    threadViewLocalId="discussView.discuss.thread.localId" partnerId="discussView.discuss.thread.channel.correspondent.persona.partner.id"-->
+<!--                />-->
+<!--            </t>-->
+<!--        </xpath>-->
+<!--    </t>-->
+</templates>

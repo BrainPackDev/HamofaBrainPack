@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_task_custom" inherit_id="project.portal_my_task" name="Portal: My Task with Sub Task">
+        <xpath expr="//div[@t-if='task.description or task.attachment_ids']" position="after">
+            <div class="container" t-if="task.child_ids">
+                <hr class="mt-4 mb-1"/>
+                <h5 class="mt-2 mb-2">Sub Task</h5>
+                <div class="table-responsive">
+                    <table class="table table-sm" id="project_sub_task">
+                        <thead class="">
+                            <tr>
+                                <th class="text-center">Title</th>
+                                <th class="text-center">Assignees</th>
+                                <th class="text-center">Deadline</th>
+                                <th class="text-center">Stage</th>
+
+                            </tr>
+                        </thead>
+                        <tbody class="sub_task_tbody">
+                            <t t-foreach="task.child_ids" t-as="child_task">
+
+                                <tr>
+                                    <td class="text-center"><a t-attf-href="/my/tasks/{{ child_task.id }}"><t t-esc="child_task.name" /></a></td>
+                                    <td class="text-center">
+                                        <t t-set="assignees" t-value="child_task.sudo().user_ids"/>
+                                        <div t-if="assignees" class="row flex-nowrap ps-3">
+                                            <span t-out="'%s%s' % (assignees[:1].name, ' + %s others' % len(assignees[1:]) if len(assignees.user_ids) > 1 else '')" t-att-title="'\n'.join(assignees[1:].mapped('name'))"/>
+                                        </div>
+                                    </td>
+                                    <td class="text-center"><span t-esc="child_task.date_deadline"/></td>
+                                    <td class="text-center"><span t-attf-class="badge #{'text-bg-primary' if child_task.stage_id.fold else 'text-bg-light'}" title="Current stage of the task" t-esc="child_task.stage_id.name"/></td>
+                                </tr>
+
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

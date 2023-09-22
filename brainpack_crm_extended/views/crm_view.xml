@@ -1,0 +1,17 @@
+<odoo>
+    <record id="crm_lead_view_form_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.view.form.inherit.event.crm.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//sheet/group/group[4]/field[@name='tag_ids']" position="after">
+                 <field name="case_type"/>
+                 <field name="transfer_type"/>
+                 <field name="investment_amount_id"/>
+                 <field name="lead_status_id"/>
+                 <field name="message"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

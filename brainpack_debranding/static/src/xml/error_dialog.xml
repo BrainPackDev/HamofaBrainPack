@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve"> 
+    <t t-inherit="web.SessionExpiredDialog" t-inherit-mode="extension" owl="1" >
+        <xpath expr="//div" position="replace">
+            <div role="alert">
+                <p style="white-space: pre-wrap;">
+                    Your session expired. The current page is about to be refreshed.
+                </p>
+            </div>
+        </xpath>
+    </t>
+</templates>

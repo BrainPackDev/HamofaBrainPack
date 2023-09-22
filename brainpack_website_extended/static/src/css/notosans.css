@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'NotoSans-Black';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-Black.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSans-BlackItalic';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-BlackItalic.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSans-Bold';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSans-BoldItalic';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSans-ExtraBold';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-ExtraBold.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSans-ExtraBoldItalic';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-ExtraBoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSans-ExtraLight';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-ExtraLight.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSans-ExtraLightItalic';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-ExtraLightItalic.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSans-Italic';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-Italic.ttf');
+}
+@font-face {
+    font-family: 'NotoSans-Light';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-Light.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSans-LightItalic';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-LightItalic.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSans-Medium';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSans-MediumItali';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-MediumItalic.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSans-Regular';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSans-SemiBold';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'NotoSans-SemiBoldItalic';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-SemiBoldItalic.ttf');
+}
+@font-face {
+    font-family: 'NotoSans-Thin';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-Thin.ttf');
+}
+@font-face {
+    font-family: 'NotoSans-ThinItalic';
+    src: url('/brainpack_website_extended/static/src/font/Noto_Sans/NotoSans-ThinItalic.ttf');
+}

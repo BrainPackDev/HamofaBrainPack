@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_partner_address_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.form.address.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='website']" position="attributes">
+                    <attribute name="placeholder">e.g. https://www.brainpack.io</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

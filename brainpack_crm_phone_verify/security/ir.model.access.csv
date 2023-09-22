@@ -1,0 +1,2 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_verify_phone_reason","verify.phone.reason","brainpack_crm_phone_verify.model_verify_phone_reason","",1,1,1,1

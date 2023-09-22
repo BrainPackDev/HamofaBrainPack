@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+        <record id="invoice_sign_mail_template" model="mail.template">
+            <field name="name">Invoice Sign Template</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="email_from">"{{ (object.user_id.email_formatted or user.email_formatted) }}"</field>
+            <field name="email_to">"{{ object.partner_id.email }}"</field>
+            <field name="subject">"{{ object.company_id.name }}"</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <div style="margin: 0px; padding: 0px;">
+                        <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                            Dear <t t-out="object.partner_id.name"/>,
+                            <br/>
+                            <br/>
+                            Sign your Invoice from here
+                            <br/>
+                            <a class="btn btn-primary" t-attf-href="/my/invoices/{{object.id}}/?{{ keep_query() }}">Sign your Invoice</a>
+                            <br/>
+                            <br/>
+                            Regards,
+                            <br/>
+                            <t t-out="object.company_id.name"/>
+                        </p>
+                    </div>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

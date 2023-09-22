@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_ext" xml:space="preserve">
+
+<!-- Start Pre Send WhatsApp Templates-->
+    <t t-name="MessagesList" owl="1">
+        <div class="messages">
+        <div class="PreMessages mt-1">
+            <t t-foreach="message_list" t-as="mes" t-key="mes.id">
+                <t t-call="discuss_message" />
+            </t>
+        </div>
+        </div>
+    </t>
+
+    <t t-name="discuss_message" owl="1">
+        <div class="o_product_record ml-1" t-att-title="mes.name" t-att-data-id="mes.id" t-att-id="mes.id">
+            <div class="message_container">
+                <span><t t-esc="mes.name"/></span>
+                <button class="btn btn-primary send_pre_message" type="button" t-att-data-id="mes.id" style="position: relative;" t-on-click.prevent="() => this._send_premessage(mes.id)">Send</button>
+            </div>
+        </div>
+    </t>
+<!-- End Pre Send WhatsApp Templates-->
+
+</templates>

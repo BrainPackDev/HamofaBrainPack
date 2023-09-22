@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<template id="service_worker" name="PWA service worker">
+    'use strict';
+        var base_cache_ver = 'base-cache-1';
+        var assets = ['/','/pwa/offline'];
+        self.addEventListener('install', function(event) {
+            self.skipWaiting();
+            event.waitUntil(
+                caches.open(base_cache_ver).then(cache =>{
+                    cache.addAll(assets);
+                })
+            )
+        });
+        self.addEventListener('activate', function(event) {
+            event.waitUntil(
+                caches.keys().then(function(keys) {
+                    return Promise.all(keys.map(function(key) {
+                        if (key !== base_cache_ver) {
+                            return caches.delete(key);
+                        }
+                    }));
+                })
+            );
+        });
+        self.addEventListener('fetch', function(event) {
+            event.respondWith(
+                fetch(event.request).then(function (response) {
+                    return response;
+                })
+                .catch(error => {
+                    return caches.match('/pwa/offline');
+            }));
+        });
+    </template>
+
+    <template id="biz_web_layout_inheirt" name="Web Main layout" inherit_id="web.layout">
+        <xpath expr="//body" position="inside">
+              <div class="ios-prompt">
+                <span style="color: rgb(187, 187, 187); float: right;" />
+                <img t-attf-src="/web/image/website/#{request.env['website'].sudo().get_current_website().id}/app_image_512/50x50" style="float: left; height: 50px; width: auto; margin-right: 1rem;" />
+                <p>To install this Web App in your iPhone/iPad press and then Add to Home Screen.</p>
+            </div>
+            <div class="ept_is_offline" style="display:none;">
+<!--                <img src="/brain_pack_backend_ent/static/src/img/offline_app.png" alt="App offline"/>-->
+            </div>
+            <style>
+              .ios-prompt {
+                background-color: #fff;
+                border: 1px solid #eee;
+                box-shadow: 0 1px 10px #ccc;
+                display: none;
+                padding: 0.8rem 1rem 0 0.5rem;
+                text-decoration: none;
+                font-size: 14px;
+                color: #555;
+                position: fixed;
+                bottom: 0;
+                margin: 0 auto 1rem;
+                z-index: 999;
+              }
+              .ept_is_offline {
+                position: fixed;
+                bottom: 1rem;
+                left: 1rem;
+                height: 65px;
+                width: 65px;
+                z-index: 9999;
+              }
+              .ept_is_offline img {
+                width: 100%;
+              }
+            </style>
+        </xpath>
+        <xpath expr="//head" position="inside">
+            <t t-set="company" t-value="request.env.company.sudo()"/>
+            <t t-set="enable_pwa" t-value="company.enable_pwa"/>
+            <t t-if="enable_pwa">
+                <link rel="manifest" t-att-href="'/brain_pack_backend_ent/%s/manifest.json' % (company.id) "/>
+                <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+                <meta name="apple-mobile-web-app-title" content="PWA"/>
+                
+                <link rel="apple-touch-icon" t-att-href="'/web/image/res.company/%s/image_512_pwa/152x152' % (company.id)"/>
+                <meta name="apple-mobile-web-app-capable" content="yes"/>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

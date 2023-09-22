@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-inherit="web_enterprise.HomeMenu" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('o_apps')]" position="before">
+            <div class="o_logo mt-5" style="text-align: center;">
+                <img class="img img-fluid company_logo" t-attf-src="/web/image?model=res.company&amp;field=backend_menubar_logo&amp;id={{company}}" style="height:58px;"/>
+			</div>
+        </xpath>
+        <xpath expr="//div[hasclass('o_home_menu')]" position="attributes">
+            <attribute name="t-att-class"></attribute>
+        </xpath>
+
+        <xpath expr="//a[@t-foreach='displayedApps']" position="replace">
+            <a t-foreach="displayedApps" t-as="app"
+                t-att-id="'result_app_' + app_index"
+                role="option"
+                t-att-aria-selected="state.focusedIndex === app_index ? 'true' : 'false'"
+                class="o_app o_menuitem col-4 col-sm-3 col-md-2 p-2 mb-3 d-flex flex-column rounded justify-content-center align-items-center"
+                t-att-class="{o_focused: state.focusedIndex === app_index}"
+                t-att-data-menu-xmlid="app.xmlid"
+                t-att-href="app.href || ('#menu_id='+app.id+'&amp;action_id='+app.actionID)"
+                t-key="app.id"
+                t-on-click.prevent="() => this._onAppClick(app)"
+                >
+                <div t-if="app.webIconData" class="app-image mb8"
+                />
+                <div t-else="" class="app-image rounded d-flex p-2 justify-content-center align-items-center">
+                    <i t-att-class="app.webIcon.iconClass" t-attf-style="color: {{app.webIcon.color}};"/>
+                </div>
+                <div class="o_caption w-100 text-center text-truncate mt-2" t-esc="app.label or app.name"/>
+            </a>
+        </xpath>
+    </t>
+</templates>

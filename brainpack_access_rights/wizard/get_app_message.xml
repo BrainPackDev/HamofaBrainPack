@@ -1,0 +1,24 @@
+<odoo>
+     <record id="get_app_messsage_view_form" model="ir.ui.view">
+        <field name="name">get.app.messsage.form</field>
+        <field name="model">get.app.messsage</field>
+        <field name="arch" type="xml">
+            <form string="Message">
+                <div>
+                    <p>Please Contact Your Service Provider.</p>
+                </div>
+                 <footer>
+                    <button name="contact_us" string="Contact Us" type="object"
+                            class="oe_highlight"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+     <record id="get_app_message_action" model="ir.actions.act_window">
+        <field name="name">Lost Reasons</field>
+        <field name="res_model">get.app.messsage</field>
+        <field name="view_mode">form</field>
+    </record>
+</odoo>

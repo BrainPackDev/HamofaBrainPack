@@ -1,0 +1,135 @@
+.support_section:hover .support_white{
+    display:none !important;
+}
+.o_home_menu .o_app .o_caption {
+    text-shadow:unset !important;
+}
+.support_section:hover .support_black{
+    display: inline-block !important;
+}
+
+body.o_web_client.custom_drawer_color .appdrawer_section .input-group{
+    border: 1px solid;
+}
+body.o_web_client.custom_drawer_color .appdrawer_section {
+    background-color: #fff;
+    color: #137ee8;
+    border-color: #137ee8;
+    --inverse-color: #fff;
+}
+
+.o_tooltip.active::before {
+    border-color: #137ee8;
+}
+
+body.o_web_client.custom_drawer_color .top_navbar_section{
+    background: #137EE8 !important;
+    color: #fff !important;
+}
+
+.o_tooltip.active {
+    border: 3px solid #137ee8 !important;
+    background-color: #137ee8 !important;
+    border-radius: 7px !important;
+}
+
+body.o_web_client.o_home_menu_background.custom_drawer_color {
+    background-color: #ffffff !important;
+    color: #137ee8 !important;
+}
+
+
+o_tooltip.active::before {
+    border-color: #137ee8 !important;
+    background: #137ee8 !important;
+
+}
+.o_tooltip.active > .o_tooltip_content {
+    color: #fff !important;
+}
+
+.o_tooltip::before{
+    background-image: url(/brainpack_debranding/static/description/blue/brainpack_tool.jpg) !important;
+    background-size: cover !important;
+    border: 3px solid #137ee8;
+    background: radial-gradient(#137ee8, #137ee8);
+}
+
+.o_tooltip.active::before{
+    background-image: unset !important;
+    background: #137ee8 !important;
+}
+
+.o_onboarding_main.o_onboarding_orange .o_onboarding_wrap{
+     background-color: #137ee8 !important;
+        background-image: unset !important;
+}
+.o_onboarding_main.o_onboarding_orange {
+    background-color: #137ee8 !important;
+        background-image: unset !important;
+}
+
+.o_onboarding_main.o_onboarding_blue .o_onboarding_wrap{
+     background-color: #137ee8 !important;
+        background-image: unset !important;
+}
+.o_onboarding_main.o_onboarding_blue {
+    background-color: #137ee8 !important;
+        background-image: unset !important;
+}
+
+.o_onboarding_main .o_onboarding_step .o_onboarding_dot{
+     background-color: #ffffff !important;
+}
+.o_onboarding_main .o_onboarding_step .o_onboarding_progress {
+    background: #ffffff !important;
+}
+#font-size .dropdown-menu .dropdown-item,#style .dropdown-menu .dropdown-item{
+    color: #1b1b1b !important;
+}
+body.o_web_client .oe-toolbar li > a.dropdown-item {
+    color: #1b1b1b !important;
+}
+body.o_web_client.custom_drawer_color .o_main_navbar.appdrawer-toggle .appdrawer_section .apps-list #search_result .search_list_content a {
+    color: #137EE8 !important;
+}
+
+b, strong {
+    font-weight: 600;
+}
+.note-description img{
+    width:100%;
+}
+.note-description-input{
+    overflow-y: scroll;
+    height: 500px;
+}
+@media (min-width: 0px) and (max-width: 575px) {
+.note-description-input{
+    overflow-y: scroll;
+    height: 320px;
+}
+}
+@media (min-width: 576px) and (max-width: 767px) {
+.note-description-input{
+    overflow-y: scroll;
+    height: 320px;
+}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+.note-description-input{
+    overflow-y: scroll;
+    height: 400px;
+}
+}
+
+/*body.o_web_client {
+    &.custom_drawer_color{
+        .appdrawer_section {
+            background-color: var(--app-drawer-custom-text-color);
+            color: var(--app-drawer-custom-bg-color);
+            border-color: var(--app-drawer-custom-bg-color);
+            --inverse-color: var(--app-drawer-custom-text-color);
+            }
+        }
+}*/

@@ -1,0 +1,101 @@
+<odoo>
+    <record id="components_view_form_inherit" model="ir.ui.view">
+        <field name="name">components.view.form.inherit.1</field>
+        <field name="model">components</field>
+        <field name="inherit_id" ref="brainpack_meta_whatsapp.components_view_form"/>
+        <field name="arch" type="xml">
+            <field name="text" position="attributes">
+                <attribute name="attrs">{'invisible': ['|','|', ('formate', '=', 'media'),('type', '=', 'buttons'),
+                    ('type', '=', 'interactive')]}
+                </attribute>
+            </field>
+            <xpath expr="//sheet/group" position="inside">
+                <field name="button_type" attrs="{'invisible': [('type', '!=', 'buttons')]}"/>
+            </xpath>
+            <xpath expr="//sheet/group" position="after">
+                <style>
+                    .custom_button{
+                    margin: 5px;
+                    }
+                </style>
+                <group attrs="{'invisible': ['|',('type', '!=', 'buttons'), ('button_type', '!=', 'call_to_action')]}">
+                    <group>
+                        <field name="type_of_action"/>
+                        <field name="button_text"/>
+                    </group>
+                    <group>
+                        <field name="phone_number" widget="phone"
+                               attrs="{'invisible': [('type_of_action', '!=', 'PHONE_NUMBER')]}"/>
+                        <field name="url_type"
+                               attrs="{'invisible': [('type_of_action', '!=', 'URL')]}"/>
+                        <field name="static_website_url" placeholder="https://example.com"
+                               attrs="{'invisible': ['|', ('type_of_action', '!=', 'URL'), ('url_type', '!=', 'static')]}"/>
+                        <field name="dynamic_website_url" placeholder="https://example.com/{{a}}"
+                               attrs="{'invisible': ['|', ('type_of_action', '!=', 'URL'), ('url_type', '!=', 'dynamic')]}"/>
+                    </group>
+                </group>
+
+                <field name="is_button_clicked" invisible="1"/>
+                <field name="name" invisible="1"/>
+
+                <group attrs="{'invisible': ['|','|',('type', '!=', 'buttons'),  ('is_button_clicked', '=', True), ('button_type', '!=', 'call_to_action')]}">
+                    <group>
+                        <field name="type_of_action_2"/>
+                        <field name="button_text_2"/>
+                    </group>
+                    <group>
+                        <field name="phone_number_2" widget="phone"
+                               attrs="{'invisible': [('type_of_action_2', '!=', 'PHONE_NUMBER')]}"/>
+                        <field name="url_type_2"
+                               attrs="{'invisible': [('type_of_action_2', '!=', 'URL')]}"/>
+                        <field name="static_website_url_2" placeholder="https://example.com"
+                               attrs="{'invisible': ['|', ('type_of_action_2', '!=', 'URL'),  ('url_type_2', '!=', 'static')]}"/>
+                        <field name="dynamic_website_url_2" placeholder="https://example.com/{{a}}"
+                               attrs="{'invisible': ['|', ('type_of_action_2', '!=', 'URL'),  ('url_type_2', '!=', 'dynamic')]}"/>
+                    </group>
+                </group>
+                <button string="Delete Button" type="object" name="delete_button" class="oe_highlight custom_button"
+                        attrs="{'invisible': ['|','|', ('button_type', '!=', 'call_to_action'), ('is_button_clicked', '=', True), ('type', '!=', 'buttons')]}"/>
+
+                <group attrs="{'invisible': ['|','|',  ('type', '!=', 'buttons'), ('button_type', '=', 'none'), ('button_type', '=', 'call_to_action')]}">
+                    <group>
+                        <field name="quick_reply_type"/>
+                        <field name="button_text"
+                               attrs="{'invisible': [('quick_reply_type', '!=', 'custom')]}"/>
+                    </group>
+                </group>
+
+                <field name="is_second_button_clicked" invisible="1"/>
+
+                <group attrs="{'invisible': ['|','|','|', ('type', '!=', 'buttons'), ('is_button_clicked', '=', True), ('button_type', '=', 'none'), ('button_type', '=', 'call_to_action')]}">
+                    <group>
+                        <field name="quick_reply_type_2"/>
+                        <field name="button_text_2"
+                               attrs="{'invisible': [('quick_reply_type_2', '!=', 'custom')]}"/>
+                    </group>
+                </group>
+                <button string="Delete Button" type="object" name="delete_button" class="oe_highlight custom_button"
+                        attrs="{'invisible': ['|','|', ('button_type', '!=', 'quick_reply'), ('is_button_clicked', '=', True), ('type', '!=', 'buttons')]}"/>
+
+                <group attrs="{'invisible': ['|','|','|',('type', '!=', 'buttons'),  ('is_second_button_clicked', '=', True), ('button_type', '=', 'none'), ('button_type', '=', 'call_to_action')]}">
+                    <group>
+                        <field name="quick_reply_type_3"/>
+                        <field name="button_text_3"
+                               attrs="{'invisible': [('quick_reply_type_3', '!=', 'custom')]}"/>
+                    </group>
+                </group>
+                <button string="Delete Button" type="object" name="delete_button_2" class="oe_highlight custom_button"
+                        attrs="{'invisible': ['|', '|', ('button_type', '!=', 'quick_reply'), ('type', '!=', 'buttons'),  ('is_second_button_clicked', '=', True) ]}"/>
+
+
+                <button string="Add Another Button" type="object" name="add_another_button"
+                        class="oe_highlight custom_button"
+                        attrs="{'invisible': ['|','|',('type', '!=', 'buttons'),('button_type', '=', 'none'), ('is_button_clicked', '=', False)]}"/>
+                <button string="Add Another Button" type="object" name="add_third_button"
+                        class="oe_highlight custom_button"
+                        attrs="{'invisible': ['|','|','|', '|',('type', '!=', 'buttons'),('button_type', '=', 'none'), ('button_type', '=', 'call_to_action'), ('is_second_button_clicked', '=', False), ('is_button_clicked', '=', True)]}"/>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

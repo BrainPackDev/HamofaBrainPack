@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="wa_template_view_form" model="ir.ui.view">
+            <field name="name">wa.template.view.form</field>
+            <field name="model">wa.template</field>
+            <field name="arch" type="xml">
+                <form string="whatsapp Templates">
+                    <header>
+                        <button name="add_whatsapp_template" type="object" string="Add Whatsapp Template"
+                                class="oe_highlight" states="draft"/>
+                        <button name="add_imported_whatsapp_template" type="object" string="Add Template"
+                                class="oe_highlight" states="imported"/>
+                        <button name="remove_whatsapp_template" type="object" string="Remove Whatsapp Template"
+                                class="oe_highlight" states="added"/>
+                        <button name="get_whatsapp_template_status" type="object" string="Get Template Status"
+                                class="oe_highlight" states="added"/>
+                        <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                             <button
+                                    class="oe_stat_button oe_stat_button_red"
+                                    icon="fa-circle"
+                                    attrs="{'invisible':['|',('template_status','=','APPROVED'),('template_status','=',False)]}"
+                                >
+                                     <field name="template_status"/>
+                            </button>
+                              <button
+                                    class="oe_stat_button oe_stat_button_green"
+                                    icon="fa-circle"
+                                    attrs="{'invisible':['|',('template_status','!=','APPROVED'),('template_status','=',False)]}"
+                                >
+                                     <field name="template_status"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" string="WA Template"/>
+                            <h1>
+                                <field name="name" required="1" attrs="{'readonly': [('template_status', '=', 'APPROVED')]}"/>
+                            </h1>
+                            <group>
+                                <field name="provider_id" required="1" attrs="{'readonly': [('template_status', '=', 'APPROVED')]}"/>
+                                <field name="template_status" invisible="1"/>
+                                <field name="category" attrs="{'readonly': [('template_status', '=', 'APPROVED')]}"/>
+                                <field name="lang" required="1" attrs="{'readonly': [('template_status', '=', 'APPROVED')]}"/>
+                                <field name="namespace" attrs="{'readonly': [('template_status', '=', 'APPROVED')]}"/>
+                                <field name="model_id" required="1" options="{'no_create': True}" attrs="{'readonly': [('template_status', '=', 'APPROVED')]}"/>
+                                <field name="model" invisible="1" attrs="{'readonly': [('template_status', '=', 'APPROVED')]}"/>
+                            </group>
+                        </div>
+                        <notebook>
+                            <page string="Internal Note" name="content">
+                                <group>
+                                    <field name="body_html" widget="html" nolabel="1" colspan="2" attrs="{'readonly': [('template_status', '=', 'APPROVED')]}"/>
+                                </group>
+                            </page>
+                            <page string="Components" name="components">
+                                <group>
+                                    <field name="components_ids" context="{'default_model_id':model_id}" attrs="{'readonly': [('template_status', '=', 'APPROVED')]}"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="wa_template_view_tree" model="ir.ui.view">
+            <field name="name">wa.template.view.tree</field>
+            <field name="model">wa.template</field>
+            <field name="arch" type="xml">
+                <tree string="WA Templates">
+                    <field name="name"/>
+                    <field name="model_id"/>
+                    <field name="template_status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="wa_template_action" model="ir.actions.act_window">
+            <field name="name">Templates</field>
+            <field name="res_model">wa.template</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="wa_template_menu"
+                  name="Templates"
+                  parent="wa_msgs_menu"
+                  sequence="1"
+                  action="wa_template_action" groups="brainpack_meta_whatsapp.whatsapp_group_user"/>
+    </data>
+</odoo>

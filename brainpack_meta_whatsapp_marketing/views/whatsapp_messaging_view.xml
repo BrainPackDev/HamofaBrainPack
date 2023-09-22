@@ -1,0 +1,187 @@
+<odoo>
+    <record model="ir.ui.view" id="whatsapp_messaging_form_view">
+        <field name="name">whatsapp.messaging.form</field>
+        <field name="model">whatsapp.messaging</field>
+        <field name="arch" type="xml">
+            <form>
+                <header style="min-height:31px;">
+                    <button name="put_in_queue" type="object"
+                            attrs="{'invisible': [('state', 'in', ('in_queue', 'done'))]}" class="oe_highlight"
+                            string="Send Now"/>
+                    <button name="action_schedule_date" type="object"
+                            attrs="{'invisible': [('state', 'in', ('in_queue', 'done'))]}" class="btn-secondary"
+                            string="Schedule"/>
+                    <!--                        <button name="action_test_mailing" type="object" class="btn-secondary" string="Test"/>-->
+                    <button name="cancel_mass_mailing" type="object"
+                            attrs="{'invisible': [('state', '!=', 'in_queue')]}" class="btn-secondary" string="Cancel"/>
+                    <!--                        <button name="retry_failed_mail" type="object" attrs="{'invisible': ['|', ('state', '!=', 'done'), ('failed', '=', 0)]}" class="oe_highlight" string="Retry"/>-->
+
+                    <field name="state" readonly="1" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_inqueue"
+                                id="button_view_inqueue"
+                                type="object"
+                                class="oe_stat_button">
+                            <field name="inqueue_ratio" string="In Queue" widget="percentpie"/>
+                        </button>
+
+                        <button name="action_view_sent"
+                                id="button_view_sent"
+                                type="object"
+                                class="oe_stat_button">
+                            <field name="sent_ratio" string="Sent" widget="percentpie"/>
+                        </button>
+
+                        <button name="action_view_delivered"
+                                id="button_view_delivered"
+                                type="object"
+                                class="oe_stat_button">
+                            <field name="delivered_ratio" string="Delivered" widget="percentpie"/>
+                        </button>
+
+                        <button name="action_view_received"
+                                id="button_view_received"
+                                type="object"
+                                class="oe_stat_button">
+                            <field name="received_ratio" string="Received" widget="percentpie"/>
+                        </button>
+
+                        <button name="action_view_read"
+                                id="button_view_read"
+                                type="object"
+                                class="oe_stat_button">
+                            <field name="read_ratio" string="Read" widget="percentpie"/>
+                        </button>
+
+                        <button name="action_view_fail"
+                                id="button_view_fail"
+                                type="object"
+                                class="oe_stat_button">
+                            <field name="fail_ratio" string="Fail" widget="percentpie"/>
+                        </button>
+                    </div>
+                    <group>
+                        <field name="name"/>
+                        <field name="wa_messaging_model_id"/>
+                        <field name="is_partner" invisible="1"/>
+                        <field name="domain" attrs="{'invisible':[('is_partner','=',False)]}"/>
+                        <field name="schedule_date" invisible="1"/>
+                        <field name="partner_ids" widget="many2many_tags"
+                               attrs="{'invisible':['|',('domain','=',True),('is_partner','=',False)]}"/>
+                        <field name="whatsapp_messaging_lists_ids" widget="many2many_tags"
+                               attrs="{'invisible':[('is_partner','=',True)]}"/>
+                        <field name="wa_messaging_domain" widget="domain"
+                               options="{'model': 'res.partner'}" attrs="{'invisible':[('domain','=',False)]}">
+                        </field>
+                        <field name="company_id"/>
+                        <field name="user_id" invisible="1"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="provider_id" required="1"
+                                   domain="[('company_id','=',company_id),('id','in',allowed_provider_ids)]"/>
+                            <field name="allowed_provider_ids" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="template_id" domain="[('provider_id','=',provider_id)]"/>
+                        </group>
+                    </group>
+
+                    <group col="4">
+                        <field name="attachment_ids" widget="many2many_binary" string="Attach a file" nolabel="1"
+                               colspan="2"/>
+                    </group>
+                    <notebook>
+                        <page string="Content" name="content">
+                            <group>
+                                <!--                                <field name="body_html" widget="html" options="{'style-inline': true, 'codeview': true }" nolabel="1"/>-->
+                                <field name="body_html" widget="html" nolabel="1" colspan="2"/>
+                            </group>
+                        </page>
+                        <page string="Whatsapp Messages" name="history">
+                            <!--                            <group>-->
+                            <field name="mail_history_ids">
+                                <tree>
+                                    <field name="provider_id"/>
+                                    <field name="date"/>
+                                    <field name="author_id"/>
+                                    <field name="partner_id"/>
+                                    <field name="phone"/>
+                                    <field name="message"/>
+                                    <field name="attachment_ids" widget="many2many_tags"/>
+                                    <field name="type"/>
+                                    <field name="fail_reason"/>
+                                </tree>
+                            </field>
+                            <!--                            </group>-->
+                        </page>
+                        <page string="Contact Message History" name="contact_history">
+                            <field name="marketing_contact_mes_history_ids">
+                                 <tree>
+                                    <field name="phone"/>
+                                    <field name="contact_whatsapp_history_ids"/>
+                                 </tree>
+                                <form>
+                                    <group>
+                                        <field name="phone" readonly="1"/>
+                                    </group>
+                                    <field name="contact_whatsapp_history_ids" widget="one2many" nolabel="1">
+                                         <tree>
+                                            <field name="provider_id"/>
+                                            <field name="date"/>
+                                            <field name="author_id"/>
+                                            <field name="partner_id"/>
+                                            <field name="phone"/>
+                                            <field name="message"/>
+                                            <field name="attachment_ids" widget="many2many_tags"/>
+                                            <field name="type"/>
+                                            <field name="fail_reason"/>
+                                        </tree>
+                                    </field>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="whatsapp_messaging_tree_view">
+        <field name="name">whatsapp.messaging.tree</field>
+        <field name="model">whatsapp.messaging</field>
+        <field name="arch" type="xml">
+            <tree default_order="create_date desc">
+                <field name="name"/>
+<!--                <field name="partner_ids" widget="many2many_tags"/>-->
+<!--                <field name="whatsapp_messaging_lists_ids" widget="many2many_tags"/>-->
+                <field name="inqueue_ratio" class="d-flex align-items-center ps-0 ps-lg-5" widget="progressbar" string="In Queue (%)" avg="Average"/>
+                <field name="sent_ratio" class="d-flex align-items-center ps-0 ps-lg-5" widget="progressbar" string="Sent (%)" avg="Average"/>
+                <field name="delivered_ratio" class="d-flex align-items-center ps-0 ps-lg-5" widget="progressbar" string="Delivered (%)" avg="Average"/>
+                <field name="received_ratio" class="d-flex align-items-center ps-0 ps-lg-5" widget="progressbar" string="Received (%)" avg="Average"/>
+                <field name="read_ratio" class="d-flex align-items-center ps-0 ps-lg-5" widget="progressbar" string="Read (%)" avg="Average"/>
+                <field name="fail_ratio" class="d-flex align-items-center ps-0 ps-lg-5" widget="progressbar" string="Fail (%)" avg="Average"/>
+                <field name="wa_messaging_model_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="whatsapp_messaging_action">
+        <field name="name">Whatsapp Marketing</field>
+        <field name="res_model">whatsapp.messaging</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="whatsapp_marketing_menu" name="Whatsapp Marketing"
+              web_icon="brainpack_meta_whatsapp_marketing,static/description/icon.png"
+              groups="brainpack_meta_whatsapp.whatsapp_group_user"/>
+    <menuitem id="whatsapp_messaging_sub_menu" name="Whatsapp Marketing" parent="whatsapp_marketing_menu"
+              action="whatsapp_messaging_action"/>
+</odoo>

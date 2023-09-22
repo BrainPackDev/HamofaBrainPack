@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_ext" xml:space="preserve">
+    <t t-name="ThreadViewTopbarExt" t-inherit="mail.ThreadViewTopbar" t-inherit-mode="extension" owl="1">
+
+        <!-- Add Channel Name/Mobile number along with the Thread Name -->
+        <xpath expr="//t[@t-if='!threadViewTopbar.isEditingThreadName']" position="replace">
+            <t t-if="!threadViewTopbar.isEditingThreadName">
+                <div class="o_ThreadViewTopbar_threadName o_ThreadViewTopbar_editableItem lead flex-shrink-0 px-1 border text-truncate fw-bold" t-att-title="threadViewTopbar.thread.displayName" t-on-click="threadViewTopbar.onClickTopbarThreadName" t-on-mouseenter="threadViewTopbar.onMouseEnterTopbarThreadName" t-on-mouseleave="threadViewTopbar.onMouseLeaveTopbarThreadName" t-attf-class="{{ threadViewTopbar.isMouseOverThreadName and !messaging.isCurrentUserGuest ? 'o-threadNameEditable bg-view' : 'border-light' }}">
+                    <t t-esc="threadViewTopbar.thread.displayName"/> <t t-if="threadViewTopbar and threadViewTopbar.thread and threadViewTopbar.thread.channel and threadViewTopbar.thread.channel.channel_type and threadViewTopbar.thread.channel.channel_type == 'chat'"> - <t t-esc="threadViewTopbar.thread.name"/></t>
+                </div>
+            </t>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o_ThreadViewTopbar_actions')]" position="replace">
+            <div class="o_ThreadViewTopbar_actions d-flex align-items-center ml-1" t-if="threadViewTopbar and threadViewTopbar.thread and !threadViewTopbar.thread.isWaMsgs">
+                    <t t-if="threadViewTopbar.thread and threadViewTopbar.thread === messaging.inbox.thread">
+                        <button class="o_ThreadViewTopbar_markAllReadButton btn btn-secondary" t-att-disabled="threadViewTopbar.threadView.messages.length === 0" t-on-click="threadViewTopbar.onClickInboxMarkAllAsRead">Mark all read</button>
+                    </t>
+                    <t t-if="threadViewTopbar.thread and threadViewTopbar.thread === messaging.starred.thread">
+                        <button class="o_ThreadViewTopbar_unstarAllButton btn btn-secondary" t-att-disabled="threadViewTopbar.threadView.messages.length === 0" t-on-click="threadViewTopbar.onClickUnstarAll">Unstar all</button>
+                    </t>
+                    <t t-if="threadViewTopbar.thread and threadViewTopbar.thread.hasCallFeature and threadViewTopbar.thread.rtcSessions.length === 0">
+                        <button class="o_ThreadViewTopbar_callButton o_ThreadViewTopbar_button btn px-2 border-none rounded shadow-none" t-att-disabled="threadViewTopbar.thread.hasPendingRtcRequest" title="Start a Call" t-on-click="threadViewTopbar.onClickPhone">
+                            <i class="fa fa-lg fa-phone text-700"/>
+                        </button>
+                        <button class="o_ThreadViewTopbar_callButton o_ThreadViewTopbar_button btn px-2 border-none rounded shadow-none" t-att-disabled="threadViewTopbar.thread.hasPendingRtcRequest" title="Start a Video Call" t-on-click="threadViewTopbar.onClickCamera">
+                            <i class="fa fa-lg fa-video-camera text-700"/>
+                        </button>
+                    </t>
+                    <t t-if="threadViewTopbar.thread and threadViewTopbar.thread.hasInviteFeature">
+                        <button class="o_ThreadViewTopbar_inviteButton o_ThreadViewTopbar_button btn px-2 border-none rounded shadow-none"  t-attf-class="{{ threadViewTopbar.invitePopoverView ? 'o-isActive' : '' }}" title="Add users" t-on-click="threadViewTopbar.onClickInviteButton" t-ref="inviteButton">
+                            <i class="fa fa-lg fa-user-plus text-700"/>
+                        </button>
+                    </t>
+                    <!-- FIXME: guests should be able to see members but there currently is no route for it, so hide it for now -->
+                    <t t-if="!messaging.isCurrentUserGuest and threadViewTopbar.thread and threadViewTopbar.thread.hasMemberListFeature and threadViewTopbar.threadView.hasMemberList and !threadViewTopbar.threadView.isMemberListOpened">
+                        <button class="o_ThreadViewTopbar_showMemberListButton o_ThreadViewTopbar_button btn px-2 border-none rounded shadow-none" title="Show Member List" t-on-click="threadViewTopbar.onClickShowMemberList">
+                            <i class="fa fa-lg fa-users text-700"/>
+                        </button>
+                    </t>
+                    <t t-if="threadViewTopbar.thread and threadViewTopbar.thread.hasMemberListFeature and threadViewTopbar.threadView.hasMemberList and threadViewTopbar.threadView.isMemberListOpened">
+                        <button class="o_ThreadViewTopbar_hideMemberListButton o_ThreadViewTopbar_button o-isActive btn px-2 border-none rounded shadow-none" title="Hide Member List" t-on-click="threadViewTopbar.onClickHideMemberList">
+                            <i class="fa fa-lg fa-users text-700"/>
+                        </button>
+                    </t>
+                    <t t-if="threadViewTopbar.thread and threadViewTopbar.thread.hasCallFeature and !threadViewTopbar.threadView.isCallSettingsMenuOpen">
+                        <button class="o_ThreadViewTopbar_openCallSettingsButton o_ThreadViewTopbar_button btn px-2 border-none rounded shadow-none" title="Show Call Settings" t-on-click="threadViewTopbar.onClickShowCallSettingsMenu">
+                            <i class="fa fa-lg fa-gear text-700"/>
+                        </button>
+                    </t>
+                    <t t-if="threadViewTopbar.thread and threadViewTopbar.thread.hasCallFeature and threadViewTopbar.threadView.isCallSettingsMenuOpen">
+                        <button class="o_ThreadViewTopbar_button o-isActive btn px-2 border-none rounded shadow-none" title="Hide Call Settings" t-on-click="threadViewTopbar.onClickHideCallSettingsMenu">
+                            <i class="fa fa-lg fa-gear text-700"/>
+                        </button>
+                    </t>
+                </div>
+         </xpath>
+    </t>
+</templates>

@@ -1,0 +1,36 @@
+<odoo>
+    <template id="portal_invoice_payment_sign_inherit" name="Sign on My Invoices"
+              inherit_id="account_payment.portal_invoice_page_inherit_payment">
+        <xpath expr="//div[@id='invoice_content']" position="after">
+             <div role="dialog" class="modal fade" id="ModalSignInvoice">
+                <div class="modal-dialog">
+                    <form id="accept" method="POST" t-att-data-order-id="invoice.id"
+                          t-att-data-token="invoice.access_token"
+                          class="js_accept_json modal-content js_website_submit_form">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <header class="modal-header">
+                            <h2>Sign</h2>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </header>
+                        <main class="modal-body" id="sign-dialog">
+                            <t t-call="portal.signature_form">
+                                <t t-set="call_url" t-value="invoice.get_portal_url(suffix='/accept')"/>
+                                <t t-set="default_name" t-value="invoice.partner_id.name"/>
+                            </t>
+                        </main>
+                    </form>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//div[hasclass('d-grid')]" position="after">
+            <t t-if="invoice.payment_state in ('paid', 'in_payment') and not invoice.signature_attachment">
+                <div class="col-sm-auto mt8">
+                    <a role="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalSignInvoice"
+                       href="#" style=" margin-bottom: 10px; width: 100%;">
+                        Sign
+                    </a>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

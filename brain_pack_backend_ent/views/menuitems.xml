@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!-- <menuitem id="back_config_main" name="Backend Theme" sequence="1" 
+			web_icon="brain_pack_backend_ent,static/src/image/backend_theme_icon.png" groups="base.user_admin" />
+
+		<menuitem id="menu_backend_config" name="Backend Config" 
+			parent="brain_pack_backend_ent.back_config_main" action="action_backend_config" sequence="80" /> -->
+
+		<menuitem id="bizople_backend_theme_configuration_mainmenu" name="BrainPack Configuration"
+			parent="base.menu_administration" sequence="10" groups="brainpack_access_rights.main_admin"/>
+
+		<record model='ir.actions.act_url' id='action_spiffy_documentation'>
+            <field name='name'>BrainPack Documentation</field>
+            <field name='url'>https://www.brainpack.io</field>
+        </record>
+		
+        <menuitem id="spiffy_documentation_menu" parent="bizople_backend_theme_configuration_mainmenu" 
+			name="BrainPack Documentation" sequence="2" action="action_spiffy_documentation"/>
+
+		<menuitem action="brain_pack_backend_ent.change_menu_icon_action" id="change_menu_icon_menu"
+			parent="bizople_backend_theme_configuration_mainmenu" sequence="5"/>
+
+		<menuitem action="brain_pack_backend_ent.act_open_pwa_shortcuts_view" id="pwa_shortcuts_view_tree_menuitem"
+			parent="bizople_backend_theme_configuration_mainmenu" sequence="5"/>
+	</data>
+</odoo>

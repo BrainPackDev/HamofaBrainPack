@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_ext" xml:space="preserve">
+    <t t-name="MessageExt" t-inherit="mail.Message" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('o_Message')]//div[hasclass('o_Message_core')]/div[hasclass('o_Message_bubbleWrap')]/div[hasclass('o_Message_bubble')]" position="attributes">
+            <attribute name="t-on-click.prevent.stop">_onClickMessage</attribute>
+            <attribute name="t-att-style">_getStyle()</attribute>
+        </xpath>
+    </t>
+</templates>

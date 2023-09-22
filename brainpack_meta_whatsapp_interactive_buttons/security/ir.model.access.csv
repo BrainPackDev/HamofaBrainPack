@@ -1,0 +1,8 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_interactive_list","access.interactive.list","model_interactive_list",base.group_user,1,1,1,1
+"access_interactive_list_title","access.interactive.list.title","model_interactive_list_title",base.group_user,1,1,1,1
+"access_interactive_button","access.interactive.button","model_interactive_button",base.group_user,1,1,1,1
+"access_product_list","access.product.list","model_product_list",base.group_user,1,1,1,1
+"access_interactive_product_list","access.interactive.product.list","model_interactive_product_list",base.group_user,1,1,1,1
+"access_whatsapp_chatbot","access.whatsapp.chatbot","model_whatsapp_chatbot",base.group_user,1,1,1,1
+"access_whatsapp_chatbot_script","access.whatsapp.chatbot.script","model_whatsapp_chatbot_script",base.group_user,1,1,1,1

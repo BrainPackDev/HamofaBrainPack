@@ -1,0 +1,62 @@
+.o_MessageSeenIndicator_icon.o-second.o-wa-second {
+    top: unset;
+}
+
+.nav-item a.active{
+   color: #fff  !important;
+   background: linear-gradient(45deg, #137ee8, #137ee8) !important;
+}
+
+.functional_tab{
+   color: linear-gradient(45deg, #137ee8, #137ee8) !important;
+}
+#navbarSupportedContent ul li a{
+   color: linear-gradient(45deg, #137ee8, #137ee8) !important;
+   border: 1px solid black;
+   font-weight: bold;
+}
+
+#navbarSupportedContent>ul>li.active>a{
+  background: linear-gradient(45deg, #137ee8, #137ee8) !important;
+  color: #fff;
+}
+
+.main-button{
+    margin-left: 5rem;
+}
+#main-buttons-view .o_form_button_save{
+     background: linear-gradient(45deg, #137ee8, #137ee8) !important;
+}
+
+
+@media (max-width: 991px){
+.chat_box_tab{
+    width: 50%;
+    text-align: center;
+}
+.chat_box_tab.active{
+   color: #fff  !important;
+   background: linear-gradient(45deg, #137ee8, #137ee8) !important;
+}
+.chat_box_tab.active a{
+    color: #fff;
+}
+.chat_box_tab a{
+    color: linear-gradient(45deg, #137ee8, #137ee8) !important;
+}
+}
+
+.chat_box_tab{
+    width: 50%;
+    text-align: center;
+}
+.chat_box_tab.active{
+   color: #fff  !important;
+   background: linear-gradient(45deg, #137ee8, #137ee8) !important;
+}
+.chat_box_tab.active a{
+    color: #fff;
+}
+.chat_box_tab a{
+    color: linear-gradient(45deg, #137ee8, #137ee8) !important;
+}yy

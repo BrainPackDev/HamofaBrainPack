@@ -1,0 +1,14 @@
+<odoo>
+    <record id="crm_lead_view_form_email_verify_inherit" model="ir.ui.view">
+        <field name="name">crm.lead.view.form.inherit.event.crm.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='opportunity_partner']//field[@name='email_from']" position="attributes">
+                <attribute name="options">{'enable_verify': True,'show_digit':5}</attribute>
+                <attribute name="widget">verifyemail</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+

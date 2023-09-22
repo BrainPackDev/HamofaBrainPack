@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="layout" inherit_id="website.layout">
+    <xpath expr="//a[hasclass('o_frontend_to_backend_apps_btn')]" position="attributes">
+        <attribute name="class" remove="fa fa-th" separator=" "/>
+    </xpath>
+     <xpath expr="//a[hasclass('o_frontend_to_backend_apps_btn')]" position="inside">
+        <img class="img img-fluid company_logo" t-attf-src="/web/image?model=res.company&amp;field=appdrawer_icon&amp;id={{request.env.company.id}}" alt="Icon" style="width:24px;height:24px;"/>
+    </xpath>
+    <xpath expr="//a[hasclass('o_frontend_to_backend_edit_btn')]/img" position="replace">
+        <img src="/brainpack_debranding/static/description/website-builder.png"/>Editor
+    </xpath>
+</template>
+
+    <template id="web_layout_debranding" inherit_id="web.layout">
+        <xpath expr="//title" position="replace">
+           <title t-esc="title or 'BrainPack'"/>
+       </xpath>
+       <xpath expr="//link[@rel='shortcut icon']" position="replace">
+           <link type="image/x-icon" rel="shortcut icon" t-att-href="x_icon or '/brainpack_debranding/static/description/brainPack_favicon/favicon-32x32.png'"/>
+       </xpath>
+    </template>
+
+</odoo>

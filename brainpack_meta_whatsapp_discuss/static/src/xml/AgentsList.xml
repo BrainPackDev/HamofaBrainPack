@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_ext" xml:space="preserve">
+<t t-name="AgentsList" owl="1">
+        <div class="agents">
+            <div class="o_acrux_chat_sidebar_title mt-1 ml-2" style="margin-left: 0.5rem !important;">
+                <div class="form-group form-inline" style="display: flex; flex-flow: row wrap; align-items: center;">
+                    <label for="agent">Agent</label>
+                    <select name="user" class="form-control link-style ml-2" id="user" style="width: 200px; margin-left: 0.5rem !important;">
+                        <option></option>
+                        <t t-foreach="users" t-as="user" t-key="user['id']">
+                            <option t-esc="user['name']" t-att-value="user['id']"/>
+                        </t>
+                    </select>
+                    <button class="btn btn-sm btn-primary add_agent ml-3" style="margin-left: 0.5rem !important; background:linear-gradient(45deg, #714B67, #5e4a59) !important;" tabindex="3" type="button"
+                            t-on-click="_addAgent">ADD</button>
+                </div>
+            </div>
+            <div class="ml-2 mt-2 Agent" style="width:99%;display:flex;margin-top: 0.5rem !important;margin-left: 0.5rem !important;">
+                <t t-foreach="agents" t-as="agent" t-key="agent.id">
+                    <div class="o_agent_record ml-1" t-att-title="agent.name" t-att-data-id="agent.id"
+                         t-att-id="agent.id" style="width:32%; margin-left: 0.25rem !important;">
+                        <div class="agent_container">
+                            <div class="o_user_image" style=" width: 20%;">
+                                <img t-attf-src="/web/image/res.users/{{agent.id}}/image_128"
+                                     style="height: 26px; width: 26px;border-radius: 15px;"/>
+                            </div>
+                            <div class="oe_user_details ml-2 justify-content-between" style="    width: 80%;
+                                            display: inline-flex;
+                                            /* text-align: center; */
+                                            align-items: center;">
+                            <span><t t-esc="agent.name"/></span>
+                                <button class="btn btn-primary fa fa-times" type="button"
+                                        t-att-data-id="agent.id" style="position: relative; background:linear-gradient(45deg, #714B67, #5e4a59) !important;" t-on-click="_removeAgent"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+
+
+
+</templates>

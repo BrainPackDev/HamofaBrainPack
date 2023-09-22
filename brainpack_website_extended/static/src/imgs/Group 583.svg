@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="96.729" height="96.735" viewBox="0 0 96.729 96.735">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_306" data-name="Rectangle 306" width="96.729" height="96.735" fill="#137ee8"/>
+    </clipPath>
+  </defs>
+  <g id="Group_583" data-name="Group 583" transform="translate(0)">
+    <g id="Group_582" data-name="Group 582" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <path id="Path_1368" data-name="Path 1368" d="M112.2,97.744v38.938l10.525-10.533,8.744,15.052c-.5.03-.829.067-1.154.067q-25.87,0-51.739,0c-2.719,0-4.424-1.159-4.965-3.4a9.255,9.255,0,0,1-.167-2.138q-.016-11-.007-22.009v-1.467H63.8v-9.636h9.639v-1.444q0-11.118,0-22.235c0-3.755,1.643-5.4,5.386-5.4q11.063-.009,22.126,0h1.478V63.906h9.681V73.53H113.5q11.119,0,22.239,0c3.83,0,5.447,1.619,5.448,5.456q.006,17.187,0,34.374v1.276L112.2,97.744" transform="translate(-44.459 -44.534)" fill="#137ee8"/>
+      <rect id="Rectangle_299" data-name="Rectangle 299" width="9.542" height="9.52" transform="translate(19.359 0.02)" fill="#137ee8"/>
+      <rect id="Rectangle_300" data-name="Rectangle 300" width="9.542" height="9.519" transform="translate(38.701)" fill="#137ee8"/>
+      <rect id="Rectangle_301" data-name="Rectangle 301" width="9.496" height="9.575" transform="translate(0.001 19.36)" fill="#137ee8"/>
+      <rect id="Rectangle_302" data-name="Rectangle 302" width="9.488" height="9.575" transform="translate(0.014 38.705)" fill="#137ee8"/>
+      <path id="Path_1369" data-name="Path 1369" d="M296.847,244.231v18.781l-.185.092-9.411-15.991,9.6-2.883" transform="translate(-200.178 -170.198)" fill="#137ee8"/>
+      <rect id="Rectangle_303" data-name="Rectangle 303" width="9.497" height="9.495" transform="translate(0 0.042)" fill="#137ee8"/>
+      <rect id="Rectangle_304" data-name="Rectangle 304" width="9.48" height="9.479" transform="translate(58.093 0.03)" fill="#137ee8"/>
+      <rect id="Rectangle_305" data-name="Rectangle 305" width="9.496" height="9.495" transform="translate(0 58.098)" fill="#137ee8"/>
+    </g>
+  </g>
+</svg>

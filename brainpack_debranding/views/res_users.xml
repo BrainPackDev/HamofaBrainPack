@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="change_password_wizard_user_tree_view_inherit" model="ir.ui.view">
+            <field name="name">change.password.user.inherit</field>
+            <field name="model">change.password.user</field>
+            <field name="inherit_id" ref="base.change_password_wizard_user_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='new_passwd']" position="attributes">
+                    <attribute name="placeholder">Type new password here</attribute>
+                </xpath>
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="class">change_password_popup</attribute>
+<!--                    <attribute name="placeholder">e.g. https://www.brainpack.io</attribute>-->
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

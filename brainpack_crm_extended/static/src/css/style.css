@@ -1,0 +1,99 @@
+div[name="phone_status"] .o_radio_input{
+    position: absolute;
+    right: 0;
+}
+div[name="phone_status"] .o_radio_item{
+    position: relative;
+}
+div[name="phone_status"] .o_vertical{
+    flex-flow: row nowrap !important;
+    display: contents;
+
+}
+div[name="phone_status"] input[type="radio"]:checked + label.o_form_label {
+    background-color: #137ee8;
+    color: #fff;
+    border-color: #137ee8;
+}
+div[name="phone_status"] .o_form_label{
+    background-color: #fff;
+    color: #137ee8;
+    border-color: #137ee8;
+    border: 1px solid;
+    padding: 3px 23px;
+        border-radius: 15px;
+}
+div[name="phone_status"] .o_radio_input{
+  opacity: 0.011;
+  z-index: 100;
+  display: flex;
+}
+
+div[name="case_type"] .o_radio_input{
+    position: absolute;
+    right: 0;
+}
+div[name="case_type"] .o_radio_item{
+    position: relative;
+    padding-left: 0em !important;
+}
+
+div[name="case_type"] input[type="radio"]:checked + label.o_form_label {
+    background-color: #137ee8;
+    color: #fff;
+    border-color: #137ee8;
+}
+body.o_web_client .o_form_view .o_form_sheet_bg .o_form_sheet .o_group div[name="case_type"] input[type="radio"]:checked + .o_form_label:not(.o_required_modifier){
+color: #fff !important;
+}
+body.o_web_client .o_form_view .o_form_sheet_bg .o_form_sheet .o_group div[name="case_type"] .o_form_label:not(.o_required_modifier){
+    color: #137ee8 !important;
+}
+div[name="case_type"] .o_form_label{
+    background-color: #fff;
+    color: #137ee8;
+    border-color: #137ee8;
+    border: 1px solid;
+    padding: 3px 23px;
+        border-radius: 15px;
+}
+div[name="case_type"] .o_radio_input{
+  opacity: 0.011;
+  z-index: 100;
+  display: flex;
+}
+
+div[name="transfer_type"] .o_radio_input{
+    position: absolute;
+    right: 0;
+}
+div[name="transfer_type"] .o_radio_item{
+    position: relative;
+    padding-left: 0em !important;
+}
+
+div[name="transfer_type"] input[type="radio"]:checked + label.o_form_label {
+    background-color: #137ee8;
+    color: #fff;
+    border-color: #137ee8;
+}
+body.o_web_client .o_form_view .o_form_sheet_bg .o_form_sheet .o_group div[name="transfer_type"] input[type="radio"]:checked + .o_form_label:not(.o_required_modifier){
+color: #fff !important;
+}
+body.o_web_client .o_form_view .o_form_sheet_bg .o_form_sheet .o_group div[name="transfer_type"] .o_form_label:not(.o_required_modifier){
+    color: #137ee8 !important;
+}
+div[name="transfer_type"] .o_form_label{
+    background-color: #fff;
+    color: #137ee8;
+    border-color: #137ee8;
+    border: 1px solid;
+    padding: 3px 23px;
+        border-radius: 15px;
+}
+div[name="transfer_type"] .o_radio_input{
+  opacity: 0.011;
+  z-index: 100;
+  display: flex;
+
+}

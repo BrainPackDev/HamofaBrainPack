@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="edit_project_form_inherit_mail_tracking" model="ir.ui.view">
+        <field name="name">project.project.form.bundle.mail.tracking.inherit</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+              <xpath expr="//sheet/div[hasclass('oe_button_box')]" position="inside">
+                 <button
+                    name="open_mail_tracking_form"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-envelope-o"
+                >
+                <field
+                        name="tracking_emails_cou"
+                        widget="statinfo"
+                        string="Tracking emails"
+                        attrs="{'invisible': [('tracking_emails_cou', '=', False)]}"
+                    />
+            </button>
+              </xpath>
+        </field>
+    </record>
+</odoo>

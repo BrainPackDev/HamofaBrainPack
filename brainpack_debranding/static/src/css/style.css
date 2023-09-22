@@ -1,0 +1,34 @@
+.change_password_popup th[data-name="user_login"]{
+    min-width: 40% !important;
+    width:40% !important;
+}
+.change_password_popup th[data-name="new_passwd"]{
+    min-width: 60% !important;
+    width:60% !important;
+}
+.change_password_popup td[name="new_passwd"] input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black !important;
+  opacity: 1; /* Firefox */
+}
+.o_view_nocontent .o_nocontent_help .o_view_nocontent_smiling_face:before {
+    background: transparent url(/brainpack_debranding/static/description/brainBox-create.svg) no-repeat center;
+}
+.bg-white-50{
+    background-color: rgb(255 255 255 / 80%) !important;
+    color: #FFF;
+}
+
+@media (max-width: 991.98px){
+    .appdrawer_section .apps-list .row {
+        padding-bottom: 56px;
+    }
+    .appdrawer_section .o_logo{
+        margin-top: 1.5rem !important;
+    }
+    .appdrawer_section .company_logo {
+        height: 45px !important;
+    }
+    .appdrawer_section .input-group {
+        padding: 2px 4px !important;
+    }
+}

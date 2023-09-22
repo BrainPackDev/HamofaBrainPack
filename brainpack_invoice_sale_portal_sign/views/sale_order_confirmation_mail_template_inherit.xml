@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <record id="mail_template_sale_confirmation_sign" model="mail.template">
+            <field name="name">Sales: Order Signature</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="subject">{{ object.company_id.name }}</field>
+            <field name="email_from">{{ (object.user_id.email_formatted or user.email_formatted) }}</field>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
+            <field name="description">Sent to customers on order confirmation for signature</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 12px;">
+                        Hello,
+                        <br/>
+                        <br/>
+                        <t t-set="transaction" t-value="object.get_portal_last_transaction()"/>
+                        Your order <span style="font-weight:bold;" t-out="object.name or ''">S00049</span> amounting in
+                        <span style="font-weight:bold;"
+                              t-out="format_amount(object.amount_total, object.currency_id) or ''">$ 10.00
+                        </span>
+                        <t t-if="object.state == 'sale' or (transaction and transaction.state in ('done', 'authorized'))">
+                            has been confirmed.
+                            <br/>
+                            <br/>
+                            Thank you for your trust!
+                        </t>
+                        <t t-elif="transaction and transaction.state == 'pending'">
+                            is pending. It will be confirmed when the payment is received.
+                            <t t-if="object.reference">Your payment reference is <span style="font-weight:bold;"
+                                                                                       t-out="object.reference or ''"></span>.
+                            </t>
+                        </t>
+                        <br/>
+                        <br/>
+                        Sign your Sale Order from here
+                        <br/>
+                        <br/>
+                        <t t-if="not object.signature">
+                            <a class="btn btn-primary" t-attf-href="/my/orders/{{object.id}}/?{{ keep_query() }}">Sign
+                                your SaleOrder
+                            </a>
+                            <br/>
+                            <br/>
+                        </t>
+                        Regards,
+                        <br/>
+                        <t t-out="object.company_id.name"/>
+                    </p>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

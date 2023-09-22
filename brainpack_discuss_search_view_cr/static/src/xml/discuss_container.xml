@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_ext" xml:space="preserve">
+    <t t-name="DiscussContainerExt" t-inherit="mail.DiscussContainer" t-inherit-mode="extension" owl="1">
+        <xpath expr="//Discuss" position="before">
+             <div class="o_control_panel search_desktop" t-ref="root">
+                <div class="o_cp_top">
+                    <div class="o_cp_top_left">
+                        <t t-slot="control-panel-top-left">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="#">
+                                        Discuss
+                                    </a>
+                                </li>
+                            </ol>
+                        </t>
+                    </div>
+                    <div class="o_cp_top_right">
+                        <div class="o_cp_searchview d-flex flex-grow-1" role="search">
+                            <div class="o_searchview pb-1 align-self-center border-bottom flex-grow-1" role="search"
+                                 aria-autocomplete="list">
+                                <i class="o_searchview_icon oi oi-search" role="img" aria-label="Search..."
+                                   title="Search..."></i>
+                                <div class="o_searchview_input_container">
+                                    <input type="text"
+                                           class="o_searchview_input"
+                                           accesskey="Q"
+                                           placeholder="Search..."
+                                           role="searchbox"
+                                           title="Search for records"
+                                            t-on-keyup="_onKeyUpSearch"
+                                    />
+                                </div>
+                            </div>
+                            <div class="o_searchview_count pb-1 align-self-center">
+<!--                                <button type="button" t-attf-class="#{messaging and messaging.discuss and messaging.discuss.threadView and messaging.discuss.threadView.searchMessage ? 'btn btn-primary' : 'btn'}" t-on-click="_onClickSearch">Start</button>-->
+                                <button type="button" class="btn fa fa-times-circle-o" t-on-click="_onClickCancle"/>
+<!--                                <span class="current_search"><t t-if="messaging and messaging.discuss" t-esc="messaging.discuss.currentSearchCount"/></span> / <span class="total_search_message" ><t t-if="messaging and messaging.discuss" t-esc="messaging.discuss.numberOfSearch"/></span> <span t-if="messaging and messaging.discuss" t-on-click="_onClickUp" t-att-class="'fa fa-angle-up %s' % ('span_disabled' if messaging.discuss.upDisable else '')"/> <span t-att-class="'fa fa-angle-down %s' % ('span_disabled' if messaging.discuss.downDisable else '')" t-on-click="_onClickDown"/>-->
+                                <span class="current_search"><t t-if="messaging and messaging.discuss and messaging.discuss.threadView" t-esc="messaging.discuss.threadView.currentSearchCount"/></span> / <span class="total_search_message" ><t t-if="messaging and messaging.discuss and messaging.discuss.threadView" t-esc="messaging.discuss.threadView.numberOfSearch"/></span> <span t-if="messaging and messaging.discuss and messaging.discuss.threadView" t-on-click="_onClickUp" t-attf-class="fa fa-angle-up #{messaging.discuss.threadView.upDisable and 'span_disabled' or ''}" style="cursor: pointer;"/> <span t-if="messaging and messaging.discuss and messaging.discuss.threadView" t-attf-class="fa fa-angle-down #{messaging.discuss.threadView.downDisable and 'span_disabled' or ''}" t-on-click="_onClickDown" style="cursor: pointer;"/>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </t>
+</templates>
+
+
+

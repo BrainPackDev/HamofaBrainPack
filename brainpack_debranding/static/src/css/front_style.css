@@ -1,0 +1,10 @@
+.o_frontend_to_backend_nav::before {
+    border-top: 20px solid #137EE8 !important;
+    border-left: 20px solid #137EE8 !important;
+}
+.o_frontend_to_backend_nav .o_frontend_to_backend_apps_btn {
+    background-color: #137EE8 !important;
+}
+.o_frontend_to_backend_nav .o_frontend_to_backend_apps_btn:hover {
+    background-color: #137EE8 !important;
+}

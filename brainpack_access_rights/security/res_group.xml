@@ -1,0 +1,12 @@
+<odoo>
+     <record id="main_admin" model="res.groups">
+        <field name="name">Main Admin</field>
+    </record>
+    <record id="client_admin" model="res.groups">
+        <field name="name">Client Admin</field>
+    </record>
+
+     <record id="base.user_admin" model="res.users">
+        <field name="groups_id" eval="[(4, ref('brainpack_access_rights.main_admin'))]"/>
+    </record>
+</odoo>

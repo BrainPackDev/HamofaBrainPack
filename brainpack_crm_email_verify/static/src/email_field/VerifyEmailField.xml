@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="web.VerifyEmailField" t-inherit="web.EmailField" t-inherit-mode="primary">
+        <xpath expr="//t[@t-else='']" position="replace">
+        </xpath>
+        <xpath expr="//t[@t-if='props.readonly']" position="replace">
+            <t t-if="props.verifyButton">
+                <span t-if="!state.verify" class="o_form_uri o_text_overflow" t-esc="state.email_field"/>
+                 <a t-else="state.verify" class="o_form_uri o_text_overflow" t-on-click.stop="" t-att-href="props.value ? 'mailto:'+props.value : undefined" t-esc="props.value || ''"/>
+
+                <a role="button"
+                   class="o_phone_form_link ms-3 d-inline-flex align-items-center btn btn-primary" style="padding: 3px !important;" t-on-click="openReasonWizard" t-if="!state.verify"
+                >
+                    <small class="fw-bold ms-1">Start</small>
+                </a>
+            </t>
+            <t t-else="">
+                 <t t-if="props.readonly">
+                    <a class="o_form_uri o_text_overflow" t-on-click.stop="" t-att-href="props.value ? 'mailto:'+props.value : undefined" t-esc="props.value || ''"/>
+                </t>
+                <t t-else="">
+                    <div class="d-inline-flex w-100">
+                        <input
+                            class="o_input"
+                            t-att-id="props.id"
+                            type="email"
+                            t-att-placeholder="props.placeholder"
+                            t-att-required="props.required"
+                            t-ref="input"
+                        />
+                        <a
+                            t-if="props.value"
+                            t-att-href="'mailto:'+props.value"
+                            class="ms-3 d-inline-flex align-items-center"
+                        >
+                            <i class="fa fa-envelope" data-tooltip="Send Email" aria-label="Send Email"></i>
+                        </a>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+    </t>
+</templates>

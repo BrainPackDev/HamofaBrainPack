@@ -1,0 +1,42 @@
+{
+    'name': 'Brainpack Meta Whatsapp Discuss',
+    'version': '1.2.',
+    'author': 'BrainPack',
+    'website': 'https://www.brainpack.io',
+    'depends': ['web', 'brainpack_meta_whatsapp'],
+    'data': [
+        'data/cron.xml',
+        # 'views/res_config_settings_views.xml',
+    ],
+    'assets': {
+        'mail.assets_discuss_public': [
+            'brainpack_meta_whatsapp_discuss/static/src/js/components/*/*.js',
+            'brainpack_meta_whatsapp_discuss/static/src/js/models/*/*.js',
+            'brainpack_meta_whatsapp_discuss/static/src/scss/thread_view_nav.scss',
+            'https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js',
+            'https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css',
+        ],
+        'web.assets_backend': [
+            ('replace', 'web/static/src/legacy/js/owl_compatibility.js','brainpack_meta_whatsapp_discuss/static/src/js/owl_compatibility.js'),
+            # 'brainpack_meta_whatsapp_discuss/static/src/js/owl_compatibility.js',
+            'brainpack_meta_whatsapp_discuss/static/src/js/components/*/*.js',
+            'brainpack_meta_whatsapp_discuss/static/src/js/models/*/*.js',
+            'brainpack_meta_whatsapp_discuss/static/src/js/AgentsList.js',
+            'brainpack_meta_whatsapp_discuss/static/src/js/MessagesList.js',
+            # 'brainpack_meta_whatsapp_discuss/static/src/js/wa_thread_view.js',
+            'brainpack_meta_whatsapp_discuss/static/src/js/action_dialog.js',
+            'brainpack_meta_whatsapp_discuss/static/src/scss/*.scss',
+            'brainpack_meta_whatsapp_discuss/static/src/css/*.css',
+            'https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js',
+            'https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css',
+            'brainpack_meta_whatsapp_discuss/static/src/xml/*.xml',
+        ],
+        # 'web.assets_qweb': [
+        # ],
+    },
+    'installable': True,
+    'auto_install': False,
+    'license': 'LGPL-3',
+    'images': ['static/description/banner.jpg'],
+    # 'post_init_hook': '_set_image_in_company',
+}
