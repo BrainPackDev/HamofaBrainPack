@@ -6,6 +6,11 @@
     'website': 'https://www.brainpack.io',
     "license": "AGPL-3",
     "depends": ["mail"],
-    "data": ["views/ir_mail_server_view.xml"],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/ir_mail_server_view.xml",
+        "views/mail_server_view.xml",
+        "views/alias_mail_view.xml",
+     ],
     "installable": True,
 }
