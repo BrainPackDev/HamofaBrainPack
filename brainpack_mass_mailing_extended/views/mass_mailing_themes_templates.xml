@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Theme "Newsletter" default template -->
+    <template id="mass_mailing_themes.theme_newsletter_template">
+        <style id="design-element">
+            h3 {
+                color: #2b3b58;
+                font-size: 18px;
+                font-weight: bolder;
+            }
+        </style>
+        <t t-set="now" t-value="datetime.datetime.now()"/>
+        <div class="s_header_social o_mail_block_header_social o_mail_snippet_general pt16 pb16" data-snippet="s_mail_block_header_social" style="background-color: rgb(26, 36, 54) !important;" data-name="Header Social">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <a style="text-decoration:none;float:none;" href="http://www.example.com" target="_blank">
+                             <img border="0" src="/brainpack_mass_mailing_extended/static/description/brain.png" style="height: auto; max-width: 100%; width: 194px;"  width="194" alt="Your Logo" />
+                        </a>
+                    </div>
+                    <div class="col-lg-8 o_mail_header_social" style="text-align: right;" t-translation="off">
+                        <a title="Facebook" href="https://www.facebook.com/brainpack">
+                            <span class="fa fa-facebook rounded-circle text-white" style="background-color: rgb(43, 59, 88) !important;"/>
+                        </a>&amp;nbsp;&amp;nbsp;
+                        <a style="margin-left:10px" title="LinkedIn" href="https://www.linkedin.com/company/brainpack">
+                            <span class="fa fa-linkedin rounded-circle text-white" style="background-color: rgb(43, 59, 88) !important;"/>
+                        </a>&amp;nbsp;&amp;nbsp;
+                        <a style="margin-left:10px" title="Twitter" href="https://twitter.com/brainpack">
+                            <span class="fa fa-twitter rounded-circle text-white" style="background-color: rgb(43, 59, 88) !important;"/>​
+                        </a>&amp;nbsp;&amp;nbsp;
+                        <a style="margin-left:10px" title="Instagram" href="https://www.instagram.com/explore/tags/brainpack/">
+                            <span class="fa fa-instagram rounded-circle text-white" style="background-color: rgb(43, 59, 88) !important;"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="s_text_block o_mail_snippet_general pb16 pt32" style="background-color: rgb(43, 59, 88) !important; padding-left: 15px; padding-right: 15px;" data-snippet="s_text_block" data-name="Text">
+            <div class="container s_allow_columns">
+                <p><font style="color: rgb(255, 255, 255);">Hi there!</font></p>
+                <p><font style="color: rgb(255, 255, 255);">The next edition of <span style="font-weight: bolder;">Odoo Experience Online</span> is coming soon!
+                    <br/>To stir up your curiosity, have a look at all the great talks scheduled and highlighted in our agenda!</font>
+                </p>
+            </div>
+        </div>
+        <div class="s_media_list o_mail_snippet_general o_cc o_cc2 pb16 pt0" style="background-color: rgb(43, 59, 88) !important; padding-left: 15px; padding-right: 15px;" data-snippet="s_media_list" data-vcss="001" data-name="Media List">
+            <div class="container">
+                <div class="row s_nb_column_fixed">
+                    <div class="col-lg-12 s_media_list_item pt0 pb0" data-name="Media item">
+                        <div class="row s_col_no_resize s_col_no_bgcolor align-items-center o_cc o_cc1">
+                            <div class="col-lg-5 s_media_list_img_wrapper align-self-stretch px-0">
+                                <img src="/mass_mailing_themes/static/src/img/theme_newsletter/s_default_image_media_list_1.jpg" class="s_media_list_img h-100 w-100" style="padding: 10px;"/>
+                            </div>
+                            <div class="col-lg-7 s_media_list_body">
+                                <h3>Get 6-months' worth of knowledge
+                                    <br/>in just 2 days</h3>
+                                <p>Learn through workshops, product demos, and inspiring talks from Odoo Experts and Partners.</p>
+                                <a class="btn btn-primary rounded-circle" href="http://">See what we've got planned</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 s_media_list_item pt16 pb0" data-name="Media item">
+                        <div class="row s_col_no_resize s_col_no_bgcolor align-items-center o_cc o_cc1">
+                            <div class="col-lg-5 s_media_list_img_wrapper align-self-stretch px-0">
+                                <img src="/mass_mailing_themes/static/src/img/theme_newsletter/s_default_image_media_list_2.jpg" class="s_media_list_img h-100 w-100" style="padding: 10px;"/>
+                            </div>
+                            <div class="col-lg-7 s_media_list_body">
+                                <h3>Meet (other) awesome members
+                                    <br/>of the community</h3>
+                                <p>Create your very own chat room or join an existing one that sparks your interest.</p>
+                                <a class="btn btn-primary rounded-circle" href="http://">Go to the chatrooms</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 s_media_list_item pt16 pb0" data-name="Media item">
+                        <div class="row s_col_no_resize s_col_no_bgcolor align-items-center o_cc o_cc1">
+                            <div class=" col-lg-5 s_media_list_img_wrapper align-self-stretch px-0">
+                                <img src="/mass_mailing_themes/static/src/img/theme_newsletter/s_default_image_media_list_3.jpg" class="s_media_list_img h-100 w-100" style="padding: 10px;"/>
+                            </div>
+                            <div class="col-lg-7 s_media_list_body">
+                                <h3>An interactive, fun
+                                    <br/>and comprehensive experience</h3>
+                                <p>Experience everything from a virtual exhibitor's hall to multiple interactive presentations and demos.</p>
+                                <a class="btn btn-primary rounded-circle" href="http://">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="s_call_to_action o_mail_snippet_general o_cc o_cc3 pt40 pb40" style="background-color: rgb(26, 36, 54) !important;" data-snippet="s_call_to_action" data-name="Call to Action">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12" style="border-color: rgb(56, 62, 69) !important;">
+                        <h3 style="text-align: center;"><font style="color: rgb(255, 255, 255);">And it won't cost you a thing!</font></h3>
+                        <p style="text-align: center;"><font style="color: rgb(255, 255, 255);">Zero, zilch, nada! Odoo Experience is free for everyone!</font></p>
+                    </div>
+                    <div class="col-lg-12" style="text-align: center;">
+                        <a class="btn btn-primary btn-lg rounded-circle" href="http://">Register now!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="s_footer_social o_mail_block_footer_social o_mail_footer_social_center o_mail_snippet_general bg-200 pt16 pb16" data-snippet="s_mail_block_footer_social" data-name="Footer Center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 o_mail_footer_links pt8 pb8" style="text-align: center;">
+                        <a role="button" href="/unsubscribe_from_list" class="btn btn-link ">Unsubscribe</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p style="text-align: center;">
+                            © <t t-out="now.strftime('%Y')" /> All Rights Reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>
