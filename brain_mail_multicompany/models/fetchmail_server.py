@@ -13,6 +13,9 @@ import re
 import socket
 import time
 from email.message import EmailMessage
+import logging
+
+_logger = logging.getLogger(__name__)
 
 from odoo import _, api, exceptions, fields, models, tools
 from odoo.addons.base.models.ir_mail_server import MailDeliveryException
@@ -98,6 +101,8 @@ class MailThread(models.AbstractModel):
         #    if destination = alias with same model -> check contact settings as they still apply
 
         mail_trace = self.env['mailing.trace'].search([('message_id', '=', message_dict.get('references'))])
+        _logger.info('message_dict.. %s' % (message_dict))
+        _logger.info('mail_trace.. %s' % (mail_trace))
         if mail_trace:
             if mail_trace.model in ['mailing.contact', 'res.partner']:
                 reply_model = mail_trace.model
