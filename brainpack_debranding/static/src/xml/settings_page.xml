@@ -100,7 +100,7 @@
                          <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/lunch.png'"/>
                     </t>
                     <t t-elif="module.key == 'maintenance'">
-                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/maintainance.png'"/>
+                         <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/maintanance.png'"/>
                     </t>
                     <t t-elif="module.key == 'mrp'">
                          <t t-set="image_url" t-value="'/brainpack_debranding/static/description/blue/manufacturing.png'"/>
@@ -532,7 +532,7 @@
                          <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/lunch.png'"/>
                     </t>
                     <t t-elif="module.key == 'maintenance'">
-                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/maintainance.png'"/>
+                         <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/maintanance.png'"/>
                     </t>
                     <t t-elif="module.key == 'mrp'">
                          <t t-set="image_url_white" t-value="'/brainpack_debranding/static/description/manufacturing.png'"/>

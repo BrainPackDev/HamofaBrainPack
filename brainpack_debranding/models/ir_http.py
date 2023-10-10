@@ -32,17 +32,20 @@ class IrHttp(models.AbstractModel):
 def render(self):
     """ Renders the Response's template, returns the result. """
     self.qcontext['request'] = request
-    message = tools.ustr(request.env["ir.ui.view"]._render_template(self.template, self.qcontext))
-    wrapper = Markup if isinstance(message, Markup) else str
-    view_rec = False
-    if isinstance(self.template, int):
-        view_rec = request.env['ir.ui.view'].sudo().search([('id','=',self.template)])
-    if view_rec and view_rec.key == 'website.outsource':
-        pass
-    else:
-        message = re.sub(
-            r"""(Odoo)""", "BrainPack", message
-        )
-    return wrapper(message)
 
+    if request.env["ir.ui.view"]._render_template(self.template, self.qcontext):
+        message = tools.ustr(request.env["ir.ui.view"]._render_template(self.template, self.qcontext))
+        wrapper = Markup if isinstance(message, Markup) else str
+        view_rec = False
+        if isinstance(self.template, int):
+            view_rec = request.env['ir.ui.view'].sudo().search([('id','=',self.template)])
+        if view_rec and view_rec.key == 'website.outsource':
+            pass
+        else:
+            message = re.sub(
+                r"""(Odoo)""", "BrainPack", message
+            )
+        return wrapper(message)
+
+    return request.env["ir.ui.view"]._render_template(self.template, self.qcontext)
 Response.render = render

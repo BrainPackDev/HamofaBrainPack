@@ -47,6 +47,7 @@
         ],
         'web.assets_frontend': [
             'brainpack_debranding/static/src/css/front_style.css',
+            'brainpack_debranding/static/src/js/error_dialogs.js',
         ],
     },
     'pre_init_hook': 'pre_init_hook',

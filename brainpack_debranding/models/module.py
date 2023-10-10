@@ -101,7 +101,7 @@ def get_module_icon(module):
         iconpath = ['static', 'description/blue', 'lunch.png']
     elif module in ['maintenance']:
         module = 'brainpack_debranding'
-        iconpath = ['static', 'description/blue', 'maintainance.png']
+        iconpath = ['static', 'description/blue', 'maintanance.png']
     elif module in ['mrp']:
         module = 'brainpack_debranding'
         iconpath = ['static', 'description/blue', 'manufacturing.png']
