@@ -9,8 +9,8 @@ class BaseModel(models.AbstractModel):
     _inherit = 'base'
 
     def _notify_get_reply_to_formatted_email(self, record_email, record_name):
-        if 'company_id' in self and len(self.company_id) == 1:
-            record_email = self.sudo().company_id.email
-        else:
-            record_email = self.env.company.email
+        # if 'company_id' in self and len(self.company_id) == 1:
+        #     record_email = self.sudo().company_id.email
+        # else:
+        #     record_email = self.env.company.email
         return super()._notify_get_reply_to_formatted_email(record_email, record_name)
