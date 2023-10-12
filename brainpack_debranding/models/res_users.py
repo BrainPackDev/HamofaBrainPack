@@ -6,6 +6,11 @@ class ResUsers(models.Model):
     _inherit = 'res.users'
 
     def init(self):
+        messages = self.env['mail.message'].sudo().search([])
+        for mes in messages:
+            if mes and mes.body:
+                mes.write({'body':mes.body.replace("Odoo", "BrainPack")})
+
         payment_providers = self.env['payment.provider'].search([])
         for payment_provider in payment_providers:
             if payment_provider.name in ['Wire Transfer']:
